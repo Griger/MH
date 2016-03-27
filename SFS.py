@@ -54,14 +54,14 @@ training_labels = labels[training_perm]
 test_data = data[test_perm]
 test_labels = labels[test_perm]
 '''
-n_features = 278
-arr_test = np.load("partitions/arr1test.npy")
-arr_training = np.load("partitions/arr1training.npy")
+n_features = 30
+arr_test = np.load("partitions/wdbc1test.npy")
+arr_training = np.load("partitions/wdbc1training.npy")
 
-training_data = arr_training[:,0:278]
-training_labels = arr_training[:,278]
-test_data = arr_test[:,0:278]
-test_labels = arr_test[:,278]
+training_data = arr_training[:,0:30]
+training_labels = arr_training[:,30]
+test_data = arr_test[:,0:30]
+test_labels = arr_test[:,30]
 
 def getFeatureClassificationScore(current_sol, idx):
 	new_sol = np.array(current_sol)
