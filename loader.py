@@ -15,19 +15,12 @@ D = np.array([l[0]], dtype = np.float64)
 
 for i in range(1,len(l)):
 	D = np.append(D, np.array([l[i]], dtype = np.float64), axis = 0)
-'''
-print "Antes de normalizar los datos:\n", D[:, 0]
-print "MAX: ", np.max(D[:, 0])
-print "MIN: ", np.min(D[:, 0])
-'''
-
 
 D[:, 0:90] = m.fit_transform(D[:, 0:90])
 np.save("data_libras.npy", D)
+
 #Wdbc load and formating
 samples, metadata = arff.loadarff('wdbc.arff')
-
-
 
 l = []
 for d in samples:

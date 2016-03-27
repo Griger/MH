@@ -2,7 +2,6 @@ from scipy.io import arff
 from sklearn.neighbors import NearestNeighbors
 import numpy as np
 import time
-#import datos as d
 
 data_libras = None
 
@@ -19,15 +18,7 @@ def loadData():
 	D = np.array(l)
 	L = np.array(e, dtype = int)
 	data_libras = np.array(zip(D,L))
-	#print D
-	#print L
-	#print H
-	#print type(Z)
-	#print type(Z[0])
-	#print type(H)
-	#print len(H[H[:,1] == 1])
 
-	#print len(d.data_libras[d.data_libras[:,1] == 1])
 
 start = time.time()
 data, metadata = arff.loadarff('movement_libras.arff')

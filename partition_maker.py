@@ -56,37 +56,6 @@ for i in range(0,5):
 	np.save("libras"+str(i)+"test.npy", test_part)
 
 
-'''
-n_data = len(labels)
-
-one_set = data_libras[labels == 1.0]
-two_set = data_libras[labels == 2.0]
-three_set = data_libras[labels == 3.0]
-four_set = data_libras[labels == 4.0]
-five_set = data_libras[labels == 5.0]
-six_set = data_libras[labels == 6.0]
-seven_set = data_libras[labels == 7.0]
-eight_set = data_libras[labels == 8.0]
-nine_set = data_libras[labels == 9.0]
-ten_set = data_libras[labels == 10.0]
-eleven_set = data_libras[labels == 11.0]
-twelve_set = data_libras[labels == 12.0]
-thirteen_set = data_libras[labels == 13.0]
-fourteen_set = data_libras[labels == 14.0]
-fifteen_set = data_libras[labels == 15.0]
-
-n1 = len(one_set)
-n2 = len(two_set)
-n3 = len(three_set)
-n4 = len(four_set)
-n5 = len(five_set)
-n6 = len(six_set)
-n7 = len(seven_set)
-n8 = len(eight_set)
-n9 = len(nine_set)
-n10 = len(ten_set)
-n11 = len(eleven_set)
-'''
 #arrhythmia partitions
 data_arr = np.load("data_arrhythmia.npy")
 data = data_arr[:, 0:278]

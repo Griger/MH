@@ -4,56 +4,6 @@ import knn
 
 np.random.seed(12345678)
 
-'''
-data_libras = np.load("data_libras.npy")
-data = data_libras[:,0:90]
-labels = data_libras[:,90]
-n_data = len(labels)
-n_features = len(data[0])
-
-perm = np.random.permutation(n_data)
-training_perm = perm[:n_data/2]
-test_perm = perm[n_data/2:]
-
-training_data = data[training_perm]
-training_labels = labels[training_perm]
-test_data = data[test_perm]
-test_labels = labels[test_perm]
-'''
-
-'''
-data_wdbc = np.load("data_wdbc.npy")
-data = data_wdbc[:,0:30]
-labels = data_wdbc[:,30]
-n_data = len(labels)
-n_features = len(data[0])
-
-perm = np.random.permutation(n_data)
-training_perm = perm[:n_data/2]
-test_perm = perm[n_data/2:]
-
-training_data = data[training_perm]
-training_labels = labels[training_perm]
-test_data = data[test_perm]
-test_labels = labels[test_perm]
-'''
-
-'''
-data_arr = np.load("data_arrhythmia.npy")
-data = data_arr[:,0:278]
-labels = data_arr[:,278]
-n_data = len(labels)
-n_features = len(data[0])
-
-perm = np.random.permutation(n_data)
-training_perm = perm[:n_data/2]
-test_perm = perm[n_data/2:]
-
-training_data = data[training_perm]
-training_labels = labels[training_perm]
-test_data = data[test_perm]
-test_labels = labels[test_perm]
-'''
 n_features = 30
 arr_test = np.load("partitions/wdbc1test.npy")
 arr_training = np.load("partitions/wdbc1training.npy")
