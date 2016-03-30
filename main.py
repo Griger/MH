@@ -3,6 +3,10 @@ import BL
 import time
 import knn
 
+def splitFeaturesAndLabels(data):
+	n_features = len(data[0]) - 1
+	return data[:, 0:n_features], data[:, n_features]
+
 test = np.load("partitions/wdbc0test.npy")
 training = np.load("partitions/wdbc0training.npy")
 
@@ -11,6 +15,12 @@ training_labels = training[:,30]
 test_data = test[:,0:30]
 test_labels = test[:,30]
 
+D, L = splitFeaturesAndLabels(training)
+
+print D[0]
+print L - training_labels
+
+'''
 start = time.time()
 sol = BL.BL(training_data, training_labels)
 end = time.time()
@@ -21,3 +31,4 @@ print "Number of selected features: ", len(sol[sol == True])
 #print "Final solution's training score: ", sol_score
 print "Final solution's test score: ", 100*knn.getKNNClasiffierScore(training_data[:, sol], training_labels, test_data[:, sol], test_labels)
 print "BL' execution time in seconds: ", end-start
+'''
