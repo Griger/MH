@@ -4,12 +4,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn import cross_validation
 from sklearn import datasets
 import time
-'''
-iris = datasets.load_iris()
-iris_data = iris.data[:10]
-iris_labels = iris.target[:10]
-'''
-
 
 classifier = KNeighborsClassifier(n_neighbors = 3)
 
@@ -49,27 +43,3 @@ def getKNNClasiffierTrainingScore (training_data, training_labels):
 		score = score + classifier.score(X_test, y_test)/float(n)
 
 	return score
-
-'''
-print iris_data
-print iris_labels
-
-idx = range(0,10)
-
-print getKNNClasiffierTrainingScore(iris_data, iris_labels)
-print vgetKNNClasiffierTrainingScoreOneExample(idx, training_data = iris_data, training_labels = iris_labels)
-print getKNNClasiffierTrainingScoreOneExample(0, iris_data, iris_labels)
-
-iris_labels_1 = [5,5,5,5,5,5,5,5,5,5]
-classifier.fit(iris_data, iris_labels)
-print classifier.score(iris_data, iris_labels)
-classifier.fit(iris_data, iris_labels_1)
-print classifier.score(iris_data, iris_labels)
-
-
-l_data = list(iris_data)
-print l_data
-l_labels = list(iris_labels)
-print l_labels
-print getKNNClasiffierScore(l_data, l_labels, l_data, l_labels)
-'''

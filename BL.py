@@ -9,7 +9,7 @@ def flip(s,i):
 
 
 def BL(training_data, training_labels):
-	n = len(training_labels)
+	n = len(training_data[0]) #number of features
 	s = np.random.choice([True, False], n) #initial solution
 	s_score = 100*knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
 	n_generated_sols = 0
