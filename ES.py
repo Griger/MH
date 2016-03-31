@@ -49,25 +49,20 @@ def ES(data, labels):
 		for i in range(0, max_neighbours):
 			#choose a random neighbour
 			idx = np.random.random_integers(0,n-1)
-			s[idx] = not s[idx]
-			#neighbour = flip(s, idx)
-			#neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
-			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:,s], labels)
+			neighbour = flip(s, idx)
+			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 
 			n_evaluations = n_evaluations + 1
 
 			delta = s_score - neighbour_score
 
-			if ((delta < 0) or np.random.uniform() <= np.exp(-delta/T)):
-				#s = neighbour
+			if ((delta < 0) or np.random.uniform() <= np.exp(-delta/T)) and delta != 0:
+				s = neighbour
 				s_score = neighbour_score
 				n_successes = n_successes + 1
-			else:
-				s[idx] = not s[idx]
 
 			if (neighbour_score > best_score):
-				#best_s = neighbour
-				best_s = np.array(s)
+				best_s = neighbour
 				best_score = neighbour_score
 
 			if n_successes == max_successes or n_evaluations == max_evaluations:
