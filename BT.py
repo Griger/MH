@@ -47,6 +47,7 @@ def TS(data, labels):
 			if n_evaluations == max_evaluations:
 				break
 
+			#TODO actualizar siempre la mejor sol
 		s = best_neighbour
 		s_score = score_best_neighbour
 
