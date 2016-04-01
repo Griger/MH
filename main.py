@@ -1,6 +1,7 @@
 import numpy as np
 import BL
 import ES
+import BT
 import time
 import knn
 
@@ -26,7 +27,7 @@ print L - training_labels
 '''
 
 start = time.time()
-sol, sol_training_score = ES.ES(training_data, training_labels)
+sol, sol_training_score =BT.BT(training_data, training_labels)
 end = time.time()
 
 print "Final solution: ", sol

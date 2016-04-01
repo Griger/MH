@@ -15,7 +15,7 @@ def BL(training_data, training_labels):
 	s_score = 100*knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
 	n_generated_sols = 0
 	max_generated_sol = 15000
-	
+
 	while (True):
 		idx = random.sample(range(0,n), n)
 		found_better_sol = False
@@ -31,10 +31,10 @@ def BL(training_data, training_labels):
 				s_score = s_i_score
 
 			if n_generated_sols == max_generated_sol:
-				return s
+				return s, s_score
 
 			if found_better_sol:
 				break
 
 		if not found_better_sol:
-			return s
+			return s, s_score

@@ -22,11 +22,16 @@ def BT(data, labels):
 	s_score = 100*knn.getKNNClasiffierTrainingScore(data[:, s], labels)
 	best_score = s_score
 
+	it_without_improving = 0
+
 	while n_evaluations < max_evaluations:
 		idx = random.sample(range(0,n), neighbourhood_tam)
 		score_best_neighbour = 0.0
 		idx_best_neighbour = -1
 		#print "New idx: ", idx
+
+		it_without_improving += 1
+
 		for i in idx:
 			neighbour = flip(s, i)
 			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
@@ -41,6 +46,8 @@ def BT(data, labels):
 
 					best_s = neighbour
 					best_score = neighbour_score
+
+					it_without_improving = 0
 			else:
 				if (neighbour_score > score_best_neighbour):
 					idx_best_neighbour = i
@@ -50,6 +57,8 @@ def BT(data, labels):
 				if (neighbour_score > best_score):
 					best_s = neighbour
 					best_score = neighbour_score
+
+					it_without_improving = 0
 
 			if n_evaluations == max_evaluations:
 				break
@@ -62,6 +71,10 @@ def BT(data, labels):
 
 		s_score = score_best_neighbour
 
+		if (it_without_improving == 10):
+			it_without_improving = 0
+			s = reinicio #TODO
+		
 		if not idx_best_neighbour in TL: #TODO estamos evitando meter dos veces el mismo movimiento en la lista
 			TL[tabu_idx] = idx_best_neighbour
 			tabu_idx = (tabu_idx + 1)%tl_tam #cyclic list
