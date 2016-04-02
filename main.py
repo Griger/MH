@@ -2,6 +2,7 @@ import numpy as np
 import BL
 import ES
 import BT
+import BText
 import time
 import knn
 
@@ -27,7 +28,7 @@ print L - training_labels
 '''
 
 start = time.time()
-sol, sol_training_score =BT.BT(training_data, training_labels)
+sol, sol_training_score =BText.BText(training_data, training_labels)
 end = time.time()
 
 print "Final solution: ", sol
@@ -35,4 +36,4 @@ print "Numero de caracteristicas: ", len(sol)
 print "Number of selected features: ", len(sol[sol == True])
 print "Final solution's training score: ", sol_training_score
 print "Final solution's test score: ", 100*knn.getKNNClasiffierScore(training_data[:, sol], training_labels, test_data[:, sol], test_labels)
-print "ES' execution time in seconds: ", end-start
+print "BText' execution time in seconds: ", end-start

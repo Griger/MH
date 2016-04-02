@@ -1,9 +1,6 @@
 import numpy as np
-from scipy.io import arff
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import cross_validation
-from sklearn import datasets
-import time
 
 classifier = KNeighborsClassifier(n_neighbors = 3)
 
@@ -35,6 +32,9 @@ def getKNNClasiffierTrainingScore (training_data, training_labels):
 	n = len(training_labels)
 	score = 0.0
 	loo = cross_validation.LeaveOneOut(n)
+
+	if len(training_data[0]) == 0:
+		return 0.0
 
 	for train_index, test_index in loo:
 		X_train, X_test = training_data[train_index], training_data[test_index]
