@@ -40,6 +40,6 @@ def getKNNClasiffierTrainingScore (training_data, training_labels):
 		X_train, X_test = training_data[train_index], training_data[test_index]
 		y_train, y_test = training_labels[train_index], training_labels[test_index]
 		classifier.fit(X_train, y_train)
-		score = score + classifier.score(X_test, y_test)/float(n)
+		score = score + classifier.score(X_test, y_test)
 
-	return score
+	return score/float(n)

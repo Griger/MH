@@ -42,7 +42,7 @@ def ES(data, labels):
 
 	while (not no_success and (n_evaluations < max_evaluations)):
 		n_successes = 0
-		print "Current annealing's temperature: ", T
+		#print "Current annealing's temperature: ", T
 
 		for i in range(0, max_neighbours):
 			#choose a random neighbour
@@ -50,23 +50,23 @@ def ES(data, labels):
 			neighbour = flip(s, idx)
 			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 
-			n_evaluations = n_evaluations + 1
+			n_evaluations += 1
 
 			delta = s_score - neighbour_score
 
 			if ((delta < 0) or np.random.uniform() <= np.exp(-delta/T)) and delta != 0:
 				s, s_score = neighbour, neighbour_score
-				n_successes = n_successes + 1
+				n_successes += 1
 
-			if (neighbour_score > best_score):
-				best_s, best_score = neighbour, neighbour_score
+				if (s_score > best_score):
+					best_s, best_score = s, s_score
 
 			if n_successes == max_successes or n_evaluations == max_evaluations:
 				break
 
 		T = nextT(T, beta)
-		print "Iteration succeses: ", n_successes
-		print "Total evaluations: ", n_evaluations
+		#print "Iteration succeses: ", n_successes
+		#print "Total evaluations: ", n_evaluations
 		no_success = (n_successes == 0)
 
 	return best_s, best_score
