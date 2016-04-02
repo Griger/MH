@@ -15,7 +15,7 @@ def ES(data, labels):
 	mu = 0.3
 	fi = 0.3
 	Tf = 10**(-3)
-	max_evaluations = 15000
+	max_evaluations = 5000
 
 	#Calculation of algorithm's parameter
 	n = len(data[0])
@@ -26,7 +26,7 @@ def ES(data, labels):
 
 	s = np.random.choice([True, False], n) #initial solution
 	best_s = np.array(s)
-	s_score = 100*knn.getKNNClasiffierTrainingScore(data[:, s], labels)
+	s_score = knn.getKNNClasiffierTrainingScore(data[:, s], labels)
 	best_score = s_score
 
 	T0 = -mu*s_score/np.log(fi) #initial temperature
@@ -42,19 +42,18 @@ def ES(data, labels):
 
 	while (not no_success and (n_evaluations < max_evaluations)):
 		n_successes = 0
-		#print "Current annealing's temperature: ", T
 
 		for i in range(0, max_neighbours):
 			#choose a random neighbour
 			idx = np.random.random_integers(0,n-1)
 			neighbour = flip(s, idx)
-			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
+			neighbour_score = knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 
 			n_evaluations += 1
 
 			delta = s_score - neighbour_score
 
-			if ((delta < 0) or np.random.uniform() <= np.exp(-delta/T)) and delta != 0:
+			if delta != 0 and ((delta < 0) or np.random.uniform() <= np.exp(-delta/T)):
 				s, s_score = neighbour, neighbour_score
 				n_successes += 1
 
@@ -65,8 +64,6 @@ def ES(data, labels):
 				break
 
 		T = nextT(T, beta)
-		#print "Iteration succeses: ", n_successes
-		#print "Total evaluations: ", n_evaluations
 		no_success = (n_successes == 0)
 
 	return best_s, best_score

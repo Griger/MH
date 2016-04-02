@@ -6,27 +6,7 @@ classifier = KNeighborsClassifier(n_neighbors = 3)
 
 def getKNNClasiffierScore (training_data, training_labels, test_data, test_labels):
 	classifier.fit(training_data, training_labels)
-	return classifier.score(test_data, test_labels)
-
-'''
-def getKNNClasiffierTrainingScoreOneExample (example_idx, training_data, training_labels):
-	distractors_data = np.delete(training_data, [example_idx], axis = 0)
-	distractors_labels = np.delete(training_labels, [example_idx])
-	#print example_idx
-	#print "Distractors_data: ", distractors_data
-	#print "Distractors_labels: ", distractors_labels
-	classifier.fit(distractors_data, distractors_labels)
-	return classifier.score([training_data[example_idx]], [training_labels[example_idx]])
-	#return classifier.score(np.array([training_data[example_idx]]), np.array([training_labels[example_idx]]))
-
-vgetKNNClasiffierTrainingScoreOneExample = np.vectorize(getKNNClasiffierTrainingScoreOneExample, excluded = ['training_data', 'training_labels'], otypes = [np.ndarray])
-
-
-def getKNNClasiffierTrainingScore (training_data, training_labels):
-	idx = range(0, len(training_data))
-	#print "Un resultado: ", vgetKNNClasiffierTrainingScoreOneExample(idx, training_data = training_data, training_labels = training_labels)
-	return np.mean(vgetKNNClasiffierTrainingScoreOneExample(idx, training_data = training_data, training_labels = training_labels))
-'''
+	return 100*classifier.score(test_data, test_labels)
 
 def getKNNClasiffierTrainingScore (training_data, training_labels):
 	n = len(training_labels)
@@ -42,4 +22,4 @@ def getKNNClasiffierTrainingScore (training_data, training_labels):
 		classifier.fit(X_train, y_train)
 		score = score + classifier.score(X_test, y_test)
 
-	return score/float(n)
+	return 100*score/float(n)
