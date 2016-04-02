@@ -1,41 +1,30 @@
-import time
 import numpy as np
 import knn
 
-np.random.seed(12345678)
-
-n_features = 30
-arr_test = np.load("partitions/wdbc1test.npy")
-arr_training = np.load("partitions/wdbc1training.npy")
-
-training_data = arr_training[:,0:30]
-training_labels = arr_training[:,30]
-test_data = arr_test[:,0:30]
-test_labels = arr_test[:,30]
-
-def getFeatureClassificationScore(current_sol, idx):
+#Function that computes the training classification score of a solution
+def getFeatureClassificationScore(current_sol, train_data, train_labels, idx):
 	new_sol = np.array(current_sol)
 	new_sol[idx] = True
-	return 100*knn.getKNNClasiffierTrainingScore(training_data[:, new_sol], training_labels)
+	return knn.getKNNClasiffierTrainingScore(train_data[:, new_sol], train_labels)
 
-vgetFeatureClassificationScore = np.vectorize(getFeatureClassificationScore, excluded = ['current_sol'], otypes=[np.ndarray])
+#vectorized version of previous function
+vgetFeatureClassificationScore = np.vectorize(getFeatureClassificationScore, excluded = ['current_sol','train_data','train_labels'], otypes=[np.ndarray])
 
 #Function that implements the SFS algorithm
-
-def SFS():
-	start = time.time()
+def SFS(data, labels):
+	n_features = len(data[0])
 	finish = False
 	sol = np.repeat(False, n_features)
 	sol_score = 0
 	c_idx = range(0, n_features)
 
+	#while we get profit and we can add new features
 	while (not finish and len(c_idx) != 0):
-		scores = vgetFeatureClassificationScore(current_sol = sol, idx = c_idx)
-		#print scores, len(scores)
+		#compute individual feature scores in relation to the current set of selected features
+		scores = vgetFeatureClassificationScore(current_sol = sol, train_data = data, train_labels = labels, idx = c_idx)
 		max_idx = np.argmax(scores)
 		max_score = scores[max_idx]
-		print "La nueva sol tiene una tasa de acierto: ", max_score
-		#print max_score, max_idx
+
 		if max_score > sol_score:
 			sol[c_idx[max_idx]] = True
 			sol_score = max_score
@@ -43,12 +32,4 @@ def SFS():
 		else:
 			finish = True
 
-	end = time.time()
-	print "Final solution: ", sol
-	print "Numero de caracteristicas: ", len(sol)
-	print "Number of selected features: ", len(sol[sol == True])
-	print "Final solution's training score: ", sol_score
-	print "Final solution's test score: ", 100*knn.getKNNClasiffierScore(training_data[:, sol], training_labels, test_data[:, sol], test_labels)
-	print "SFS' execution time in seconds: ", end-start
-
-SFS()
+	return sol, sol_score

@@ -27,6 +27,7 @@ def BText(data, labels):
 	it_without_new_best_sol = 0
 	long_term_mem = np.repeat(0, n) #long term memory
 	num_accepted_sols = 0
+	
 	while n_evaluations < max_evaluations:
 		idx = random.sample(range(0,n), neighbourhood_tam)
 		best_neighbour_score = 0.0
@@ -50,6 +51,9 @@ def BText(data, labels):
 		s = best_neighbour
 		num_accepted_sols += 1
 		long_term_mem[s] += 1 #update long term memory
+
+		TL[tabu_idx] = idx_best_neighbour
+		tabu_idx = (tabu_idx + 1)%tl_tam #cyclic list
 
 		if best_neighbour_score > best_score:
 			best_s, best_score = s, best_neighbour_score
@@ -75,26 +79,11 @@ def BText(data, labels):
 			reduce_tam = np.random.choice([True, False])
 
 			if reduce_tam:
-				print "Reducir tam:"
-				print "TL antes: ", TL, "Tamanio antes: ", tl_tam
-				new_tam = ceil(tl_tam/2.0)
-				if (tabu_idx < new_tam):
-					TL = TL[:int(new_tam)]
-				else:
-					TL = TL[int(new_tam):]
-					tabu_idx -= int(new_tam)
-				tl_tam = len(TL)
-				print "TL despues: ", TL, "Tamanio despues: ", tl_tam
+				tl_tam = int(ceil(tl_tam/2.0))
+				TL = np.repeat(-1, tl_tam)
 			else:
-				print "Aumentar tam"
-				print "TL antes: ", TL, "Tamanio antes: ", tl_tam
-				TL = np.concatenate( (TL[tabu_idx:], TL[:tabu_idx], np.repeat(-1, ceil(tl_tam/2.0))) )
-				tl_tam = len(TL)
-				tabu_idx = 0
-				print "TL despues: ", TL, "Tamanio despues: ", tl_tam
+				tl_tam += int(ceil(tl_tam/2.0))
+				TL = np.repeat(-1, tl_tam)
 
-		TL[tabu_idx] = idx_best_neighbour
-		tabu_idx = (tabu_idx + 1)%tl_tam #cyclic list
-		print TL
 
 	return best_s, best_score

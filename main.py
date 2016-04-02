@@ -1,4 +1,5 @@
 import numpy as np
+import SFS
 import BL
 import ES
 import BT
@@ -41,6 +42,8 @@ print "Final solution's training score: ", sol_training_score
 print "Final solution's test score: ", knn.getKNNClasiffierScore(training_data[:, sol], training_labels, test_data[:, sol], test_labels)
 print "ES' execution time in seconds: ", end-start
 '''
+
+'''
 wdbc_test_data = []
 wdbc_test_labels = []
 wdbc_train_data = []
@@ -56,10 +59,60 @@ for i in range(0,5):
 	wdbc_train_data.append(D)
 	wdbc_train_labels.append(L)
 
+
 for i in range(0,5):
-	heuristic_name = "ES"
+	heuristic_name = "SFS"
 	print "Results for", heuristic_name, "in wdbc"
 	print "Partition ", i+1, "-", 1
-	getResult(heuristic_name, ES.ES, wdbc_train_data[i], wdbc_train_labels[i], wdbc_test_data[i], wdbc_test_labels[i])
+	getResult(heuristic_name, SFS.SFS, wdbc_train_data[i], wdbc_train_labels[i], wdbc_test_data[i], wdbc_test_labels[i])
 	print "Partition ", i+1, "-", 2
-	getResult(heuristic_name, ES.ES, wdbc_test_data[i], wdbc_test_labels[i], wdbc_train_data[i], wdbc_train_labels[i])
+	getResult(heuristic_name, SFS.SFS, wdbc_test_data[i], wdbc_test_labels[i], wdbc_train_data[i], wdbc_train_labels[i])
+'''
+
+'''
+libras_test_data = []
+libras_test_labels = []
+libras_train_data = []
+libras_train_labels = []
+
+for i in range(0,5):
+	test = np.load("partitions/libras" + str(i) + "test.npy")
+	training = np.load("partitions/libras" + str(i) + "training.npy")
+	D, L = splitFeaturesAndLabels(test)
+	libras_test_data.append(D)
+	libras_test_labels.append(L)
+	D, L = splitFeaturesAndLabels(training)
+	libras_train_data.append(D)
+	libras_train_labels.append(L)
+
+for i in range(0,5):
+	heuristic_name = "SFS"
+	print "Results for", heuristic_name, "in libras"
+	print "Partition ", i+1, "-", 1
+	getResult(heuristic_name, SFS.SFS, libras_train_data[i], libras_train_labels[i], libras_test_data[i], libras_test_labels[i])
+	print "Partition ", i+1, "-", 2
+	getResult(heuristic_name, SFS.SFS, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
+'''
+
+arr_test_data = []
+arr_test_labels = []
+arr_train_data = []
+arr_train_labels = []
+
+for i in range(0,5):
+	test = np.load("partitions/arr" + str(i) + "test.npy")
+	training = np.load("partitions/arr" + str(i) + "training.npy")
+	D, L = splitFeaturesAndLabels(test)
+	arr_test_data.append(D)
+	arr_test_labels.append(L)
+	D, L = splitFeaturesAndLabels(training)
+	arr_train_data.append(D)
+	arr_train_labels.append(L)
+
+for i in range(0,5):
+	heuristic_name = "SFS"
+	print "Results for", heuristic_name, "in arr"
+	print "Partition ", i+1, "-", 1
+	getResult(heuristic_name, SFS.SFS, arr_train_data[i], arr_train_labels[i], arr_test_data[i], arr_test_labels[i])
+	print "Partition ", i+1, "-", 2
+	getResult(heuristic_name, SFS.SFS, arr_test_data[i], arr_test_labels[i], arr_train_data[i], arr_train_labels[i])
