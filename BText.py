@@ -86,5 +86,7 @@ def BText(data, labels):
 				tl_tam += int(ceil(tl_tam/2.0))
 				TL = np.repeat(-1, tl_tam)
 
+			tabu_idx = 0
+
 
 	return best_s, best_score

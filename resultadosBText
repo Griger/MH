@@ -1,0 +1,65 @@
+Results for BText in wdbc
+Partition  1 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  56.6666666667 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  95.0704225352
+BText' execution time in seconds:  692.234080076
+Partition  1 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  40.0 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  96.1403508772
+BText' execution time in seconds:  682.911976099
+Results for BText in wdbc
+Partition  2 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  56.6666666667 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  94.3661971831
+BText' execution time in seconds:  680.201151133
+Partition  2 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  70.0 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  96.1403508772
+BText' execution time in seconds:  666.339776039
+Results for BText in wdbc
+Partition  3 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  60.0 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  96.1267605634
+BText' execution time in seconds:  690.011018991
+Partition  3 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  30.0 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  95.7894736842
+BText' execution time in seconds:  708.357872009
+Results for BText in wdbc
+Partition  4 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  50.0 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  95.4225352113
+BText' execution time in seconds:  691.623530865
+Partition  4 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  60.0 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  94.0350877193
+BText' execution time in seconds:  677.527747869
+Results for BText in wdbc
+Partition  5 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  93.661971831
+BText' execution time in seconds:  689.445683956
+Partition  5 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  20.0 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  96.1403508772
+BText' execution time in seconds:  694.333168983
