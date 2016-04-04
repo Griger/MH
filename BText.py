@@ -12,6 +12,7 @@ def flip(s,i):
 def BText(data, labels):
 	n = len(data[0]) #problem's size
 	max_evaluations = 5000
+	print "Ejecutando Busqueda Tabu extendida", max_evaluations
 	n_evaluations = 0
 	tl_tam = n/3 #tabu list's tam
 	tabu_idx = 0 #start of tabu list
@@ -20,14 +21,14 @@ def BText(data, labels):
 
 	s = np.random.choice([True, False], n) #initial solution
 	best_s = s
-	s_score = 100*knn.getKNNClasiffierTrainingScore(data[:, s], labels)
+	s_score = knn.getKNNClasiffierTrainingScore(data[:, s], labels)
 	best_score = s_score
 
 	#new version adds
 	it_without_new_best_sol = 0
 	long_term_mem = np.repeat(0, n) #long term memory
 	num_accepted_sols = 0
-	
+
 	while n_evaluations < max_evaluations:
 		idx = random.sample(range(0,n), neighbourhood_tam)
 		best_neighbour_score = 0.0
@@ -35,7 +36,7 @@ def BText(data, labels):
 
 		for i in idx:
 			neighbour = flip(s, i)
-			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
+			neighbour_score = knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 			n_evaluations = n_evaluations + 1
 
 			if (i in TL):

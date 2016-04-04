@@ -1,0 +1,178 @@
+Results for ES in wdbc
+Partition  1 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  46.6666666667 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  96.4788732394
+ES' execution time in seconds:  86.8798880577
+Partition  1 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  46.6666666667 %
+Final solution's training score:  97.5352112676
+Final solution's test score:  94.7368421053
+ES' execution time in seconds:  89.1470589638
+Results for ES in wdbc
+Partition  2 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  53.3333333333 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  96.1267605634
+ES' execution time in seconds:  86.0042309761
+Partition  2 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  73.3333333333 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  95.4385964912
+ES' execution time in seconds:  79.7021000385
+Results for ES in wdbc
+Partition  3 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  43.3333333333 %
+Final solution's training score:  95.7894736842
+Final solution's test score:  96.4788732394
+ES' execution time in seconds:  46.9508039951
+Partition  3 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  36.6666666667 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.7894736842
+ES' execution time in seconds:  88.451225996
+Results for ES in wdbc
+Partition  4 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  53.3333333333 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  94.014084507
+ES' execution time in seconds:  84.623456955
+Partition  4 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  46.6666666667 %
+Final solution's training score:  97.8873239437
+Final solution's test score:  94.0350877193
+ES' execution time in seconds:  85.6639120579
+Results for ES in wdbc
+Partition  5 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  50.0 %
+Final solution's training score:  97.5438596491
+Final solution's test score:  95.0704225352
+ES' execution time in seconds:  85.8592147827
+Partition  5 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  36.6666666667 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  94.3859649123
+ES' execution time in seconds:  87.6410689354
+Results for ES in libras
+Partition  1 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  64.4444444444 %
+Final solution's training score:  72.7777777778
+Final solution's test score:  73.8888888889
+ES' execution time in seconds:  164.596934795
+Partition  1 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  50.0 %
+Final solution's training score:  65.5555555556
+Final solution's test score:  66.1111111111
+ES' execution time in seconds:  174.234375954
+Results for ES in libras
+Partition  2 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  57.7777777778 %
+Final solution's training score:  70.5555555556
+Final solution's test score:  66.1111111111
+ES' execution time in seconds:  172.007686853
+Partition  2 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  53.3333333333 %
+Final solution's training score:  73.3333333333
+Final solution's test score:  72.7777777778
+ES' execution time in seconds:  175.858080864
+Results for ES in libras
+Partition  3 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  58.8888888889 %
+Final solution's training score:  73.8888888889
+Final solution's test score:  66.6666666667
+ES' execution time in seconds:  171.501887083
+Partition  3 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  51.1111111111 %
+Final solution's training score:  73.3333333333
+Final solution's test score:  71.1111111111
+ES' execution time in seconds:  183.793003082
+Results for ES in libras
+Partition  4 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  51.1111111111 %
+Final solution's training score:  72.7777777778
+Final solution's test score:  68.8888888889
+ES' execution time in seconds:  179.025320053
+Partition  4 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  58.8888888889 %
+Final solution's training score:  75.0
+Final solution's test score:  72.7777777778
+ES' execution time in seconds:  168.029330015
+Results for ES in libras
+Partition  5 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  64.4444444444 %
+Final solution's training score:  67.7777777778
+Final solution's test score:  77.2222222222
+ES' execution time in seconds:  165.79995203
+Partition  5 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  51.1111111111 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  73.8888888889
+ES' execution time in seconds:  175.419964075
+Results for ES in arr
+Partition  1 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  52.1582733813 %
+Final solution's training score:  68.5567010309
+Final solution's test score:  66.1458333333
+ES' execution time in seconds:  770.288136959
+Partition  1 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  47.4820143885 %
+Final solution's training score:  68.75
+Final solution's test score:  63.9175257732
+ES' execution time in seconds:  765.746303082
+Results for ES in arr
+Partition  2 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  49.6402877698 %
+Final solution's training score:  68.5567010309
+Final solution's test score:  65.625
+ES' execution time in seconds:  780.416297197
+Partition  2 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  47.8417266187 %
+Final solution's training score:  68.75
+Final solution's test score:  66.4948453608
+ES' execution time in seconds:  775.441374063
+Results for ES in arr
+Partition  3 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  48.9208633094 %
+Final solution's training score:  70.618556701
+Final solution's test score:  69.7916666667
+ES' execution time in seconds:  788.238968134
+Partition  3 - 2
+Ejecutando Enfriamiento Simulado
+% reduction:  51.0791366906 %
+Final solution's training score:  70.8333333333
+Final solution's test score:  65.9793814433
+ES' execution time in seconds:  762.561928034
+Results for ES in arr
+Partition  4 - 1
+Ejecutando Enfriamiento Simulado
+% reduction:  48.9208633094 %
+Final solution's training score:  71.6494845361
+Final solution's test score:  68.75
+ES' execution time in seconds:  783.635154009
+Partition  4 - 2
+Ejecutando Enfriamiento Simulado

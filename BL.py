@@ -10,9 +10,10 @@ def flip(s,i):
 
 
 def BL(training_data, training_labels):
+	print ("Ejecutando Busqueda Local")
 	n = len(training_data[0]) #number of features
 	s = np.random.choice([True, False], n) #initial solution
-	s_score = 100*knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
+	s_score = knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
 	n_generated_sols = 0
 	max_generated_sol = 15000
 
@@ -22,12 +23,12 @@ def BL(training_data, training_labels):
 
 		for i in idx:
 			s_i = flip(s, i)
-			s_i_score = 100*knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
-			n_generated_sols = n_generated_sols + 1
+			s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
+			n_generated_sols += 1
 
 			if(s_i_score > s_score):
 				found_better_sol = True
-				s[i] = not s[i]
+				s = s_i
 				s_score = s_i_score
 
 			if n_generated_sols == max_generated_sol:

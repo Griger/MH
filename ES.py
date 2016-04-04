@@ -11,6 +11,7 @@ def flip(s,i):
 	return new_s
 
 def ES(data, labels):
+	print "Ejecutando Enfriamiento Simulado"
 	#Common parameter values
 	mu = 0.3
 	fi = 0.3

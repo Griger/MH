@@ -9,8 +9,10 @@ def flip(s,i):
 	return new_s
 
 def BT(data, labels):
+
 	n = len(data[0]) #problem's size
 	max_evaluations = 5000
+	print "Ejecutando Busqueda Tabu", max_evaluations
 	n_evaluations = 0
 	tl_tam = n/3 #tabu list's tam
 	tabu_idx = 0 #start of tabu list
@@ -19,7 +21,7 @@ def BT(data, labels):
 
 	s = np.random.choice([True, False], n) #initial solution
 	best_s = s
-	s_score = 100*knn.getKNNClasiffierTrainingScore(data[:, s], labels)
+	s_score = knn.getKNNClasiffierTrainingScore(data[:, s], labels)
 	best_score = s_score
 
 	while n_evaluations < max_evaluations:
@@ -29,7 +31,7 @@ def BT(data, labels):
 
 		for i in idx:
 			neighbour = flip(s, i)
-			neighbour_score = 100*knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
+			neighbour_score = knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 			n_evaluations = n_evaluations + 1
 
 			#print neighbour
@@ -55,8 +57,8 @@ def BT(data, labels):
 		TL[tabu_idx] = idx_best_neighbour
 		tabu_idx = (tabu_idx + 1)%tl_tam #cyclic list
 
-		print "Total evaluations: ", n_evaluations
-		print "Best neighbout idx: ", idx_best_neighbour
-		print "TL: ", TL
-		
+		#print "Total evaluations: ", n_evaluations
+		#print "Best neighbout idx: ", idx_best_neighbour
+		#print "TL: ", TL
+
 	return best_s, best_score

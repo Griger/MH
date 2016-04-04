@@ -1,0 +1,195 @@
+Results for BT in wdbc
+Partition  1 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  50.0 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  95.4225352113
+BT' execution time in seconds:  655.177186012
+Partition  1 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  60.0 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  95.0877192982
+BT' execution time in seconds:  640.177470922
+Results for BT in wdbc
+Partition  2 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  94.3661971831
+BT' execution time in seconds:  647.327893019
+Partition  2 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.4385964912
+BT' execution time in seconds:  627.416105032
+Results for BT in wdbc
+Partition  3 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  56.6666666667 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  97.1830985915
+BT' execution time in seconds:  634.715778828
+Partition  3 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  43.3333333333 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  95.7894736842
+BT' execution time in seconds:  650.892083883
+Results for BT in wdbc
+Partition  4 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  96.1267605634
+BT' execution time in seconds:  654.680481911
+Partition  4 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  93.3333333333
+BT' execution time in seconds:  655.59561491
+Results for BT in wdbc
+Partition  5 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  56.6666666667 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  92.9577464789
+BT' execution time in seconds:  643.713946819
+Partition  5 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  43.3333333333 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  95.0877192982
+BT' execution time in seconds:  650.780417919
+Results for BT in libras
+Partition  1 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  50.0 %
+Final solution's training score:  77.7777777778
+Final solution's test score:  74.4444444444
+BT' execution time in seconds:  442.371069908
+Partition  1 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  67.7777777778 %
+Final solution's training score:  73.8888888889
+Final solution's test score:  69.4444444444
+BT' execution time in seconds:  417.097254038
+Results for BT in libras
+Partition  2 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  48.8888888889 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  66.6666666667
+BT' execution time in seconds:  441.375782967
+Partition  2 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  58.8888888889 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  71.1111111111
+BT' execution time in seconds:  438.637142181
+Results for BT in libras
+Partition  3 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  62.2222222222 %
+Final solution's training score:  77.2222222222
+Final solution's test score:  73.3333333333
+BT' execution time in seconds:  433.433637142
+Partition  3 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  62.2222222222 %
+Final solution's training score:  76.1111111111
+Final solution's test score:  70.0
+BT' execution time in seconds:  427.883813858
+Results for BT in libras
+Partition  4 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  77.7777777778
+Final solution's test score:  71.6666666667
+BT' execution time in seconds:  450.715741158
+Partition  4 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  56.6666666667 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  71.1111111111
+BT' execution time in seconds:  437.277895927
+Results for BT in libras
+Partition  5 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  50.0 %
+Final solution's training score:  71.6666666667
+Final solution's test score:  70.5555555556
+BT' execution time in seconds:  431.017498016
+Partition  5 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  48.8888888889 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  71.1111111111
+BT' execution time in seconds:  447.010961056
+Results for BT in arr
+Partition  1 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  59.7122302158 %
+Final solution's training score:  77.3195876289
+Final solution's test score:  67.7083333333
+BT' execution time in seconds:  717.858455181
+Partition  1 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  56.1151079137 %
+Final solution's training score:  73.4375
+Final solution's test score:  70.1030927835
+BT' execution time in seconds:  711.627550125
+Results for BT in arr
+Partition  2 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  50.7194244604 %
+Final solution's training score:  72.6804123711
+Final solution's test score:  64.5833333333
+BT' execution time in seconds:  752.387799978
+Partition  2 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  51.7985611511 %
+Final solution's training score:  74.4791666667
+Final solution's test score:  69.0721649485
+BT' execution time in seconds:  754.198268175
+Results for BT in arr
+Partition  3 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  55.3956834532 %
+Final solution's training score:  72.6804123711
+Final solution's test score:  68.75
+BT' execution time in seconds:  742.519886971
+Partition  3 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  53.9568345324 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  65.9793814433
+BT' execution time in seconds:  726.010480165
+Results for BT in arr
+Partition  4 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  51.0791366906 %
+Final solution's training score:  72.1649484536
+Final solution's test score:  63.0208333333
+BT' execution time in seconds:  739.389081001
+Partition  4 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  51.4388489209 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  68.5567010309
+BT' execution time in seconds:  750.85957098
+Results for BT in arr
+Partition  5 - 1
+Ejecutando Busqueda Tabu 5000
+% reduction:  52.8776978417 %
+Final solution's training score:  72.1649484536
+Final solution's test score:  67.7083333333
+BT' execution time in seconds:  742.293395042
+Partition  5 - 2
+Ejecutando Busqueda Tabu 5000
+% reduction:  53.9568345324 %
+Final solution's training score:  72.3958333333
+Final solution's test score:  64.9484536082
+BT' execution time in seconds:  739.026867867
