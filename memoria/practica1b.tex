@@ -203,6 +203,45 @@ return mejor_sol_encontrada
 \newpage
 \subsection{\color[rgb]{0.0,0.0,0.51}Búsqueda Tabú Extendida (BText.py)}
 
+El esquema de búsqueda es el mismo que en la BT básica, lo que cambia es que añadimos un esquema de reinicialización en el bucle interno que funciona del siguiente modo:\\
+
+\begin{lstlisting}
+#iniciamos la memoria a largo plazo como un vector con tantos 0 como caracteristicas haya
+while no hayamos generado mas vecinos que el total permitido:
+	#todo igual que en la BT basica
+	
+	s = mejor vecino
+	soluciones_aceptadas++
+	para cada car. seleccionada en mejor vecino aumentamos el contador de la memoria a largo plazo de ella en 1
+	
+	if mejor vecino es mejor que mejor sol. hasta el momento:
+		actualizamos la mejor
+	else:
+		numero de iteraciones sin mejorar++
+		
+	if llevamos 10 iteraciones sin mejorar la mejor solucion:
+		obtenemos numero aleatorio en el [1,3] con probabilidades [0.25,0.25,0.5]
+		
+		if sale 1:
+			sol_actual = una solucion nueva completamente aleatoria
+		elif sale 2:
+			sol_actual = mejor_solucion_encontrada
+		else:
+			#construimos una nueva sol_actual donde cada caracteristica se rige por lo que sigue
+			sol_actual[i] = U(0,1) < (1 - (numero de veces que la car. i se ha aparecido en las sols. aceptadas/soluciones_aceptadas)
+			
+		Elegimos si reducir o aumentar el tamanio de la lista tabu
+		
+		if Reducir:
+			LT = una lista con la mitad de tamanio con todas las casillas a -1 (vacia)
+		else:
+			LT = una lista con el tamanio de antes + la mitad de ese tamanio con todo a -1
+			
+		Se insertaran nuevos elementos empezando desde el inicio de la lista
+		
+return la mejor solucion encontrada
+		
+\end{lstlisting}
 \newpage
 \section{\color[rgb]{0.0,0.0,0.21}Breve descripción del algoritmo de comparación}
 
@@ -226,4 +265,23 @@ return el conjunto de caracteristicas al que hemos llegado
 \newpage
 \section{\color[rgb]{0.0,0.0,0.21}Procedimiento considerado para desarrollar la práctica}
 
+\subsection{\color[rgb]{0.0,0.0,0.51}Desarrollo}
+
+El código usado en prácticas lo he implementado yo a partir de las explicaciones dadas tanto en clase de prácticas como de teoría sobre los distintos algoritmos, siendo de mucha utilidad los pseudocódigos de las transparencia de teoría así como el esqueme de funcinamiento de las búsqueda tabú, también de las transparencia.\\
+
+La parte que no ha sido implementada por mí es la correspondiente a la implementación de las soluciones, es decir, tanto el KNN como los mecanismos de evaluación de las soluciones. Para ello he usado un módulo de Python llamado scikit cuya documentación la podemos consultar en la siguien web que es la que he consultado yo para poder usar aquello que necesitaba \url{http://scikit-learn.org/stable/documentation.html}, para instalar este módulo en Ubuntu hemos usado el siguiente comando de terminal \textit{pip install -U scikit-learn}. Este módulo nos permite tanto crear un clasificador 3NN con los datos que elijamos y posteriormente etiquetar datos u obtener directamente el porcentaje de acierto para un conjunto de datos.\\
+
+Además tiene una función para hacer las pruebas Leave One Out dándole un conjunto de datos y nos dice los índices para poder separar el conjunto de datos de aprendizaje en una muestra por un lado y el resto por otro y poder calcular la función objetivo como queremos.\\
+
+\subsection{\color[rgb]{0.0,0.0,0.51}Manual de usuario}
+
+Cada uno de los algoritmos están implementados en distintos ficheros de los que podemos ver su contenido en el \textit{leeme} que se nos pide que incluyamos con el código. Los experimentos han sido ejecutados usando el fichero main al que le pasamos por argumentos el nombre del algoritmo a usar: KNN, SFS, BL, ES, BT y BText. La semilla se establece dentro del fichero al inicio de la ejecución del algoritmo para cada una de las particiones. Esto lo hemos hecho así para poder cortar la obtención de datos cuando sea necesaria y poder retomar los experimento desde la partición por las que nos quedáramos, así no se desajusta la semilla con la que hacemos los experimentos al retomar.\\
+
+Entonces para ejecutar los experimentos de cada algoritmo lo que haremos es \textit{python main.py algoritmo} y se ejecutará el algoritmo sobre todas las particiones de datos que tenemos.\\
+
+\section{\color[rgb]{0.0,0.0,0.21}Experimentos y análisis de resultados}
+
+Estás prácticas han sido implementadas en Python 2.7.6 y ejecutadas sobre un ordenador son S.O. Ubuntu 14.04 LTS, de 8GB de RAM y procesador Intel Core i7-4790 CPU 3.60GHz con 8 núcleos, aunque dado que el código no ha sido paralelizado estos núcleos no han sido explotados al máximo.\\
+
+Debido a algunas complicaciones y a la falta de tiempo he ejecutado los algoritmo con un número máximo de evaluaciones de 5000 en lugar de 15000 lo que se ve reflejado tanto en el tiempo de ejecución: por ejemplo la Búsqueda Tabú tarda aproximadamente un tercio del tiempo ya que como no tiene otro criterio de parada que no sea el número de evaluaciones, la reducción se ve afectada justamente por el número máximo de evaluaciones que se hagan.\\
 \end{document}
