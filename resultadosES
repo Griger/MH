@@ -175,4 +175,21 @@ Final solution's training score:  71.6494845361
 Final solution's test score:  68.75
 ES' execution time in seconds:  783.635154009
 Partition  4 - 2
-Ejecutando Enfriamiento Simulado
+Ejecutando Enfriamiento Simulado 5000
+% reduction:  49.6402877698 %
+Final solution's training score:  69.2708333333
+Final solution's test score:  63.4020618557
+ES' execution time in seconds:  753.27030015
+Results for ES in arr
+Partition  5 - 1
+Ejecutando Enfriamiento Simulado 5000
+% reduction:  44.964028777 %
+Final solution's training score:  69.0721649485
+Final solution's test score:  62.5
+ES' execution time in seconds:  761.364650965
+Partition  5 - 2
+Ejecutando Enfriamiento Simulado 5000
+% reduction:  47.1223021583 %
+Final solution's training score:  68.75
+Final solution's test score:  62.3711340206
+ES' execution time in seconds:  778.512143135

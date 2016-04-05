@@ -63,3 +63,133 @@ Ejecutando Busqueda Tabu extendida 5000
 Final solution's training score:  99.2957746479
 Final solution's test score:  96.1403508772
 BText' execution time in seconds:  694.333168983
+Results for BText in libras
+Partition  1 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  54.4444444444 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  69.4444444444
+BText' execution time in seconds:  494.481127024
+Partition  1 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  54.4444444444 %
+Final solution's training score:  68.8888888889
+Final solution's test score:  68.3333333333
+BText' execution time in seconds:  502.045265913
+Results for BText in libras
+Partition  2 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  43.3333333333 %
+Final solution's training score:  72.2222222222
+Final solution's test score:  66.6666666667
+BText' execution time in seconds:  506.602131128
+Partition  2 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  51.1111111111 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  71.1111111111
+BText' execution time in seconds:  510.139528036
+Results for BText in libras
+Partition  3 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  71.6666666667
+BText' execution time in seconds:  511.65030098
+Partition  3 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  51.1111111111 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  71.1111111111
+BText' execution time in seconds:  506.187037945
+Results for BText in libras
+Partition  4 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  52.2222222222 %
+Final solution's training score:  76.6666666667
+Final solution's test score:  68.8888888889
+BText' execution time in seconds:  508.987622976
+Partition  4 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  47.7777777778 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  68.3333333333
+BText' execution time in seconds:  517.494791031
+Results for BText in libras
+Partition  5 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  71.1111111111
+Final solution's test score:  72.2222222222
+BText' execution time in seconds:  505.054692984
+Partition  5 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  44.4444444444 %
+Final solution's training score:  78.3333333333
+Final solution's test score:  72.7777777778
+BText' execution time in seconds:  498.506376028
+Results for BText in arr
+Partition  1 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  55.3956834532 %
+Final solution's training score:  74.7422680412
+Final solution's test score:  65.625
+BText' execution time in seconds:  954.810904026
+Partition  1 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  52.8776978417 %
+Final solution's training score:  72.3958333333
+Final solution's test score:  68.0412371134
+BText' execution time in seconds:  916.167709112
+Results for BText in arr
+Partition  2 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  51.4388489209 %
+Final solution's training score:  70.618556701
+Final solution's test score:  67.1875
+BText' execution time in seconds:  992.341773987
+Partition  2 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  51.4388489209 %
+Final solution's training score:  69.2708333333
+Final solution's test score:  68.0412371134
+BText' execution time in seconds:  942.768321037
+Results for BText in arr
+Partition  3 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  52.1582733813 %
+Final solution's training score:  70.1030927835
+Final solution's test score:  67.1875
+BText' execution time in seconds:  959.003060818
+Partition  3 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  53.5971223022 %
+Final solution's training score:  70.8333333333
+Final solution's test score:  67.5257731959
+BText' execution time in seconds:  922.411643028
+Results for BText in arr
+Partition  4 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  52.5179856115 %
+Final solution's training score:  70.618556701
+Final solution's test score:  65.1041666667
+BText' execution time in seconds:  945.755994081
+Partition  4 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  52.5179856115 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  63.4020618557
+BText' execution time in seconds:  890.617939949
+Results for BText in arr
+Partition  5 - 1
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  55.3956834532 %
+Final solution's training score:  72.6804123711
+Final solution's test score:  67.1875
+BText' execution time in seconds:  944.006648064
+Partition  5 - 2
+Ejecutando Busqueda Tabu extendida 5000
+% reduction:  56.1151079137 %
+Final solution's training score:  69.7916666667
+Final solution's test score:  59.793814433
+BText' execution time in seconds:  929.246621847

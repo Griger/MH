@@ -11,13 +11,13 @@ def flip(s,i):
 	return new_s
 
 def ES(data, labels):
-	print "Ejecutando Enfriamiento Simulado"
+
 	#Common parameter values
 	mu = 0.3
 	fi = 0.3
 	Tf = 10**(-3)
 	max_evaluations = 5000
-
+	print "Ejecutando Enfriamiento Simulado", max_evaluations
 	#Calculation of algorithm's parameter
 	n = len(data[0])
 

@@ -25,10 +25,12 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 heuristic_name = "BText"
 heuristic = BText.BText
 
+'''
 wdbc_test_data = []
 wdbc_test_labels = []
 wdbc_train_data = []
 wdbc_train_labels = []
+
 
 for i in range(0,5):
 	test = np.load("partitions/wdbc" + str(i) + "test.npy")
@@ -47,8 +49,8 @@ for i in range(0,5):
 	getResult(heuristic_name, heuristic, wdbc_train_data[i], wdbc_train_labels[i], wdbc_test_data[i], wdbc_test_labels[i])
 	print "Partition ", i+1, "-", 2
 	getResult(heuristic_name, heuristic, wdbc_test_data[i], wdbc_test_labels[i], wdbc_train_data[i], wdbc_train_labels[i])
-
 '''
+
 libras_test_data = []
 libras_test_labels = []
 libras_train_data = []
@@ -70,8 +72,8 @@ for i in range(0,5):
 	getResult(heuristic_name, heuristic, libras_train_data[i], libras_train_labels[i], libras_test_data[i], libras_test_labels[i])
 	print "Partition ", i+1, "-", 2
 	getResult(heuristic_name, heuristic, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
-'''
-'''
+
+
 arr_test_data = []
 arr_test_labels = []
 arr_train_data = []
@@ -93,4 +95,3 @@ for i in range(0,5):
 	getResult(heuristic_name, heuristic, arr_train_data[i], arr_train_labels[i], arr_test_data[i], arr_test_labels[i])
 	print "Partition ", i+1, "-", 2
 	getResult(heuristic_name, heuristic, arr_test_data[i], arr_test_labels[i], arr_train_data[i], arr_train_labels[i])
-'''
