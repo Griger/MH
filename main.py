@@ -1,4 +1,5 @@
 import numpy as np
+import KNN
 import SFS
 import BL
 import ES
@@ -22,8 +23,8 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print "Final solution's test score: ", knn.getKNNClasiffierScore(train_data[:, sol], train_labels, test_data[:, sol], test_labels)
 	print heuristic_name + "' execution time in seconds: ", end-start
 
-heuristic_name = "BL"
-heuristic = BL.BL
+heuristic_name = "3NN"
+heuristic = KNN.KNN
 
 
 wdbc_test_data = []
