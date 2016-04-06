@@ -147,7 +147,7 @@ Pasamos ya a describir el esquema de búsqueda del algoritmo para el enfriamient
 \begin{lstlisting}
 generamos una sol. inicial aleatoria y calculamos los params. de el problema
 
-while se acepte algun vecino en el vecindario explorado de la sol actual and no se hayan generado 15000 vecinos en total:
+while se acepte algun vecino en el vecindario explorado de la sol actual and no se hayan generado 5000 vecinos en total:
 
 	n_exitos = 0 #vecinos generados y aceptados hasta el momento
 	for hasta el max_vecinos permitidos:
@@ -171,7 +171,7 @@ while se acepte algun vecino en el vecindario explorado de la sol actual and no 
 return la mejor solucion encontrada
 \end{lstlisting}
 
-Hemos añadido la condición de que delta no sea cero ya que de otro modo la exponencial que usamos para aceptar soluciones peores valdría uno con lo que estaríamos tomando siempre aquellos vecinos con el mismo coste que la solución actual, esto hacía que el algoritmo generase siempre los 15000 vecinos que tiene como tope, tardando media hora para una partición de wdbc.\\
+Hemos añadido la condición de que delta no sea cero ya que de otro modo la exponencial que usamos para aceptar soluciones peores valdría uno con lo que estaríamos tomando siempre aquellos vecinos con el mismo coste que la solución actual, esto hacía que el algoritmo generase siempre los 5000 vecinos que tiene como tope, tardando media hora para una partición de wdbc.\\
 
 \newpage
 \subsection{\color[rgb]{0.0,0.0,0.51}Búsqueda Tabú (BT.py)}
@@ -215,7 +215,7 @@ El esquema de búsqueda es el mismo que en la BT básica, lo que cambia es que a
 while no hayamos generado mas vecinos que el total permitido:
 	#todo igual que en la BT basica
 	
-	s = mejor vecino
+	sol_actual = mejor vecino encontrado en la iteracion
 	soluciones_aceptadas++
 	para cada car. seleccionada en mejor vecino aumentamos el contador de la memoria a largo plazo de ella en 1
 	
@@ -303,13 +303,13 @@ Hemos empleado tres bases de datos distintas, a continuación mencionamos sus ta
 
 Lo que hemos hecho con los datos ha sido un preprocesado, en primer lugar todos los datos han sido codificados como flotantes (las etiquetas de wdbc eran cadenas de texto y las hemos cambiado por los valores 0 y 1), también hemos puesto la etiqueta en la última columna de la tabla de datos.\\
 
-También hemos normalizado cada una de las columnas de datos (sin contar la de etiquetas) de modos que los valores quedaran en el intervalo [0,1] mediantes la fórmula:\\
+También hemos normalizado cada una de las columnas de datos (sin contar la de etiquetas) de modo que los valores quedaran en el intervalo [0,1] mediantes la fórmula:\\
 
 \begin{center}
 $x_j^N = \dfrac{x_j - Min_j}{Max_j-Min_j}$ (siendo $Max_j$ y $Min_j$ el máximo y mínimo valor de los datos para la característica j-ésima de las muestras).
 \end{center}
 
-El código empleado para este formateo de los datos está en el fichero \textbf{\textcolor{green}{loader.py}} que se adjunta en la entrega, como podemos ver para realizar la normalización de los datos hemos usado una utilidad del módulo scikit-learn antes mencionado que se llama MinMaxScaler. Y para futuros usos de estos datos normalizados, y con el objetivo de no tener que realizar tales operaciones cada ocasión que queramos usarlos hemos almacenado los arrays de numpy donde hemos almacenado los datos en sendos ficheros con extensión .npy usando la función \textbf{numpy.save}. Estos ficheros son: \textbf{\textcolor{green}{data\_wdbc.npy}}, \textbf{\textcolor{green}{data\_libras.npy}} y \textbf{\textcolor{green}{data\_arrhythmia.npy}}.\\
+El código empleado para este formateo de los datos está en el fichero \textbf{\textcolor{green}{loader.py}} que se adjunta en la entrega. Como podemos ver para realizar la normalización de los datos hemos usado una utilidad del módulo scikit-learn antes mencionado que se llama MinMaxScaler. Y para futuros usos de estos datos normalizados, y con el objetivo de no tener que realizar tales operaciones cada ocasión que queramos usarlos, hemos almacenado los arrays de numpy donde hemos almacenado los datos en sendos ficheros con extensión .npy usando la función \textbf{numpy.save}. Estos ficheros son: \textbf{\textcolor{green}{data\_wdbc.npy}}, \textbf{\textcolor{green}{data\_libras.npy}} y \textbf{\textcolor{green}{data\_arrhythmia.npy}}.\\
 
 A continuación hemos elaborado las distintas particiones sobre estos datos que serán utilizadas en los experimentos, para ello hemos elaborado el código recogido en el fichero \textbf{\textcolor{green}{partition\_maker.npy}} donde simplemente tomamos una muestra aleatoria de los índices de los arrays antes generados, teniendo en cuenta que la cantidad de muestras de cada una de las clases en las que se clasifican los datos sea lo más equilibrida posible entre la partición de test y su correspondiente partición de training. La semilla usada para la generación de dichas particiones, y que podemos ver en el fichero mencionado, ha sido la \textbf{12345678}. Nuevamente hemos almacenado cada una de dichas particiones en ficheros .npy, los cuáles están en la carpeta \textbf{\textcolor{green}{partitions}}.\\
 
@@ -486,21 +486,53 @@ Media                                        & 98,63        & 95,29         & 49
 \includegraphics[width=130mm]{graphTasaDentro.png}
 \end{figure}
 
+Como podemos ver la tasa de acierto sobre Wdbc es la más elevada con respecto a las otras bases, además las tasas de acierto de todos lo algoritmos sobre esta base son muy parecidas, esto se debe a que, como dijo el profesor, esta base de datos es muy pequeña, es decir, el espacio de búsqueda es muy pequeño ($2^{30}$) y hay muy poca tasa de mejora entre una solución y otra.\\
+
+Las tasas de acierto tanto para arritmia como para libras son muy parecidas como podemos ver en la gráfica para cada algoritmo. Es importante señalar cómo la tasa de acierto de los algoritmos usados en mejor que la tasa que da el 3NN original, es decir, usando todos los datos de la muestra. Con lo cual aquí se pone de manifiesto cómo el hecho de reducir el número de características a considerar no merma la correcta clasificación de los datos, al menos dentro de la muestra ya veremos qué sucede fuera. De hecho reduciendo el número de características no sólo reducimos el cómputo necesario sino también el posible ruido que pueden tener algunos datos.\\
+
+Es curioso ver cómo el algoritmo greedy produce los mejores resultados en la base de datos con un espacio de búsqueda mayor, de hecho produce mejores resultados en esa base de datos que en la de libras que tiene un espacio menor, probablemente por la naturaleza de los datos, es decir, cómo de distintas sean las muestras que componen las distintas clases entre sí. En mi opinión el hecho de que sea el SFS el que produzca mejores resultados que el resto en el espacio de búsqueda más grande se debe a que al fin y al cabo el greedy en cada momento va construyendo la mejor solución que puede mientras que en cambio el resto de métodos depende más de cómo de buena sea la exploración que realicen. Entonces en un espacio de tamaño $2^{278}$ el hecho de que impongamos a los algoritmos que sólo pueda hacer 5000 evaluaciones hace que su capacidad de encontrar una buena solución sea pequeña, además de depender un tanto del azar.\\
+
+En cambio si podemos ver cómo para el espacio más reducido de libras sí que los algoritmos que hacen una búsqueda más extensa en el terreno, dan resultados más próximos a los que da el SFS e incluso superándolo como en las dos versiones de la Búsqueda Tabú. De hecho esta búsqueda da los mejores resultados sobre el conjunto de libras.\\
+
+Vemos también cómo los algoritmos de BL, ES, BT y BText dan mejores resultados sobre la base de libras que sobre la de arritmia por lo que hemos comentado antes probablemente.\\
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=130mm]{graphTasaFuera.png}
 \end{figure}
 
+Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación que producen sus características seleccionadas para los datos fuera de la muestra de entrenamiento. Lo primero que señalamos es que en la amplia mayoría de los casos la tasa de acierto es mayor dentro de la muestra que fuera, pero hay algunos casos donde es al revés. Esto se debe a que es probable que haya muestras de entrenamiento de una clase más cercanas a otra muestra pese a no pertenecer a la clase de dicha muestra. Con lo cual se puede dar el caso de que la "votación" sea mala en la muestra y en cambio la muestra fuera la distribución de puntos sea más favorable a una correcta clasificación de los datos. Por lo tanto no tiene que extrañarnos demasiado esto. Quizás si usásemos un 1NN sí que sería más probable que la muestra más cercana a otra perteneciera a la misma clase que ella (decimos la más cercana y no que en el 1NN hubiésemos obtenido una tasa de acierto del 100\% dentro de la muestra puesto que usamos para evitar esto el Leave One Out).\\
+
+Nuevamente el comportamiento para Wdbc es muy similar para todos los algoritmos, lo que era esperable por el razonamiento que hemos dado antes. Pero también observamos que si bien sigue habiendo diferencias entre el comportamiento de los distintos algoritmos para una determinada base de datos ahora las diferencias son menos notables entre unos y otros. Es decir, que aunque hay algunos algoritmos que son capaces de adaptarse mejor que otros para la muestra que le pasamos, luego la solución que nos dan se comporta más o menos del mismo modo fuera de la muestra. Poniendo de manifiesto que no podemos asegurar que una solución que sea buena dentro de los datos de entrenamiento vaya a serlo también fuera.\\
+
+Algo que también cabe señalar es que en esta ocasión para la base de datos de libras el 3NN sí supera a dos algoritmos, la BText y el SFS, pero no obstante no mejora a todos los algoritmos con lo que no podemos decir que para obtener mejores resultados en datos desconocidos tengamos que usar toda la información de la que dispongamos. Además por ejemplo se comporta mejor que la Búsqueda Tabú Extendida pero no mejor que la Búsqueda Tabú, aquí se pone de manifiesto que depende fuertemente de los datos que se consideren porque la BT y su versión extendida no difieren mucho en comportamiento. Difieren en que la extendida hace una exploración más esparcida del espacio de búsqueda, pero esto con sólo 5000 evaluaciones puede que no se pueda ver tan reflejado en los resultados.\\
+
+El hecho de que el 3NN con toda la información no mejore a todos los algoritmos puede venir de que no sólo haya características irrelevantes sino que, como hemos señalado anteriormente, haya datos cuya medición haya sido errónea y que simplemente lo que nos estén haciendo sea empeorar el resultado.\\
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=130mm]{graphTasaReduccion.png}
 \end{figure}
 
+Evidentemente la tasa de reducción para el 3NN es 0 pues tomamos todas las características al no tener otro criterio. Ahora el que produce mayor reducción es el greedy lo que es lógico por la forma en la que trabaja, agregando progresivamente propiedades hasta no encontrar mejora ninguna.\\
+
+Las tasas de reducción para el resto de algoritmos son muy similares entre sí, si lo pensamos dado que nuestra función de coste sólo tiene en cuenta la tasa media de acierto en la muestra de entrenamiento (no tenemos en cuenta también la reducción que consigue) es lógico que esto suceda así, o al menos que no haya un algoritmo que claramente produzca mejores resultados que otro. Partimos de una solución totalmente aleatoria y nos movemos por los vecinos solamente teniendo en cuenta su score y algún término de azar como sucede en el Enfriamiento Simulado. Por lo tanto no podemos decir nada acerca de por qué se comportan así el resto de algoritmos respecto a la reducción y sólo podemos atribuirlo al azar.\\
+
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=130mm]{graphTiempos.png}
 \end{figure}
+
+
+Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de solución es 0 pues simplemente devuelve un solución con todos los valores a True, es decir, escoge todas las características sin tener ningún criterio.\\
+
+Como podemos ver los tiempos de ejecución del SFS y la Búsqueda Local son "similares" puesto que en esencia funcionan del mismo modo, parten de una solución, exploran su entorno y eligen el mejor, continuando hasta que no encuentran mejora. Y si nos fijamos los timepos de la búsqueda local son mejores incluso que los del greedy y esto se debe a lo que mayor tiempo de cómputo consume en todos los algoritmos que hemos diseñado, la evaluación de las soluciones. Y es que mientras que el greedy ha de explorar todo el entorno de la solución, la búsqueda local evalúa vecinos hasta que encuentra uno mejor que la solución actual; con lo que el número de evaluaciones es menor y por tanto el tiempo de ejecución medio también.\\
+
+Observemos ahora lo que sucede con los tres algoritmos que quedan y que tienen tiempos de ejecución mayores que los anteriores. El enfriamiento simulado presenta menores tiempos de ejecución para las bases de Wdbc y Libras, esto se debe a que el enfriamiento no siempre realiza las 5000 evaluaciones que tiene como máximo ya que tiene otro criterio de salida, que es no aceptar ningún vecino en la iteración. Entonces en la mayoría de casos el enfriamiento saldrá antes de completar las 5000 evaluaciones con lo que el tiempo de cómputo, que como ya hemos dicho es la mayor parte el cálculo del score, se reduce.\\
+
+Ahora bien como vemos en el caso de arritmia la Búsqueda Tabú Básica si tiene un tiempo de ejecución menor, eso probablmente se deba a que en esta base las soluciones cambian más de unas a otras y por tanto que se acepten más vecinos. Además cuanto mayor sea el tamaño del problema (número de características) más lento enfriará el algortimo, o lo que es equivalente, más lenta bajará la probabilidad de aceptar vecinos peores, con lo que esto hace que se haga un mayor número de evaluaciones, pudiendo llegar a las 5000. Además el cálculo de la exponencial para ver si aceptamos un mal vecino o no también conlleva un cómputo.\\
+
+Y finalmente si nos fijamos en las búsquedas tabú vemos cómo claramente la extendida conlleva más tiempo de cómputo. Dado que estos algoritmos tienen como único criterio de parada el realizar 5000 evaluaciones ambos realizan  el mismo números de cálculo de score, ahora bien la búsqueda tabú extendida consume más tiempo debido al mantenimiento de la lista tabú y los mecanismos de reinicialización. Además observamos otra cosa, y es que como el número de evaluaciones es el mismo sea cuál sea la base de datos actualizada ahora la ejecución en Wdbc es más lenta que en libras, ya que al haber un número mayor de muestras (569 > 360) lo que más pesa es el mecanismo de Leave One Out que se realiza 569 veces en lugar de 360 (la diferencia de tamaño de las componentes de los vectores para calcular las distancias en ambos casos es de 90-30 = 60 con lo que esto no afecta demasiado al cómputo). No sucede lo mismo para Arritmia que pese a tener un menor número de muestras tarda más esto se debe en el caso de las BT básica a que el cáculo de la distancia puede resultar muy costoso pues ya la diferencia de longitudes entre vectores es de 278-30 = 248. En el caso de la extendida los mecanismos de reinicialización mediante memoria a largo plazo son más costosos cuanto mayor sea el número de características. Lo que acaba nuestro análisis de los datos.
+
 \end{document}
