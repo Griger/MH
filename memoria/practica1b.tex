@@ -3,6 +3,7 @@
 \usepackage{pgfplots}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{multirow}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{hyperref}
@@ -19,11 +20,15 @@
 \title{Práctica 1.b: Búsquedas por Trayectorias para el Problema de la Selección de Características \\ SFS \\ Búsqueda Local de Primero el Mejor \\ Enfriamiento Simulado \\ Búsqueda Tabú}
 \date{}
 
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.55in}
 %Configuración especial
 \setlength{\parindent}{0cm}
 \pretolerance=10000
 \tolerance=10000
 \renewcommand{\contentsname}{\color[rgb]{0.0,0.0,0.21}Índice}
+\renewcommand{\tablename}{\color[rgb]{0.5,0.0,0.0}Tabla}
 
 \hypersetup{
   colorlinks=true,%colorear el texto en lugar de poner una caja de color alrededor
@@ -284,6 +289,151 @@ Entonces para ejecutar los experimentos de cada algoritmo lo que haremos es \tex
 Estás prácticas han sido implementadas en Python 2.7.6 y ejecutadas sobre un ordenador son S.O. Ubuntu 14.04 LTS, de 8GB de RAM y procesador Intel Core i7-4790 CPU 3.60GHz con 8 núcleos, aunque dado que el código no ha sido paralelizado estos núcleos no han sido explotados al máximo.\\
 
 Debido a algunas complicaciones y a la falta de tiempo he ejecutado los algoritmo con un número máximo de evaluaciones de 5000 en lugar de 15000 lo que se ve reflejado tanto en el tiempo de ejecución: por ejemplo la Búsqueda Tabú tarda aproximadamente un tercio del tiempo ya que como no tiene otro criterio de parada que no sea el número de evaluaciones, la reducción se ve afectada justamente por el número máximo de evaluaciones que se hagan.\\
+
+
+
+\begin{table}[H]
+\centering
+\caption{Resultados 3NN}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{3NN}} & \multicolumn{4}{c|}{Wdbc}                     & \multicolumn{4}{c|}{Movement\_Libras}         & \multicolumn{4}{c|}{Arrhythmia}               \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                     & \%\_clas\_in & \%\_clas\_out & \%\_red & T    & \%\_clas\_in & \%\_clas\_out & \%\_red & T    & \%\_clas\_in & \%\_clas\_out & \%\_red & T    \\ \hline
+Partición 1-1                              & 96,14        & 96,12         & 0,00    & 0,00 & 72,22        & 71,66         & 0,00    & 0,00 & 65,46        & 65,10         & 0,00    & 0,00 \\ \hline
+Partición 1-2                              & 96,83        & 95,78         & 0,00    & 0,00 & 63,33        & 67,77         & 0,00    & 0,00 & 63,02        & 64,94         & 0,00    & 0,00 \\ \hline
+Partición 2-1                              & 95,43        & 96,47         & 0,00    & 0,00 & 67,22        & 66,11         & 0,00    & 0,00 & 62,37        & 63,02         & 0,00    & 0,00 \\ \hline
+Partición 2-2                              & 96,12        & 96,49         & 0,00    & 0,00 & 70,55        & 71,11         & 0,00    & 0,00 & 65,10        & 64,43         & 0,00    & 0,00 \\ \hline
+Partición 3-1                              & 93,68        & 97,18         & 0,00    & 0,00 & 68,88        & 70,55         & 0,00    & 0,00 & 61,34        & 67,18         & 0,00    & 0,00 \\ \hline
+Partición 3-2                              & 97,53        & 95,43         & 0,00    & 0,00 & 67,22        & 70,55         & 0,00    & 0,00 & 63,54        & 64,43         & 0,00    & 0,00 \\ \hline
+Partición 4-1                              & 96,14        & 95,42         & 0,00    & 0,00 & 68,33        & 70,00         & 0,00    & 0,00 & 62,37        & 65,62         & 0,00    & 0,00 \\ \hline
+Partición 4-2                              & 98,23        & 95,43         & 0,00    & 0,00 & 67,77        & 70,55         & 0,00    & 0,00 & 63,54        & 64,43         & 0,00    & 0,00 \\ \hline
+Partición 5-1                              & 96,14        & 95,42         & 0,00    & 0,00 & 62,77        & 77,22         & 0,00    & 0,00 & 65,97        & 65,10         & 0,00    & 0,00 \\ \hline
+Partición 5-2                              & 97,88        & 95,43         & 0,00    & 0,00 & 72,77        & 70,55         & 0,00    & 0,00 & 63,54        & 63,40         & 0,00    & 0,00 \\ \hline
+Media                                      & 96,41        & 95,92         & 0,00    & 0,00 & 68,11        & 70,61         & 0,00    & 0,00 & 63,63        & 64,77         & 0,00    & 0,00 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{Resultados SFS}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{SFS}} & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}          & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+Partición 1-1                              & 95,43        & 95,42         & 83,33   & 19,42 & 72,77        & 63,33         & 92,22   & 49,48 & 78,35        & 69,27         & 97,12   & 198,74 \\ \hline
+Partición 1-2                              & 97,53        & 92,98         & 90,00   & 13,09 & 73,33        & 65,00         & 88,88   & 69,34 & 77,08        & 71,64         & 98,20   & 128,73 \\ \hline
+Partición 2-1                              & 97,19        & 97,53         & 86,66   & 16,15 & 74,44        & 66,66         & 87,77   & 73,15 & 82,47        & 74,47         & 98,20   & 129,18 \\ \hline
+Partición 2-2                              & 97,53        & 95,78         & 90,00   & 13,25 & 72,22        & 68,88         & 90,00   & 61,25 & 73,43        & 65,97         & 98,92   & 85,33  \\ \hline
+Partición 3-1                              & 96,49        & 95,77         & 83,33   & 19,27 & 75,00        & 62,22         & 88,88   & 67,62 & 76,80        & 70,31         & 97,84   & 154,96 \\ \hline
+Partición 3-2                              & 97,88        & 95,08         & 86,66   & 16,15 & 76,66        & 73,33         & 88,88   & 67,14 & 83,33        & 70,10         & 97,84   & 147,64 \\ \hline
+Partición 4-1                              & 95,08        & 91,54         & 93,33   & 10,15 & 76,66        & 70,00         & 87,77   & 73,53 & 79,89        & 68,75         & 97,84   & 150,57 \\ \hline
+Partición 4-2                              & 98,23        & 94,03         & 76,66   & 24,36 & 75,00        & 63,88         & 92,22   & 50,50 & 79,68        & 69,58         & 98,20   & 128,46 \\ \hline
+Partición 5-1                              & 96,84        & 97,18         & 86,66   & 16,41 & 71,66        & 69,44         & 91,11   & 55,95 & 82,47        & 71,35         & 96,40   & 241,28 \\ \hline
+Partición 5-2                              & 98,23        & 94,03         & 83,33   & 19,20 & 75,00        & 65,00         & 91,11   & 57,63 & 78,64        & 71,64         & 98,56   & 107,24 \\ \hline
+Media                                      & 97,04        & 94,93         & 86,00   & 16,75 & 74,27        & 66,77         & 89,88   & 62,56 & 79,21        & 70,31         & 97,91   & 147,21 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{Resultados Búsqueda Local}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{BL}} & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}          & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+Partición 1-1                             & 98,24        & 96,47         & 40,00   & 15,79 & 75,00        & 75,55         & 44,44   & 17,54 & 70,10        & 66,66         & 52,87   & 92,33  \\ \hline
+Partición 1-2                             & 97,18        & 95,78         & 46,66   & 6,61  & 67,77        & 68,33         & 45,55   & 14,69 & 67,70        & 64,43         & 50,35   & 98,59  \\ \hline
+Partición 2-1                             & 97,19        & 95,77         & 46,66   & 6,87  & 70,00        & 68,88         & 42,22   & 18,04 & 70,61        & 66,14         & 52,87   & 120,49 \\ \hline
+Partición 2-2                             & 95,77        & 95,78         & 46,66   & 4,76  & 72,77        & 70,55         & 45,55   & 11,22 & 69,27        & 65,97         & 54,67   & 107,77 \\ \hline
+Partición 3-1                             & 95,43        & 96,47         & 43,33   & 6,37  & 70,00        & 69,44         & 47,77   & 10,83 & 71,13        & 69,79         & 55,03   & 100,83 \\ \hline
+Partición 3-2                             & 97,53        & 94,38         & 46,66   & 4,97  & 71,66        & 71,11         & 45,55   & 11,94 & 72,91        & 67,52         & 54,31   & 111,44 \\ \hline
+Partición 4-1                             & 97,89        & 96,83         & 46,66   & 13,16 & 72,22        & 70,55         & 42,22   & 25,19 & 71,64        & 64,58         & 54,67   & 134,42 \\ \hline
+Partición 4-2                             & 97,53        & 94,38         & 53,33   & 5,73  & 68,88        & 68,33         & 48,88   & 12,81 & 69,79        & 62,88         & 53,23   & 110,05 \\ \hline
+Partición 5-1                             & 96,84        & 93,66         & 50,00   & 5,19  & 66,11        & 75,00         & 46,66   & 20,01 & 70,10        & 67,70         & 51,43   & 93,23  \\ \hline
+Partición 5-2                             & 98,59        & 94,73         & 50,00   & 6,35  & 71,11        & 72,22         & 44,44   & 18,50 & 68,22        & 61,85         & 52,87   & 63,10  \\ \hline
+Media                                     & 97,22        & 95,43         & 47,00   & 7,58  & 70,55        & 71,00         & 45,33   & 16,08 & 70,15        & 65,75         & 53,23   & 103,23 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{Resultados Enfriamiento Simulado}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{ES}} & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}           & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+Partición 1-1                             & 97,89        & 96,47         & 46,66   & 86,87 & 72,77        & 73,88         & 64,44   & 164,59 & 68,55        & 66,14         & 52,15   & 770,28 \\ \hline
+Partición 1-2                             & 97,53        & 94,73         & 46,66   & 89,14 & 65,55        & 66,11         & 50,00   & 174,23 & 68,75        & 63,91         & 47,48   & 765,74 \\ \hline
+Partición 2-1                             & 97,19        & 96,12         & 53,33   & 86,00 & 70,55        & 66,11         & 57,77   & 172,00 & 68,55        & 65,62         & 49,64   & 780,41 \\ \hline
+Partición 2-2                             & 98,23        & 95,43         & 73,33   & 79,70 & 73,33        & 72,77         & 53,33   & 175,85 & 68,75        & 66,49         & 47,84   & 775,44 \\ \hline
+Partición 3-1                             & 95,78        & 96,47         & 43,33   & 46,95 & 73,88        & 66,66         & 58,88   & 171,50 & 70,61        & 69,79         & 48,92   & 788,23 \\ \hline
+Partición 3-2                             & 98,59        & 95,78         & 36,66   & 88,45 & 73,33        & 71,11         & 51,11   & 183,79 & 70,83        & 65,97         & 51,07   & 762,56 \\ \hline
+Partición 4-1                             & 97,19        & 94,01         & 53,33   & 84,62 & 72,77        & 68,88         & 51,11   & 179,02 & 71,64        & 68,75         & 48,92   & 783,63 \\ \hline
+Partición 4-2                             & 97,88        & 94,03         & 46,66   & 85,66 & 75,00        & 72,77         & 58,88   & 168,02 & 69,27        & 63,40         & 49,64   & 753,27 \\ \hline
+Partición 5-1                             & 97,54        & 95,07         & 50,00   & 85,85 & 67,77        & 77,22         & 64,44   & 165,79 & 69,07        & 62,50         & 44,96   & 761,36 \\ \hline
+Partición 5-2                             & 98,23        & 94,38         & 36,66   & 87,64 & 74,44        & 73,88         & 51,11   & 175,41 & 68,75        & 62,37         & 47,12   & 778,51 \\ \hline
+Media                                     & 97,61        & 95,25         & 48,66   & 82,09 & 71,94        & 70,94         & 56,11   & 173,02 & 69,48        & 65,49         & 48,77   & 771,94 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{Resultados Búsqueda Tabú}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{BT}} & \multicolumn{4}{c|}{Wdbc}                       & \multicolumn{4}{c|}{Movement\_Libras}           & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+Partición 1-1                             & 98,59        & 95,42         & 50,00   & 655,18 & 77,77        & 74,44         & 50,00   & 442,37 & 77,31        & 67,70         & 59,71   & 717,85 \\ \hline
+Partición 1-2                             & 98,94        & 95,08         & 60,00   & 640,17 & 73,88        & 69,44         & 67,77   & 417,09 & 73,43        & 70,10         & 56,11   & 711,62 \\ \hline
+Partición 2-1                             & 98,59        & 94,36         & 53,33   & 647,32 & 75,55        & 66,66         & 48,88   & 441,37 & 72,68        & 64,58         & 50,71   & 752,38 \\ \hline
+Partición 2-2                             & 98,59        & 95,43         & 53,33   & 627,41 & 78,88        & 71,11         & 58,88   & 438,63 & 74,47        & 69,07         & 51,79   & 754,19 \\ \hline
+Partición 3-1                             & 97,89        & 97,18         & 56,66   & 634,71 & 77,22        & 73,33         & 62,22   & 433,43 & 72,68        & 68,75         & 55,39   & 742,51 \\ \hline
+Partición 3-2                             & 99,29        & 95,78         & 43,33   & 650,89 & 76,11        & 70,00         & 62,22   & 427,88 & 72,91        & 65,97         & 53,95   & 726,01 \\ \hline
+Partición 4-1                             & 98,59        & 96,12         & 53,33   & 654,68 & 77,77        & 71,66         & 46,66   & 450,71 & 72,16        & 63,02         & 51,07   & 739,38 \\ \hline
+Partición 4-2                             & 99,29        & 93,33         & 46,66   & 655,59 & 78,88        & 71,11         & 56,66   & 437,27 & 72,91        & 68,55         & 51,43   & 750,85 \\ \hline
+Partición 5-1                             & 98,59        & 92,95         & 56,66   & 643,71 & 71,66        & 70,55         & 50,00   & 431,01 & 72,16        & 67,70         & 52,87   & 742,29 \\ \hline
+Partición 5-2                             & 99,29        & 95,08         & 43,33   & 650,78 & 78,88        & 71,11         & 48,88   & 447,01 & 72,39        & 64,94         & 53,95   & 739,02 \\ \hline
+Media                                     & 98,77        & 95,07         & 51,66   & 646,04 & 76,66        & 70,94         & 55,22   & 436,68 & 73,31        & 67,04         & 53,70   & 737,61 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[ht]
+\centering
+\caption{Resultados Búsqueda Tabú Extendida}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{BText}} & \multicolumn{4}{c|}{Wdbc}                       & \multicolumn{4}{c|}{Movement\_Libras}           & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+\multicolumn{1}{|c|}{}                       & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+Partición 1-1                                & 98,59        & 95,07         & 56,66   & 692,23 & 78,88        & 69,44         & 54,44   & 494,48 & 74,74        & 65,62         & 55,39   & 954,81 \\ \hline
+Partición 1-2                                & 98,59        & 96,14         & 40,00   & 682,91 & 68,88        & 68,33         & 54,44   & 502,04 & 72,39        & 68,04         & 52,87   & 916,16 \\ \hline
+Partición 2-1                                & 98,59        & 94,36         & 56,66   & 680,20 & 72,22        & 66,66         & 43,33   & 506,60 & 70,61        & 67,18         & 51,43   & 992,34 \\ \hline
+Partición 2-2                                & 98,59        & 96,14         & 70,00   & 666,33 & 75,55        & 71,11         & 51,11   & 510,13 & 69,27        & 68,04         & 51,43   & 942,76 \\ \hline
+Partición 3-1                                & 97,19        & 96,12         & 60,00   & 690,01 & 75,55        & 71,66         & 53,33   & 511,65 & 70,10        & 67,18         & 52,15   & 959,00 \\ \hline
+Partición 3-2                                & 99,29        & 95,78         & 30,00   & 708,35 & 74,44        & 71,11         & 51,11   & 506,18 & 70,83        & 67,52         & 53,59   & 922,41 \\ \hline
+Partición 4-1                                & 98,24        & 95,42         & 50,00   & 691,62 & 76,66        & 68,88         & 52,22   & 508,98 & 70,61        & 65,10         & 52,51   & 945,75 \\ \hline
+Partición 4-2                                & 99,29        & 94,03         & 60,00   & 677,52 & 74,44        & 68,33         & 47,77   & 517,49 & 72,91        & 63,40         & 52,51   & 890,61 \\ \hline
+Partición 5-1                                & 98,59        & 93,66         & 46,66   & 689,44 & 71,11        & 72,22         & 53,33   & 505,05 & 72,68        & 67,18         & 55,39   & 944,00 \\ \hline
+Partición 5-2                                & 99,29        & 96,14         & 20,00   & 694,33 & 78,33        & 72,77         & 44,44   & 498,50 & 69,79        & 59,79         & 56,11   & 929,24 \\ \hline
+Media                                        & 98,63        & 95,29         & 49,00   & 687,29 & 74,61        & 70,05         & 50,55   & 506,11 & 71,39        & 65,91         & 53,34   & 939,71 \\ \hline
+\end{tabular}}
+\end{table}
+\newpage
 
 \begin{figure}[H]
 \centering
