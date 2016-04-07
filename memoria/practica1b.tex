@@ -17,7 +17,7 @@
 \usepackage[nonumberlist]{glossaries} %[toc,style=altlistgroup,hyperfirst=false] 
 %usar makeglossaries grafo para recompilar el archivo donde están los grafos y que así salga actualizado
 \author{Gustavo Rivas Gervilla DNI: 75570417F \\ gustavofox92@correo.ugr.es \\5º Doble Grado en Ing. Informática y Matemáticas \\Grupo 3}
-\title{Práctica 1.b: Búsquedas por Trayectorias para el Problema de la Selección de Características \\ SFS \\ Búsqueda Local de Primero el Mejor \\ Enfriamiento Simulado \\ Búsqueda Tabú}
+\title{Práctica 1.b: Búsquedas por Trayectorias para el Problema de la Selección de Características \\ SFS \\ Búsqueda Local de Primero el Mejor \\ Enfriamiento Simulado \\ Búsqueda Tabú \\ Búsqueda Tabú Extendida}
 \date{}
 
 \addtolength{\oddsidemargin}{-.875in}
@@ -286,7 +286,7 @@ Los algoritmos han sido implementados en Python 2.7.6 para su ejecución son nec
 \begin{itemize}
 \item numpy (v 1.8.2) \textbf{sudo apt-get install python-numpy}
 \item scikit \textbf{sudo apt-get install python-scikits-learn}
-\item El resto de módulos empleados suelen venir con las distribuciones básicas de Python.
+\item El resto de módulos empleados suelen venir con las distribuciones básicas de Python (random, sys y time).
 \end{itemize}
 
 Cada uno de los algoritmos están implementados en distintos ficheros de los que podemos ver su contenido en el \textbf{\textcolor{green}{LEEME}} que se nos pide que incluyamos con el código. Los experimentos han sido ejecutados usando el fichero main al que le pasamos por argumentos el nombre del algoritmo a usar: 3NN, SFS, BL, ES, BT y BText. La semilla se establece dentro del fichero al inicio de la ejecución del algoritmo para cada una de las particiones. Esto lo hemos hecho así para poder cortar la obtención de datos cuando sea necesaria y poder retomar los experimento desde la partición por las que nos quedáramos, así no se desajusta la semilla con la que hacemos los experimentos al retomar.\\
@@ -331,6 +331,8 @@ Los parámetros empleados en cada uno de los algoritmos son los que se indican e
 
 
 \subsection{\color[rgb]{0.0,0.0,0.51}Resultados}
+
+Adjuntamos también las tablas en un fichero por si no se leen correctamente en el pdf.
 
 \begin{table}[H]
 \centering
@@ -452,7 +454,7 @@ Media                                     & 98,77        & 95,07         & 51,66
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \caption{Resultados Búsqueda Tabú Extendida}
 \label{my-label}
@@ -549,4 +551,11 @@ Ahora bien como vemos en el caso de arritmia la Búsqueda Tabú Básica si tiene
 
 Y finalmente si nos fijamos en las búsquedas tabú vemos cómo claramente la extendida conlleva más tiempo de cómputo. Dado que estos algoritmos tienen como único criterio de parada el realizar 5000 evaluaciones ambos realizan  el mismo números de cálculo de score, ahora bien la búsqueda tabú extendida consume más tiempo debido al mantenimiento de la lista tabú y los mecanismos de reinicialización. Además observamos otra cosa, y es que como el número de evaluaciones es el mismo sea cuál sea la base de datos actualizada ahora la ejecución en Wdbc es más lenta que en libras, ya que al haber un número mayor de muestras (569 > 360) lo que más pesa es el mecanismo de Leave One Out que se realiza 569 veces en lugar de 360 (la diferencia de tamaño de las componentes de los vectores para calcular las distancias en ambos casos es de 90-30 = 60 con lo que esto no afecta demasiado al cómputo). No sucede lo mismo para Arritmia que pese a tener un menor número de muestras tarda más esto se debe en el caso de las BT básica a que el cáculo de la distancia puede resultar muy costoso pues ya la diferencia de longitudes entre vectores es de 278-30 = 248. En el caso de la extendida los mecanismos de reinicialización mediante memoria a largo plazo son más costosos cuanto mayor sea el número de características. Lo que acaba nuestro análisis de los datos.
 
+\newpage
+\section{\color[rgb]{0.0,0.0,0.21}Bibliografía}
+
+\begin{itemize}
+\item Documentación del módulo scikit-learn: \url{http://scikit-learn.org/stable/documentation.html}
+\item Documentación de Numpy: \url{http://docs.scipy.org/doc/}
+\end{itemize}
 \end{document}
