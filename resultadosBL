@@ -1,195 +1,195 @@
 Results for BL in wdbc
 Partition  1 - 1
-Ejecutando Busqueda Local
-% reduction:  53.3333333333 %
-Final solution's training score:  96.8421052632
-Final solution's test score:  92.6056338028
-BL' execution time in seconds:  10.6571521759
+Ejecutando Busqueda Local 5000
+% reduction:  40.0 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  96.4788732394
+BL' execution time in seconds:  15.796038866
 Partition  1 - 2
-Ejecutando Busqueda Local
-% reduction:  53.3333333333 %
-Final solution's training score:  97.8873239437
-Final solution's test score:  95.0877192982
-BL' execution time in seconds:  9.58799505234
+Ejecutando Busqueda Local 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  97.1830985915
+Final solution's test score:  95.7894736842
+BL' execution time in seconds:  6.61403417587
 Results for BL in wdbc
 Partition  2 - 1
-Ejecutando Busqueda Local
-% reduction:  43.3333333333 %
-Final solution's training score:  96.8421052632
+Ejecutando Busqueda Local 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  97.1929824561
 Final solution's test score:  95.7746478873
-BL' execution time in seconds:  4.63901495934
+BL' execution time in seconds:  6.87844705582
 Partition  2 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  46.6666666667 %
 Final solution's training score:  95.7746478873
-Final solution's test score:  95.0877192982
-BL' execution time in seconds:  4.23747014999
+Final solution's test score:  95.7894736842
+BL' execution time in seconds:  4.76166391373
 Results for BL in wdbc
 Partition  3 - 1
-Ejecutando Busqueda Local
-% reduction:  40.0 %
-Final solution's training score:  96.1403508772
+Ejecutando Busqueda Local 5000
+% reduction:  43.3333333333 %
+Final solution's training score:  95.4385964912
 Final solution's test score:  96.4788732394
-BL' execution time in seconds:  6.95901298523
+BL' execution time in seconds:  6.37109804153
 Partition  3 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  46.6666666667 %
-Final solution's training score:  97.8873239437
-Final solution's test score:  94.7368421053
-BL' execution time in seconds:  5.73245406151
+Final solution's training score:  97.5352112676
+Final solution's test score:  94.3859649123
+BL' execution time in seconds:  4.97818493843
 Results for BL in wdbc
 Partition  4 - 1
-Ejecutando Busqueda Local
-% reduction:  30.0 %
-Final solution's training score:  96.8421052632
-Final solution's test score:  94.7183098592
-BL' execution time in seconds:  10.4490320683
+Ejecutando Busqueda Local 5000
+% reduction:  46.6666666667 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  96.8309859155
+BL' execution time in seconds:  13.162760973
 Partition  4 - 2
-Ejecutando Busqueda Local
-% reduction:  40.0 %
-Final solution's training score:  98.2394366197
-Final solution's test score:  93.3333333333
-BL' execution time in seconds:  7.26819086075
+Ejecutando Busqueda Local 5000
+% reduction:  53.3333333333 %
+Final solution's training score:  97.5352112676
+Final solution's test score:  94.3859649123
+BL' execution time in seconds:  5.73609304428
 Results for BL in wdbc
 Partition  5 - 1
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  50.0 %
-Final solution's training score:  97.8947368421
-Final solution's test score:  92.9577464789
-BL' execution time in seconds:  11.2311961651
+Final solution's training score:  96.8421052632
+Final solution's test score:  93.661971831
+BL' execution time in seconds:  5.1959168911
 Partition  5 - 2
-Ejecutando Busqueda Local
-% reduction:  40.0 %
+Ejecutando Busqueda Local 5000
+% reduction:  50.0 %
 Final solution's training score:  98.5915492958
-Final solution's test score:  94.0350877193
-BL' execution time in seconds:  10.9680950642
+Final solution's test score:  94.7368421053
+BL' execution time in seconds:  6.35054206848
 Results for BL in libras
 Partition  1 - 1
-Ejecutando Busqueda Local
-% reduction:  41.1111111111 %
-Final solution's training score:  71.1111111111
-Final solution's test score:  73.3333333333
-BL' execution time in seconds:  10.1109309196
+Ejecutando Busqueda Local 5000
+% reduction:  44.4444444444 %
+Final solution's training score:  75.0
+Final solution's test score:  75.5555555556
+BL' execution time in seconds:  17.5418539047
 Partition  1 - 2
-Ejecutando Busqueda Local
-% reduction:  42.2222222222 %
-Final solution's training score:  67.2222222222
-Final solution's test score:  70.0
-BL' execution time in seconds:  22.6763210297
+Ejecutando Busqueda Local 5000
+% reduction:  45.5555555556 %
+Final solution's training score:  67.7777777778
+Final solution's test score:  68.3333333333
+BL' execution time in seconds:  14.6941950321
 Results for BL in libras
 Partition  2 - 1
-Ejecutando Busqueda Local
-% reduction:  46.6666666667 %
-Final solution's training score:  71.1111111111
-Final solution's test score:  67.7777777778
-BL' execution time in seconds:  21.1518800259
+Ejecutando Busqueda Local 5000
+% reduction:  42.2222222222 %
+Final solution's training score:  70.0
+Final solution's test score:  68.8888888889
+BL' execution time in seconds:  18.0471868515
 Partition  2 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
+% reduction:  45.5555555556 %
+Final solution's training score:  72.7777777778
+Final solution's test score:  70.5555555556
+BL' execution time in seconds:  11.2218728065
+Results for BL in libras
+Partition  3 - 1
+Ejecutando Busqueda Local 5000
+% reduction:  47.7777777778 %
+Final solution's training score:  70.0
+Final solution's test score:  69.4444444444
+BL' execution time in seconds:  10.8366270065
+Partition  3 - 2
+Ejecutando Busqueda Local 5000
 % reduction:  45.5555555556 %
 Final solution's training score:  71.6666666667
-Final solution's test score:  70.0
-BL' execution time in seconds:  11.9003930092
+Final solution's test score:  71.1111111111
+BL' execution time in seconds:  11.9495818615
 Results for BL in libras
-Partition  3 - 1
-Ejecutando Busqueda Local
-% reduction:  46.6666666667 %
-Final solution's training score:  70.5555555556
-Final solution's test score:  68.8888888889
-BL' execution time in seconds:  11.6229171753
-Partition  3 - 2
-Ejecutando Busqueda Local
-% reduction:  47.7777777778 %
+Partition  4 - 1
+Ejecutando Busqueda Local 5000
+% reduction:  42.2222222222 %
 Final solution's training score:  72.2222222222
 Final solution's test score:  70.5555555556
-BL' execution time in seconds:  10.8367209435
-Results for BL in libras
-Partition  4 - 1
-Ejecutando Busqueda Local
-% reduction:  43.3333333333 %
-Final solution's training score:  70.0
-Final solution's test score:  66.1111111111
-BL' execution time in seconds:  16.1949448586
+BL' execution time in seconds:  25.1955709457
 Partition  4 - 2
-Ejecutando Busqueda Local
-% reduction:  50.0 %
-Final solution's training score:  70.5555555556
-Final solution's test score:  68.8888888889
-BL' execution time in seconds:  21.1338078976
+Ejecutando Busqueda Local 5000
+% reduction:  48.8888888889 %
+Final solution's training score:  68.8888888889
+Final solution's test score:  68.3333333333
+BL' execution time in seconds:  12.8186619282
 Results for BL in libras
 Partition  5 - 1
-Ejecutando Busqueda Local
-% reduction:  43.3333333333 %
-Final solution's training score:  63.8888888889
-Final solution's test score:  76.1111111111
-BL' execution time in seconds:  10.5644738674
-Partition  5 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  46.6666666667 %
+Final solution's training score:  66.1111111111
+Final solution's test score:  75.0
+BL' execution time in seconds:  20.0182499886
+Partition  5 - 2
+Ejecutando Busqueda Local 5000
+% reduction:  44.4444444444 %
 Final solution's training score:  71.1111111111
-Final solution's test score:  70.0
-BL' execution time in seconds:  11.5185759068
+Final solution's test score:  72.2222222222
+BL' execution time in seconds:  18.501527071
 Results for BL in arr
 Partition  1 - 1
-Ejecutando Busqueda Local
-% reduction:  53.2374100719 %
-Final solution's training score:  74.7422680412
-Final solution's test score:  66.6666666667
-BL' execution time in seconds:  95.7087230682
-Partition  1 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  52.8776978417 %
-Final solution's training score:  66.6666666667
-Final solution's test score:  65.4639175258
-BL' execution time in seconds:  61.0236439705
+Final solution's training score:  70.1030927835
+Final solution's test score:  66.6666666667
+BL' execution time in seconds:  92.3373978138
+Partition  1 - 2
+Ejecutando Busqueda Local 5000
+% reduction:  50.3597122302 %
+Final solution's training score:  67.7083333333
+Final solution's test score:  64.4329896907
+BL' execution time in seconds:  98.5971310139
 Results for BL in arr
 Partition  2 - 1
-Ejecutando Busqueda Local
-% reduction:  53.2374100719 %
+Ejecutando Busqueda Local 5000
+% reduction:  52.8776978417 %
 Final solution's training score:  70.618556701
-Final solution's test score:  65.625
-BL' execution time in seconds:  114.173741817
+Final solution's test score:  66.1458333333
+BL' execution time in seconds:  120.499363899
 Partition  2 - 2
-Ejecutando Busqueda Local
-% reduction:  52.5179856115 %
-Final solution's training score:  68.75
-Final solution's test score:  67.5257731959
-BL' execution time in seconds:  56.1639690399
+Ejecutando Busqueda Local 5000
+% reduction:  54.6762589928 %
+Final solution's training score:  69.2708333333
+Final solution's test score:  65.9793814433
+BL' execution time in seconds:  107.775747061
 Results for BL in arr
 Partition  3 - 1
-Ejecutando Busqueda Local
-% reduction:  52.5179856115 %
-Final solution's training score:  71.6494845361
-Final solution's test score:  67.1875
-BL' execution time in seconds:  113.838469028
-Partition  3 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  55.035971223 %
+Final solution's training score:  71.1340206186
+Final solution's test score:  69.7916666667
+BL' execution time in seconds:  100.835848093
+Partition  3 - 2
+Ejecutando Busqueda Local 5000
+% reduction:  54.3165467626 %
 Final solution's training score:  72.9166666667
 Final solution's test score:  67.5257731959
-BL' execution time in seconds:  179.953977823
+BL' execution time in seconds:  111.445270061
 Results for BL in arr
 Partition  4 - 1
-Ejecutando Busqueda Local
-% reduction:  54.3165467626 %
-Final solution's training score:  70.618556701
-Final solution's test score:  65.1041666667
-BL' execution time in seconds:  182.789705992
+Ejecutando Busqueda Local 5000
+% reduction:  54.6762589928 %
+Final solution's training score:  71.6494845361
+Final solution's test score:  64.5833333333
+BL' execution time in seconds:  134.422835827
 Partition  4 - 2
-Ejecutando Busqueda Local
+Ejecutando Busqueda Local 5000
 % reduction:  53.2374100719 %
-Final solution's training score:  71.875
-Final solution's test score:  64.4329896907
-BL' execution time in seconds:  96.9706568718
+Final solution's training score:  69.7916666667
+Final solution's test score:  62.8865979381
+BL' execution time in seconds:  110.058867931
 Results for BL in arr
 Partition  5 - 1
-Ejecutando Busqueda Local
-% reduction:  50.3597122302 %
-Final solution's training score:  72.6804123711
-Final solution's test score:  66.1458333333
-BL' execution time in seconds:  85.4090480804
+Ejecutando Busqueda Local 5000
+% reduction:  51.4388489209 %
+Final solution's training score:  70.1030927835
+Final solution's test score:  67.7083333333
+BL' execution time in seconds:  93.2379689217
 Partition  5 - 2
-Ejecutando Busqueda Local
-% reduction:  51.7985611511 %
-Final solution's training score:  69.7916666667
-Final solution's test score:  62.3711340206
-BL' execution time in seconds:  64.6621549129
+Ejecutando Busqueda Local 5000
+% reduction:  52.8776978417 %
+Final solution's training score:  68.2291666667
+Final solution's test score:  61.8556701031
+BL' execution time in seconds:  63.1042430401

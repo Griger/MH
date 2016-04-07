@@ -17,7 +17,6 @@ def ES(data, labels):
 	fi = 0.3
 	Tf = 10**(-3)
 	max_evaluations = 5000
-	print "Ejecutando Enfriamiento Simulado", max_evaluations
 	#Calculation of algorithm's parameter
 	n = len(data[0])
 

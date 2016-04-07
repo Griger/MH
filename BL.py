@@ -14,8 +14,7 @@ def BL(training_data, training_labels):
 	s_score = knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
 	n_generated_sols = 0
 	max_generated_sol = 5000
-	print ("Ejecutando Busqueda Local"), max_generated_sol
-
+	
 	while (True):
 		idx = random.sample(range(0,n), n)
 		found_better_sol = False

@@ -11,7 +11,6 @@ def BT(data, labels):
 
 	n = len(data[0]) #problem's size
 	max_evaluations = 5000
-	print "Ejecutando Busqueda Tabu", max_evaluations
 	n_evaluations = 0
 	tl_tam = n/3 #tabu list's tam
 	tabu_idx = 0 #start of tabu list
