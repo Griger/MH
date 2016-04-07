@@ -16,7 +16,7 @@
 \usepackage{cite} %paquete para que Latex contraiga las referencias [1-4] en lugar de [1][2][3][4]
 \usepackage[nonumberlist]{glossaries} %[toc,style=altlistgroup,hyperfirst=false] 
 %usar makeglossaries grafo para recompilar el archivo donde están los grafos y que así salga actualizado
-\author{Gustavo Rivas Gervilla DNI: 75570417F \\ gustavofox92@correo.ugr.es \\5º Doble Grado en Ing. Informática y Matemáticas \\Grupo de los Viernes de 17:30 a 19:30}
+\author{Gustavo Rivas Gervilla DNI: 75570417F \\ gustavofox92@correo.ugr.es \\5º Doble Grado en Ing. Informática y Matemáticas \\Grupo 3}
 \title{Práctica 1.b: Búsquedas por Trayectorias para el Problema de la Selección de Características \\ SFS \\ Búsqueda Local de Primero el Mejor \\ Enfriamiento Simulado \\ Búsqueda Tabú}
 \date{}
 
@@ -61,11 +61,11 @@
 \newpage
 
 \section{\color[rgb]{0.0,0.0,0.21}Descripción/formulación del problema abordado}
-Lo que intentamos hacer con nuestro algoritmos es encontrar un conjunto de características de unos datos que nos permitan realizar una clasificación suficientemente buena de nuevos datos que nos lleguen con las mismas características.\\
+Lo que intentamos hacer con nuestros algoritmos es encontrar un conjunto de características de unos datos que nos permitan realizar una clasificación suficientemente buena de nuevos datos que nos lleguen con las mismas características.\\
 
 Hay un problema muy habitual en la vida real y es la de clasificar una serie de elementos en distintas categorías en función de información sobre ellos, esta tarea puede ser realizada por personas o, lo que es más eficiente, por un ordenador. Para realizar tal clasificación es habitual que se recojan multitud de datos sobre los distintos elementos que se quieren clasificar, de modo que en base a esta información podamos decidir si el elemento es de una categoría o de otra. Pensemos por ejemplo en clasificar fruta en base a si se desecha o no. Podemos pensar en recoger datos sobre el tamaño de esa fruta, su color, su textura o su dureza y en base a estas mediciones una máquina debería clasificar la fruta en buena o mala.\\
 
-El problema está en que normalmente no se conoce tan bien el campo de estudio como para saber a ciencia cierta qué datos recoger, qué datos serán más relevantes a la hora de clasificar elementos de una determinada población. Entonces lo que se hace es recoger gran cantidad de información sobre los elementos para al menos intentar que no haya carencias en la información, esto por supuesto conlleva tanto el coste de adquirir esa información (no sabemos cómo de caro es realizar una determinada medición) y el coste computacional de procesar toda esa información. Entonces lo que nos gustaría es averiguar qué información, de entre toda la que hemos obtenido, es la verdaderamente relevante para la clasificación que queremos realizar.\\
+El problema está en que normalmente no se conoce tan bien el campo de estudio como para saber a ciencia cierta qué datos recoger, qué datos serán más relevantes a la hora de clasificar elementos de una determinada población. Entonces lo que se hace es recoger gran cantidad de información sobre los elementos para al menos intentar que no haya carencias en la información, esto por supuesto conlleva tanto el coste de adquirir esa información (no sabemos cómo de caro es realizar una determinada medición) como el coste computacional de procesar toda esa información. Entonces lo que nos gustaría es averiguar qué información, de entre toda la que hemos obtenido, es la verdaderamente relevante para la clasificación que queremos realizar.\\
 
 Entonces partiendo de un conjunto de datos de aprendizaje, valores de características de distintos elementos, queremos ver con qué subconjunto de características podemos hacer una buena clasificación de esos elementos, así si tenemos que cada dato viene dado por una lista de n características $[f_1, f_2, ..., f_n]$ queremos obtener un subconjunto de esas características, de modo que teniendo sólo la información $[f_{s1}, ..., f_{sm}]$, se haga una buena clasificación del conjunto de datos de aprendizaje, del que conocemos por supuesto la clasificación perfecta de dichos datos. Y esperamos que con esa misma información se clasifiquen lo mejor posible nuevos elementos de fuera de la muestra de aprendizaje.\\
 
@@ -73,7 +73,7 @@ Entonces partiendo de un conjunto de datos de aprendizaje, valores de caracterí
 
 \section{\color[rgb]{0.0,0.0,0.21}Descripción de la aplicación de los algoritmos empleados al problema}
 
-Dado que estamos ante un problema de selección las soluciones se representarán como vectores binarios de booleanos de tamaño el número de características a elegir, indicando si una característica se considera o no, así tendremos claramente un espacio de búsqueda de $2^n$, siendo el n el número de características a elegir que también lo podemos ver como el tamaño del problema abordado.\\
+Dado que estamos ante un problema de selección las soluciones se representarán como vectores binarios de booleanos de tamaño el número de características a elegir, indicando si una característica se considera o no, así tendremos claramente un espacio de búsqueda de $2^n$, siendo $n$ el número de características a elegir que también lo podemos ver como el tamaño del problema abordado.\\
 
 Entonces para evaluar como de buena es una determinada solución hacemos lo siguiente:\\
 
@@ -84,25 +84,26 @@ for cada dato de entrenamiento:
 	clasificador_dato = construir clasificador 3NN con el resto de datos
 	ver si clasificador_dato clasifica correctamente a ese dato
 	
-return media del numero de aciertos
+return porcentaje de aciertos
 \end{lstlisting}
 
-Para generar las soluciones vecinas a una dada usamos el operador flip que funciona del siguiente modo:\\
+Nuestros algoritmos irán explorando, según su mecanismo, el espacio de soluciones empleando la función anterior para tomar decisiones sobre qué movimientos se realizan en dicho espacio de búsqueda. Para poder generar las soluciones vecinas a una dada empleamos el operador de Flip, el cual funciona del siguiente modo:\\
 
 \begin{lstlisting}
 def flip(sol, idx):
 	cambiar el valor de la pos. idx de la sol por su negado
 \end{lstlisting}
 
-Cuando queramos ver cómo de buena es la solución final que ha obtenido nuestro algoritmo de búsqueda lo que hacemos es:\\
+Cuando finalice su proceso de búsqueda los algoritmos nos devolverán la solución que ellos han elegido (junto con el score dentro de la muestra de entrenamiento calculada como hemos dicho antes). Entonces una vez tenemos la solución nos queda por evaluar cómo de bien se clasifican los datos empleando un clasificador 3NN construido sólo con aquellas características seleccionadas por nuestra solución:\\
 
 \begin{lstlisting}
 claficador = construir clasificador con los datos de entrenamiento solo con las caracterisiticas seleccionadas por nuestra solucion
-ver el porcentaje de acierto de este clasificador etiquetando los datos de test
+return el porcentaje de acierto de este clasificador etiquetando los datos de test de los que consideramos solo las caracteristicas seleccionadas por la solucion
 \end{lstlisting}
 
-A cada algoritmo le daremos solamente los datos de entrenamiento separados en características y etiquetas pera que con la estragia de búsqueda que implemente nos devuelva la mejor solución posible para él, luego la evaluación de la solución final la haremos fuera del algoritmo con los datos de test (en la sección 8 ya diremos cómo hemos generado las particiones TODO).
+A cada algoritmo le daremos solamente los datos de entrenamiento separados en características y etiquetas pera que con la estragia de búsqueda que implemente nos devuelva la mejor solución posible para él, luego la evaluación de la solución final la haremos fuera del algoritmo con los datos de test (en la sección 8 explicaremos cómo hemos generado las particiones). Para aquellos algoritmos que empleando algún tipo de aleatoriedad en sus decisiones inicilizaremos la semilla aleatoria antes de la ejecución de dicho algoritmo.	\\
 \newpage
+
 \section{\color[rgb]{0.0,0.0,0.21}Descripción en pseudocódigo de los algoritmos}
 \subsection{\color[rgb]{0.0,0.0,0.51}Búsqueda Local (BL.py)}
 
@@ -134,13 +135,11 @@ El esquema de enfriamiento que seguimos es el de Cauchy modificado para el que c
 nueva_T = T_actual/(1+beta*T_actual) #beta es una param. del problema
 \end{lstlisting}
 
-y la temperatura inicial se calcula en base al "costo" de la solución inicial, que en este caso es su poder de clasificación para las muestras de entrenamiento de las que partamos, y dos parámtros $\mu$ y $\phi$ que fijamos a 0.3 con lo que el cálculo de la temperatura inicial es tan sencillo como el siguiente:\\
+y la temperatura inicial se calcula en base al "coste" de la solución inicial, que en este caso es su poder de clasificación para las muestras de entrenamiento de las que partamos, y dos parámtros $\mu$ y $\phi$ que fijamos a 0.3 con lo que el cálculo de la temperatura inicial es tan sencillo como el siguiente:\\
 
 \begin{lstlisting}
 T0 = -mu*coste_sol_inicial/log(fi)
 \end{lstlisting}
-
-hay algo que me sorprende de este hecho y es que dado que el logarirmo neperiano de 0.3 es negativo, en nuestro cálculo, cuanto mejor sea la solución inicial de la que partamos, más elevada será dicha temperatura, es decir, más tardaremos en llegar a la temperatura final.\\
 
 Pasamos ya a describir el esquema de búsqueda del algoritmo para el enfriamiento simulado:\\
 
@@ -156,7 +155,7 @@ while se acepte algun vecino en el vecindario explorado de la sol actual and no 
 		
 		delta = diferencia entre coste sol. actual y el vecino
 		
-		if (el vecino es mejor que la sol actual or U(0,1) <= exp(-delta/temperatura_actual) #U(0,1) valor aleatorio uniforme en el [0,1]) and delta != 0:
+		if (el vecino es mejor que la sol actual or U(0,1) <= exp(-delta/temperatura_actual) and delta != 0 #U(0,1) valor aleatorio uniforme en el [0,1]):
 			sol actual = vecino
 			n_exitos++
 		
@@ -179,6 +178,8 @@ Hemos añadido la condición de que delta no sea cero ya que de otro modo la exp
 Aquí tenemos el pseudocódigo para la búsqueda tabú básica, en el también se ve cómo manejamos la lista tabú como una lista cíclica que consultamos para ver si un vecino ha sido generado mediante un movimiento tabú:\\
 
 \begin{lstlisting}
+sol_actual = partimos de una solucion aleatoria
+
 while no se hayan generado el maximo de vecinos permitido:
 	elegimos n vecinos aleatorios a revisar, siendo n el maximo permitido por iteracion
 
@@ -225,6 +226,7 @@ while no hayamos generado mas vecinos que el total permitido:
 		numero de iteraciones sin mejorar++
 		
 	if llevamos 10 iteraciones sin mejorar la mejor solucion:
+		numero de iteraciones sin mejora = 0
 		obtenemos numero aleatorio en el [1,3] con probabilidades [0.25,0.25,0.5]
 		
 		if sale 1:
@@ -274,16 +276,28 @@ return el conjunto de caracteristicas al que hemos llegado
 
 El código usado en prácticas lo he implementado yo a partir de las explicaciones dadas tanto en clase de prácticas como de teoría sobre los distintos algoritmos, siendo de mucha utilidad los pseudocódigos de las transparencia de teoría así como el esqueme de funcinamiento de las búsqueda tabú, también de las transparencia.\\
 
-La parte que no ha sido implementada por mí es la correspondiente a la implementación de las soluciones, es decir, tanto el KNN como los mecanismos de evaluación de las soluciones. Para ello he usado un módulo de Python llamado scikit cuya documentación la podemos consultar en la siguien web que es la que he consultado yo para poder usar aquello que necesitaba \url{http://scikit-learn.org/stable/documentation.html}, para instalar este módulo en Ubuntu hemos usado el siguiente comando de terminal \textit{sudo apt-get install python-scikits-learn}. Este módulo nos permite tanto crear un clasificador 3NN con los datos que elijamos y posteriormente etiquetar datos u obtener directamente el porcentaje de acierto para un conjunto de datos.\\
+La parte que no ha sido implementada por mí es la correspondiente a la evaluación de las soluciones, es decir, tanto el KNN como los mecanismos de evaluación de las soluciones. Para ello he usado un módulo de Python llamado \textbf{\textcolor{green}{sklearn}} cuya documentación la podemos consultar en la siguien web que es la que he consultado yo para poder usar aquello que necesitaba \url{http://scikit-learn.org/stable/documentation.html}. Este módulo nos permite tanto crear un clasificador 3NN con los datos que elijamos y posteriormente etiquetar datos u obtener directamente el porcentaje de acierto para un conjunto de datos.\\
 
 Además tiene una función para hacer las pruebas Leave One Out dándole un conjunto de datos y nos dice los índices para poder separar el conjunto de datos de aprendizaje en una muestra por un lado y el resto por otro y poder calcular la función objetivo como queremos.\\
 
 \subsection{\color[rgb]{0.0,0.0,0.51}Manual de usuario}
+Los algoritmos han sido implementados en Python 2.7.6 para su ejecución son necesarios tener instalados los módulos compatibles con esta versión de Python siguientes:\\
 
-Cada uno de los algoritmos están implementados en distintos ficheros de los que podemos ver su contenido en el \textit{leeme} que se nos pide que incluyamos con el código. Los experimentos han sido ejecutados usando el fichero main al que le pasamos por argumentos el nombre del algoritmo a usar: 3NN, SFS, BL, ES, BT y BText. La semilla se establece dentro del fichero al inicio de la ejecución del algoritmo para cada una de las particiones. Esto lo hemos hecho así para poder cortar la obtención de datos cuando sea necesaria y poder retomar los experimento desde la partición por las que nos quedáramos, así no se desajusta la semilla con la que hacemos los experimentos al retomar.\\
+\begin{itemize}
+\item numpy (v 1.8.2) \textbf{sudo apt-get install python-numpy}
+\item scikit \textbf{sudo apt-get install python-scikits-learn}
+\item El resto de módulos empleados suelen venir con las distribuciones básicas de Python.
+\end{itemize}
+
+Cada uno de los algoritmos están implementados en distintos ficheros de los que podemos ver su contenido en el \textbf{\textcolor{green}{LEEME}} que se nos pide que incluyamos con el código. Los experimentos han sido ejecutados usando el fichero main al que le pasamos por argumentos el nombre del algoritmo a usar: 3NN, SFS, BL, ES, BT y BText. La semilla se establece dentro del fichero al inicio de la ejecución del algoritmo para cada una de las particiones. Esto lo hemos hecho así para poder cortar la obtención de datos cuando sea necesaria y poder retomar los experimento desde la partición por las que nos quedáramos, así no se desajusta la semilla con la que hacemos los experimentos al retomar.\\
 
 Entonces para ejecutar por ejemplo los experimentos para el Enfriamiento Simulado lo que haremos es \textit{python main.py ES} y se ejecutará el algoritmo sobre todas las particiones de datos que tenemos.\\
 
+En el directorio \textbf{\textcolor{green}{make\_partitions}} tenemos tanto los archivos arff como los códigos necesarios para elaborar las particiones que serán utilizadas por nuestros algoritmos. Esto no es necesario para ejecutar los programas puesto que en el directorio \textbf{\textcolor{green}{partitions}} tenemos almacenadas todas las particiones construidas. No obstante si se quisiera replicar el procedimiento de desarrollo de particiones lo que haríamos sería: eliminar los archivos con extensión .npy del directorio \textbf{make\_partitions} (para tener seguridad de que no se corrompan dichos archivos), ejecutar el loader con la instrucción \textbf{python loader.py} y a continuación elaborar las particiones con \textbf{python partition\_maker.py} (dentro de este directorio que es donde se encuentran ambos códigos). Esto generará diversos archivos de extensión .npy con nombres que empiezan por arr, wdbc o libras (según la base) seguida de un número y la palabra test o training.\\
+
+Estos archivos deberán reemplazar a aquellos que se encuentran en el directorio \textbf{partitions} y ya podremos ejecutar los algoritmos con dichas particiones desde el main.\\
+
+\newpage
 \section{\color[rgb]{0.0,0.0,0.21}Experimentos y análisis de resultados}
 
 \subsection{\color[rgb]{0.0,0.0,0.51}Descripción de los casos del problema empleados y de los valores de los parámetros}

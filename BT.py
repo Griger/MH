@@ -32,16 +32,11 @@ def BT(data, labels):
 			neighbour_score = knn.getKNNClasiffierTrainingScore(data[:, neighbour], labels)
 			n_evaluations = n_evaluations + 1
 
-			#print neighbour
-			#print neighbour_score
-
 			if (i in TL):
 				if (neighbour_score > best_score and neighbour_score > best_neighbour_score):#aspiration criteria
-					#print "Acepto por aspiracion"
 					idx_best_neighbour, best_neighbour, best_neighbour_score = i, neighbour, neighbour_score
 			else:
 				if (neighbour_score > best_neighbour_score):
-					#print "Acepto vecino por ser mejor que el anterior"
 					idx_best_neighbour, best_neighbour, best_neighbour_score = i, neighbour, neighbour_score
 
 			if n_evaluations == max_evaluations:
@@ -54,9 +49,5 @@ def BT(data, labels):
 
 		TL[tabu_idx] = idx_best_neighbour
 		tabu_idx = (tabu_idx + 1)%tl_tam #cyclic list
-
-		#print "Total evaluations: ", n_evaluations
-		#print "Best neighbout idx: ", idx_best_neighbour
-		#print "TL: ", TL
 
 	return best_s, best_score

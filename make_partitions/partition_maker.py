@@ -16,8 +16,7 @@ ones = data_wdbc[labels == 1.0]
 
 n_zeros = len(zeros)
 n_ones = len(ones)
-print n_zeros
-print n_ones
+
 for i in range(0,5):
 	perm_zeros = np.random.permutation(n_zeros)
 	perm_ones  = np.random.permutation(n_ones)
