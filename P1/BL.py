@@ -8,13 +8,13 @@ def flip(s,i):
 	return new_s
 
 
-def BL(training_data, training_labels, initial_sol):
+def BL(training_data, training_labels):
 	n = len(training_data[0]) #number of features
-	s = initial_sol
+	s = np.random.choice([True, False], n) #initial solution
 	s_score = knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
 	n_generated_sols = 0
-	max_generated_sol = 15000 #TODO igual lo cambio en caso de que tarden demasiado las ejecuciones
-
+	max_generated_sol = 5000
+	
 	while (True):
 		idx = random.sample(range(0,n), n)
 		found_better_sol = False

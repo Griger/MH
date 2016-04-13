@@ -1,10 +1,5 @@
 import numpy as np
-import KNN
-import SFS
-import BL
-import ES
-import BT
-import BText
+import BMB
 import time
 import knn
 import sys
@@ -25,8 +20,8 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print heuristic_name + "' execution time in seconds: ", end-start
 
 
-heuristics = {'3NN': KNN.KNN, 'SFS' : SFS.SFS, 'BL' : BL.BL, 'ES' : ES.ES, 'BT' : BT.BT, 'BText' : BText.BText}
-heuristic_names = ['3NN', 'SFS', 'BL', 'ES', 'BT', 'BText']
+heuristics = {'BMB': BMB.BMB}
+heuristic_names = ['BMB']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 	print "Algoritmo no especificado o no valido. Elija entre 3NN, SFS, BL, ES, BT o BText"
