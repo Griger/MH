@@ -7,6 +7,7 @@ import sys
 def splitFeaturesAndLabels(data):
 	n_features = len(data[0]) - 1
 	return data[:, 0:n_features], data[:, n_features]
+	#return data[:, 0:n_features], np.array(data[:, n_features], dtype = np.int32)
 
 def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, test_labels):
 	np.random.seed(12345678)
@@ -24,7 +25,7 @@ heuristics = {'BMB': BMB.BMB}
 heuristic_names = ['BMB']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
-	print "Algoritmo no especificado o no valido. Elija entre 3NN, SFS, BL, ES, BT o BText"
+	print "Algoritmo no especificado o no valido. Elija entre BMB"
 else:
 	heuristic_name = sys.argv[1]
 	heuristic = heuristics[heuristic_name]
@@ -45,7 +46,10 @@ else:
 		wdbc_train_data.append(D)
 		wdbc_train_labels.append(L)
 
+	print wdbc_test_data[0][0]
+	print wdbc_test_data[0][0].dtype
 
+'''
 	for i in range(0,5):
 		print "Results for", heuristic_name, "in wdbc"
 		print "Partition ", i+1, "-", 1
@@ -98,3 +102,4 @@ else:
 		getResult(heuristic_name, heuristic, arr_train_data[i], arr_train_labels[i], arr_test_data[i], arr_test_labels[i])
 		print "Partition ", i+1, "-", 2
 		getResult(heuristic_name, heuristic, arr_test_data[i], arr_test_labels[i], arr_train_data[i], arr_train_labels[i])
+'''
