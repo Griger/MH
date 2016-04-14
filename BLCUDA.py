@@ -8,10 +8,12 @@ def flip(s,i):
 	return new_s
 
 
-def BL(training_data, training_labels, initial_sol):
+def BLCUDA(training_data, training_labels, initial_sol):
 	n = len(training_data[0]) #number of features
 	s = np.array(initial_sol)
-	s_score = knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
+	knnGPU = knnLooGPU(len(training_data), n, 3)
+	#s_score = knn.getKNNClasiffierTrainingScore(training_data[:, s], training_labels)
+	s_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
 	n_generated_sols = 0
 	max_generated_sol = 15000
 
@@ -22,7 +24,8 @@ def BL(training_data, training_labels, initial_sol):
 
 		for i in idx:
 			s_i = flip(s, i)
-			s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
+			#s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
+			s_i_score = knnGPU.scoreSolution(training_data[:, s_i], training_labels)
 			n_generated_sols += 1
 
 			if(s_i_score > s_score):
