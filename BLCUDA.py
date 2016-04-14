@@ -1,6 +1,5 @@
 import numpy as np
-import random
-import knn
+from knnLooGPU import *
 
 def flip(s,i):
 	new_s = np.array(s)

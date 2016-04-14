@@ -1,5 +1,4 @@
 from BLCUDA import *
-from knnLooGPU import *
 import numpy as np
 
 def flip(s,i):
