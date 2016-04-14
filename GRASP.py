@@ -6,7 +6,7 @@ def GRASP (train_data, train_labels):
 	best_score = 0.0
 
 	for _ in range(0,25):
-		s_greedy = randSFS(train_data, train_labels)
+		s_greedy, s_greedy_score = randSFS(train_data, train_labels)
 		s, s_score = BL(train_data, train_labels, s_greedy)
 
 		if s_score > best_score:
