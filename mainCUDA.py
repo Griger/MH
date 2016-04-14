@@ -46,10 +46,6 @@ else:
 		wdbc_train_data.append(D)
 		wdbc_train_labels.append(L)
 
-	print wdbc_test_data[0][0]
-	print wdbc_test_data[0][0].dtype
-
-
 	for i in range(0,5):
 		print("Results for", heuristic_name, "in wdbc")
 		print("Partition ", i+1, "-", 1)
