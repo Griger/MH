@@ -25,7 +25,7 @@ def BLCUDA(training_data, training_labels, initial_sol):
 			s_i = flip(s, i)
 			#s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
 			print(training_labels.dtype)
-			print(train_data[0].dtype)
+			print(training_data[0].dtype)
 			s_i_score = knnGPU.scoreSolution(training_data[:, s_i], training_labels)
 			n_generated_sols += 1
 
