@@ -1,0 +1,195 @@
+Results for BMB in wdbc
+Partition  1 - 1
+Ejecutando BMB
+% reduction:  40.0 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  95.4225352113
+BMB' execution time in seconds:  3.7760136127471924
+Partition  1 - 2
+Ejecutando BMB
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.4385964912
+BMB' execution time in seconds:  3.5799784660339355
+Results for BMB in wdbc
+Partition  2 - 1
+Ejecutando BMB
+% reduction:  56.666666666666664 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  95.7746478873
+BMB' execution time in seconds:  3.7737061977386475
+Partition  2 - 2
+Ejecutando BMB
+% reduction:  56.666666666666664 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.0877192982
+BMB' execution time in seconds:  3.3718101978302
+Results for BMB in wdbc
+Partition  3 - 1
+Ejecutando BMB
+% reduction:  46.666666666666664 %
+Final solution's training score:  96.8421052632
+Final solution's test score:  96.8309859155
+BMB' execution time in seconds:  3.5503222942352295
+Partition  3 - 2
+Ejecutando BMB
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  95.0877192982
+BMB' execution time in seconds:  3.128331422805786
+Results for BMB in wdbc
+Partition  4 - 1
+Ejecutando BMB
+% reduction:  50.0 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  95.4225352113
+BMB' execution time in seconds:  3.7654547691345215
+Partition  4 - 2
+Ejecutando BMB
+% reduction:  50.0 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  95.0877192982
+BMB' execution time in seconds:  3.4909677505493164
+Results for BMB in wdbc
+Partition  5 - 1
+Ejecutando BMB
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  95.4225352113
+BMB' execution time in seconds:  3.2809152603149414
+Partition  5 - 2
+Ejecutando BMB
+% reduction:  53.333333333333336 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  94.7368421053
+BMB' execution time in seconds:  3.4887051582336426
+Results for BMB in libras
+Partition  1 - 1
+Ejecutando BMB
+% reduction:  51.11111111111111 %
+Final solution's training score:  79.4444444444
+Final solution's test score:  71.6666666667
+BMB' execution time in seconds:  14.324830055236816
+Partition  1 - 2
+Ejecutando BMB
+% reduction:  54.44444444444444 %
+Final solution's training score:  77.7777777778
+Final solution's test score:  69.4444444444
+BMB' execution time in seconds:  14.705785751342773
+Results for BMB in libras
+Partition  2 - 1
+Ejecutando BMB
+% reduction:  62.22222222222222 %
+Final solution's training score:  77.2222222222
+Final solution's test score:  64.4444444444
+BMB' execution time in seconds:  13.957361936569214
+Partition  2 - 2
+Ejecutando BMB
+% reduction:  57.77777777777777 %
+Final solution's training score:  78.3333333333
+Final solution's test score:  68.3333333333
+BMB' execution time in seconds:  13.799899339675903
+Results for BMB in libras
+Partition  3 - 1
+Ejecutando BMB
+% reduction:  51.11111111111111 %
+Final solution's training score:  77.7777777778
+Final solution's test score:  68.8888888889
+BMB' execution time in seconds:  13.403348684310913
+Partition  3 - 2
+Ejecutando BMB
+% reduction:  54.44444444444444 %
+Final solution's training score:  76.6666666667
+Final solution's test score:  70.0
+BMB' execution time in seconds:  16.117924451828003
+Results for BMB in libras
+Partition  4 - 1
+Ejecutando BMB
+% reduction:  48.888888888888886 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  71.1111111111
+BMB' execution time in seconds:  13.205134630203247
+Partition  4 - 2
+Ejecutando BMB
+% reduction:  54.44444444444444 %
+Final solution's training score:  76.6666666667
+Final solution's test score:  71.6666666667
+BMB' execution time in seconds:  13.382981777191162
+Results for BMB in libras
+Partition  5 - 1
+Ejecutando BMB
+% reduction:  56.666666666666664 %
+Final solution's training score:  75.0
+Final solution's test score:  74.4444444444
+BMB' execution time in seconds:  15.969505310058594
+Partition  5 - 2
+Ejecutando BMB
+% reduction:  61.111111111111114 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  75.0
+BMB' execution time in seconds:  14.227882385253906
+Results for BMB in arr
+Partition  1 - 1
+Ejecutando BMB
+% reduction:  49.64028776978417 %
+Final solution's training score:  74.2268041237
+Final solution's test score:  65.1041666667
+BMB' execution time in seconds:  139.72561502456665
+Partition  1 - 2
+Ejecutando BMB
+o % reduction:  50.0 %
+Final solution's training score:  71.875
+Final solution's test score:  65.4639175258
+BMB' execution time in seconds:  152.28111243247986
+Results for BMB in arr
+Partition  2 - 1
+Ejecutando BMB
+% reduction:  47.84172661870504 %
+Final solution's training score:  74.2268041237
+Final solution's test score:  65.1041666667
+BMB' execution time in seconds:  158.260573387146
+Partition  2 - 2
+Ejecutando BMB
+% reduction:  53.956834532374096 %
+Final solution's training score:  70.3125
+Final solution's test score:  64.9484536082
+BMB' execution time in seconds:  153.49139285087585
+Results for BMB in arr
+Partition  3 - 1
+Ejecutando BMB
+% reduction:  53.597122302158276 %
+Final solution's training score:  72.1649484536
+Final solution's test score:  66.1458333333
+BMB' execution time in seconds:  135.15625262260437
+Partition  3 - 2
+Ejecutando BMB
+% reduction:  53.597122302158276 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  64.4329896907
+BMB' execution time in seconds:  176.420063495636
+Results for BMB in arr
+Partition  4 - 1
+Ejecutando BMB
+% reduction:  52.87769784172662 %
+Final solution's training score:  72.6804123711
+Final solution's test score:  68.75
+BMB' execution time in seconds:  170.45696997642517
+Partition  4 - 2
+Ejecutando BMB
+% reduction:  54.67625899280576 %
+Final solution's training score:  75.0
+Final solution's test score:  64.4329896907
+BMB' execution time in seconds:  163.38927054405212
+Results for BMB in arr
+Partition  5 - 1
+Ejecutando BMB
+% reduction:  51.07913669064749 %
+Final solution's training score:  73.7113402062
+Final solution's test score:  67.7083333333
+BMB' execution time in seconds:  138.78401350975037
+Partition  5 - 2
+Ejecutando BMB
+% reduction:  50.0 %
+Final solution's training score:  72.3958333333
+Final solution's test score:  63.4020618557
+BMB' execution time in seconds:  149.11128854751587
