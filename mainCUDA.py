@@ -76,7 +76,7 @@ else:
 		print("Partition ", i+1, "-", 2)
 		getResult(heuristic_name, heuristic, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
 
-	''''
+	'''
 	arr_test_data = []
 	arr_test_labels = []
 	arr_train_data = []
