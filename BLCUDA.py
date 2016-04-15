@@ -22,17 +22,21 @@ def BLCUDA(training_data, training_labels, initial_sol):
 		found_better_sol = False
 
 		for i in idx:
-			s_i = flip(s, i)
+			#s_i = flip(s, i)
+			s[i] = not s[i]
 			#s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
 			#print(training_labels.dtype)
 			#print(training_data[0].dtype)
-			s_i_score = knnGPU.scoreSolution(training_data[:, s_i], training_labels)
+			#s_i_score = knnGPU.scoreSolution(training_data[:, s_i], training_labels)
+			s_i_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
 			n_generated_sols += 1
 
 			if(s_i_score > s_score):
 				found_better_sol = True
-				s = s_i
+				#s = s_i
 				s_score = s_i_score
+			else:
+				s[i] = not s[i] #revert change
 
 			if n_generated_sols == max_generated_sol:
 				return s, s_score
