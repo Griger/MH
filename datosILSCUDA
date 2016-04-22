@@ -1,0 +1,110 @@
+Results for ILS in wdbc
+Partition  1 - 1
+% reduction:  63.33333333333333 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  94.3661971831
+ILS' execution time in seconds:  3.058661937713623
+Partition  1 - 2
+% reduction:  53.333333333333336 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.0877192982
+ILS' execution time in seconds:  3.100433349609375
+Results for ILS in wdbc
+Partition  2 - 1
+% reduction:  53.333333333333336 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  96.1267605634
+ILS' execution time in seconds:  3.604754686355591
+Partition  2 - 2
+% reduction:  46.666666666666664 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  95.7894736842
+ILS' execution time in seconds:  3.2115914821624756
+Results for ILS in wdbc
+Partition  3 - 1
+% reduction:  43.333333333333336 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  97.5352112676
+ILS' execution time in seconds:  3.1495707035064697
+Partition  3 - 2
+% reduction:  36.666666666666664 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  95.7894736842
+ILS' execution time in seconds:  3.12959361076355
+Results for ILS in wdbc
+Partition  4 - 1
+% reduction:  46.666666666666664 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  96.1267605634
+ILS' execution time in seconds:  2.4709620475769043
+Partition  4 - 2
+% reduction:  33.33333333333333 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  94.3859649123
+ILS' execution time in seconds:  3.0727250576019287
+Results for ILS in wdbc
+Partition  5 - 1
+% reduction:  43.333333333333336 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  94.7183098592
+ILS' execution time in seconds:  2.9103846549987793
+Partition  5 - 2
+% reduction:  43.333333333333336 %
+Final solution's training score:  99.2957746479
+Final solution's test score:  95.4385964912
+ILS' execution time in seconds:  2.6650073528289795
+Results for ILS in libras
+Partition  1 - 1
+% reduction:  46.666666666666664 %
+Final solution's training score:  79.4444444444
+Final solution's test score:  76.6666666667
+ILS' execution time in seconds:  12.03887414932251
+Partition  1 - 2
+% reduction:  48.888888888888886 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  71.6666666667
+ILS' execution time in seconds:  10.989194393157959
+Results for ILS in libras
+Partition  2 - 1
+% reduction:  52.22222222222223 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  70.0
+ILS' execution time in seconds:  10.826170444488525
+Partition  2 - 2
+% reduction:  52.22222222222223 %
+Final solution's training score:  80.0
+Final solution's test score:  73.8888888889
+ILS' execution time in seconds:  11.358971357345581
+Results for ILS in libras
+Partition  3 - 1
+% reduction:  53.333333333333336 %
+Final solution's training score:  77.7777777778
+Final solution's test score:  73.3333333333
+ILS' execution time in seconds:  12.826884269714355
+Partition  3 - 2
+% reduction:  53.333333333333336 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  71.1111111111
+ILS' execution time in seconds:  11.376697540283203
+Results for ILS in libras
+Partition  4 - 1
+% reduction:  54.44444444444444 %
+Final solution's training score:  81.1111111111
+Final solution's test score:  74.4444444444
+ILS' execution time in seconds:  11.944855451583862
+Partition  4 - 2
+% reduction:  55.55555555555556 %
+Final solution's training score:  78.3333333333
+Final solution's test score:  75.0
+ILS' execution time in seconds:  13.081703186035156
+Results for ILS in libras
+Partition  5 - 1
+% reduction:  54.44444444444444 %
+Final solution's training score:  76.1111111111
+Final solution's test score:  78.8888888889
+ILS' execution time in seconds:  12.41339635848999
+Partition  5 - 2
+% reduction:  45.55555555555556 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  78.8888888889
+ILS' execution time in seconds:  11.458051681518555
