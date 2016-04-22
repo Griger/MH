@@ -3,6 +3,7 @@ import BMBCUDA
 import time
 import knn
 import sys
+from knnLooGPU import *
 
 def splitFeaturesAndLabels(data):
 	n_features = len(data[0]) - 1
@@ -11,13 +12,15 @@ def splitFeaturesAndLabels(data):
 
 def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, test_labels):
 	np.random.seed(12345678)
+	knnGPU = knnLooGPU(len(training_data), len(test_data), len(train_data[0]), 3)
 	start = time.time()
-	sol, sol_training_score = heuristic(train_data, train_labels)
+	sol, sol_training_score = heuristic(train_data, train_labels, knnGPU)
 	end = time.time()
 
 	print("% reduction: ", 1.0*(len(sol) - len(sol[sol == True]))/len(sol)*100, "%")
 	print("Final solution's training score: ", sol_training_score)
-	print("Final solution's test score: ", knn.getKNNClasiffierScore(train_data[:, sol], train_labels, test_data[:, sol], test_labels))
+	#print("Final solution's test score: ", knn.getKNNClasiffierScore(train_data[:, sol], train_labels, test_data[:, sol], test_labels))
+	print("Final solution's test score: ", knnLooGPU.scoreOut(train_data[:, sol], test_data[:, sol], train_labels,  test_labels))
 	print(heuristic_name + "' execution time in seconds: ", end-start)
 
 
@@ -29,7 +32,7 @@ if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 else:
 	heuristic_name = sys.argv[1]
 	heuristic = heuristics[heuristic_name]
-	'''
+
 	wdbc_test_data = []
 	wdbc_test_labels = []
 	wdbc_train_data = []
@@ -76,7 +79,7 @@ else:
 		print("Partition ", i+1, "-", 2)
 		getResult(heuristic_name, heuristic, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
 
-	'''
+
 	arr_test_data = []
 	arr_test_labels = []
 	arr_train_data = []
