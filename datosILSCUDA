@@ -108,3 +108,58 @@ Partition  5 - 2
 Final solution's training score:  78.8888888889
 Final solution's test score:  78.8888888889
 ILS' execution time in seconds:  11.458051681518555
+Results for ILS in arr
+Partition  1 - 1
+% reduction:  52.51798561151079 %
+Final solution's training score:  79.381443299
+Final solution's test score:  66.6666666667
+ILS' execution time in seconds:  114.28475141525269
+Partition  1 - 2
+% reduction:  55.39568345323741 %
+Final solution's training score:  74.4791666667
+Final solution's test score:  67.0103092784
+ILS' execution time in seconds:  111.75751209259033
+Results for ILS in arr
+Partition  2 - 1
+% reduction:  53.23741007194245 %
+Final solution's training score:  74.7422680412
+Final solution's test score:  65.1041666667
+ILS' execution time in seconds:  95.07731485366821
+Partition  2 - 2
+% reduction:  53.956834532374096 %
+Final solution's training score:  74.4791666667
+Final solution's test score:  72.1649484536
+ILS' execution time in seconds:  119.36680459976196
+Results for ILS in arr
+Partition  3 - 1
+% reduction:  55.03597122302158 %
+Final solution's training score:  76.2886597938
+Final solution's test score:  68.2291666667
+ILS' execution time in seconds:  102.29435324668884
+Partition  3 - 2
+% reduction:  57.9136690647482 %
+Final solution's training score:  76.5625
+Final solution's test score:  65.9793814433
+ILS' execution time in seconds:  115.70699548721313
+Results for ILS in arr
+Partition  4 - 1
+% reduction:  51.798561151079134 %
+Final solution's training score:  76.8041237113
+Final solution's test score:  68.2291666667
+ILS' execution time in seconds:  114.23416781425476
+Partition  4 - 2
+% reduction:  50.719424460431654 %
+Final solution's training score:  76.0416666667
+Final solution's test score:  62.8865979381
+ILS' execution time in seconds:  112.00996541976929
+Results for ILS in arr
+Partition  5 - 1
+% reduction:  48.201438848920866 %
+Final solution's training score:  76.2886597938
+Final solution's test score:  67.1875
+ILS' execution time in seconds:  129.35144019126892
+Partition  5 - 2
+% reduction:  56.11510791366906 %
+Final solution's training score:  76.0416666667
+Final solution's test score:  63.9175257732
+ILS' execution time in seconds:  105.86523985862732
