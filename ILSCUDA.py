@@ -1,6 +1,6 @@
 import numpy as np
-import knn
-from BL import *
+from knnLooGPU import *
+from BLCUDA import *
 from math import *
 
 def mutation(s):
@@ -11,9 +11,9 @@ def mutation(s):
 	mutant_s[mutant_idx] = np.logical_not(mutant_s[mutant_idx])
 	return mutant_s
 
-def ILS (train_data, train_labels):
+def ILS (train_data, train_labels, knnGPU):
 	s = np.random.choice([True, False], n)
-	s, s_score = BL(train_data, train_labels, s)
+	s, s_score = BLCUDA(train_data, train_labels, knnGPU, s)
 	best_s, best_score = None, 0.0
 
 	for _ in range(0,24):
