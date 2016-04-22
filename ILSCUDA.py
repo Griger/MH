@@ -12,6 +12,7 @@ def mutation(s):
 	return mutant_s
 
 def ILSCUDA(train_data, train_labels, knnGPU):
+	n = len(train_data[0])
 	s = np.random.choice([True, False], n)
 	s, s_score = BLCUDA(train_data, train_labels, knnGPU, s)
 	best_s, best_score = None, 0.0

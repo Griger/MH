@@ -12,6 +12,7 @@ def mutation(s):
 	return mutant_s
 
 def ILS (train_data, train_labels):
+	n = len(train_data[0])
 	s = np.random.choice([True, False], n)
 	s, s_score = BL(train_data, train_labels, s)
 	best_s, best_score = None, 0.0
