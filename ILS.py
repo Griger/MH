@@ -22,6 +22,6 @@ def ILS (train_data, train_labels):
 			best_s, best_score = s, s_score
 
 		s = mutation(best_s)
-		s, s_score = BL(s)
+		s, s_score = BL(train_data, train_labels, s)
 
 	return best_s, best_score

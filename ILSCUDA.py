@@ -22,6 +22,6 @@ def ILSCUDA(train_data, train_labels, knnGPU):
 			best_s, best_score = s, s_score
 
 		s = mutation(best_s)
-		s, s_score = BL(s)
+		s, s_score = BLCUDA(train_data, train_labels, knnGPU, s)
 
 	return best_s, best_score
