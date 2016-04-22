@@ -11,7 +11,7 @@ def mutation(s):
 	mutant_s[mutant_idx] = np.logical_not(mutant_s[mutant_idx])
 	return mutant_s
 
-def ILS (train_data, train_labels, knnGPU):
+def ILSCUDA(train_data, train_labels, knnGPU):
 	s = np.random.choice([True, False], n)
 	s, s_score = BLCUDA(train_data, train_labels, knnGPU, s)
 	best_s, best_score = None, 0.0
