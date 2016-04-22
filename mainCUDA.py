@@ -12,7 +12,7 @@ def splitFeaturesAndLabels(data):
 
 def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, test_labels):
 	np.random.seed(12345678)
-	knnGPU = knnLooGPU(len(training_data), len(test_data), len(train_data[0]), 3)
+	knnGPU = knnLooGPU(len(train_data), len(test_data), len(train_data[0]), 3)
 	start = time.time()
 	sol, sol_training_score = heuristic(train_data, train_labels, knnGPU)
 	end = time.time()
