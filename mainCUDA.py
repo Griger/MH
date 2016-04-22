@@ -20,7 +20,7 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print("% reduction: ", 1.0*(len(sol) - len(sol[sol == True]))/len(sol)*100, "%")
 	print("Final solution's training score: ", sol_training_score)
 	#print("Final solution's test score: ", knn.getKNNClasiffierScore(train_data[:, sol], train_labels, test_data[:, sol], test_labels))
-	print("Final solution's test score: ", knnLooGPU.scoreOut(train_data[:, sol], test_data[:, sol], train_labels,  test_labels))
+	print("Final solution's test score: ", knnGPU.scoreOut(train_data[:, sol], test_data[:, sol], train_labels,  test_labels))
 	print(heuristic_name + "' execution time in seconds: ", end-start)
 
 
