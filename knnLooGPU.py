@@ -121,6 +121,9 @@ class knnLooGPU:
         numSamples = samples.shape[0]
         numFeatures = samples.shape[1]
 
+        if numFeatures == 0:
+            return 0.0
+
         # Transfer host (CPU) samples, target and results array to
         # device (GPU) memory
         samplesGPU = gpuarray.to_gpu(samples.flatten())
