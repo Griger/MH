@@ -5,7 +5,7 @@ from knnLooGPU import *
 def getFeatureClassificationScore(current_sol, train_data, train_labels, idx, knnGPU):
 	new_sol = np.array(current_sol)
 	new_sol[idx] = True
-	return knnGPU.scoreSolution(train_data[:, new_sol], train_labels)	
+	return knnGPU.scoreSolution(train_data[:, new_sol], train_labels)
 
 #vectorized version of previous function
 vgetFeatureClassificationScore = np.vectorize(getFeatureClassificationScore, excluded = ['current_sol','train_data','train_labels', 'knnGPU'], otypes=[np.ndarray])
@@ -16,7 +16,7 @@ def randSFSCUDA(data, labels, knnGPU):
 	finish = False
 	sol = np.repeat(False, n_features)
 	sol_score = 0.0
-	CL = range(0, n_features) #candidate list
+	CL = list(range(0, n_features)) #candidate list
 	alpha = 0.3
 
 	#while we get profit and we can add new features
