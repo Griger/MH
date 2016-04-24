@@ -15,18 +15,11 @@ def BLCUDA(training_data, training_labels, knnGPU, initial_sol):
 	max_generated_sol = 15000
 
 	while (True):
-		#idx = random.sample(range(0,n), n)
 		idx = np.random.choice(range(0,n), n, False)
 		found_better_sol = False
 
 		for i in idx:
-			#s_i = flip(s, i)
 			s[i] = not s[i]
-			#s_i_score = knn.getKNNClasiffierTrainingScore(training_data[:, s_i], training_labels)
-			#print(training_labels.dtype)
-			#print(training_data[0].dtype)
-			#s_i_score = knnGPU.scoreSolution(training_data[:, s_i], training_labels)
-			print("Numero de Trues: ", sum(s))
 			s_i_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
 			n_generated_sols += 1
 
