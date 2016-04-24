@@ -142,3 +142,24 @@ Final solution's training score:  84.375
 Final solution's test score:  70.618556701
 GRASP' execution time in seconds:  157.76192545890808
 Results for GRASP in arr
+Partition  4 - 1
+% reduction:  92.44604316546763 %
+Final solution's training score:  81.4432989691
+Final solution's test score:  73.9583333333
+GRASP' execution time in seconds:  102.18526315689087
+Partition  4 - 2
+% reduction:  90.28776978417267 %
+Final solution's training score:  85.9375
+Final solution's test score:  73.7113402062
+GRASP' execution time in seconds:  143.3857705593109
+Results for GRASP in arr
+Partition  5 - 1
+% reduction:  94.96402877697841 %
+Final solution's training score:  86.0824742268
+Final solution's test score:  69.7916666667
+GRASP' execution time in seconds:  108.92953705787659
+Partition  5 - 2
+% reduction:  93.16546762589928 %
+Final solution's training score:  82.8125
+Final solution's test score:  76.2886597938
+GRASP' execution time in seconds:  99.1507785320282
