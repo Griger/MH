@@ -1,0 +1,127 @@
+Results for GRASP in wdbc
+Partition  1 - 1
+% reduction:  80.0 %
+Final solution's training score:  98.5964912281
+Final solution's test score:  91.9014084507
+GRASP' execution time in seconds:  9.506301879882812
+Partition  1 - 2
+% reduction:  46.666666666666664 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  95.4385964912
+GRASP' execution time in seconds:  10.875825881958008
+Results for GRASP in wdbc
+Partition  2 - 1
+% reduction:  66.66666666666666 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  94.014084507
+GRASP' execution time in seconds:  8.381792068481445
+Partition  2 - 2
+% reduction:  23.333333333333332 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  96.1403508772
+GRASP' execution time in seconds:  10.541184902191162
+Results for GRASP in wdbc
+Partition  3 - 1
+% reduction:  60.0 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  96.8309859155
+GRASP' execution time in seconds:  9.109857559204102
+Partition  3 - 2
+% reduction:  70.0 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  96.1403508772
+GRASP' execution time in seconds:  11.245382308959961
+Results for GRASP in wdbc
+Partition  4 - 1
+% reduction:  60.0 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  95.4225352113
+GRASP' execution time in seconds:  9.181743383407593
+Partition  4 - 2
+% reduction:  46.666666666666664 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  94.7368421053
+GRASP' execution time in seconds:  9.682722806930542
+Results for GRASP in wdbc
+Partition  5 - 1
+% reduction:  70.0 %
+Final solution's training score:  98.2456140351
+Final solution's test score:  91.9014084507
+GRASP' execution time in seconds:  10.126384735107422
+Partition  5 - 2
+% reduction:  73.33333333333333 %
+Final solution's training score:  98.9436619718
+Final solution's test score:  94.3859649123
+GRASP' execution time in seconds:  10.975258350372314
+Results for GRASP in libras
+Partition  1 - 1
+% reduction:  86.66666666666667 %
+Final solution's training score:  81.6666666667
+Final solution's test score:  75.5555555556
+GRASP' execution time in seconds:  33.29890203475952
+Partition  1 - 2
+% reduction:  85.55555555555556 %
+Final solution's training score:  78.3333333333
+Final solution's test score:  72.2222222222
+GRASP' execution time in seconds:  36.15140342712402
+Results for GRASP in libras
+Partition  2 - 1
+% reduction:  86.66666666666667 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  67.2222222222
+GRASP' execution time in seconds:  34.02679491043091
+Partition  2 - 2
+% reduction:  84.44444444444444 %
+Final solution's training score:  81.6666666667
+Final solution's test score:  71.1111111111
+GRASP' execution time in seconds:  35.99290704727173
+Results for GRASP in libras
+Partition  3 - 1
+% reduction:  87.77777777777777 %
+Final solution's training score:  80.0
+Final solution's test score:  70.0
+GRASP' execution time in seconds:  35.56295084953308
+Partition  3 - 2
+% reduction:  84.44444444444444 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  75.0
+GRASP' execution time in seconds:  32.53740620613098
+Results for GRASP in libras
+Partition  4 - 1
+% reduction:  77.77777777777779 %
+Final solution's training score:  83.3333333333
+Final solution's test score:  72.7777777778
+GRASP' execution time in seconds:  38.11028432846069
+Partition  4 - 2
+% reduction:  80.0 %
+Final solution's training score:  80.5555555556
+Final solution's test score:  71.6666666667
+GRASP' execution time in seconds:  35.71272420883179
+Results for GRASP in libras
+Partition  5 - 1
+% reduction:  86.66666666666667 %
+Final solution's training score:  77.2222222222
+Final solution's test score:  78.8888888889
+GRASP' execution time in seconds:  31.40917730331421
+Partition  5 - 2
+% reduction:  81.11111111111111 %
+Final solution's training score:  81.6666666667
+Final solution's test score:  75.0
+GRASP' execution time in seconds:  32.39896845817566
+Results for GRASP in arr
+Partition  1 - 1
+% reduction:  93.88489208633094 %
+Final solution's training score:  85.0515463918
+Final solution's test score:  72.9166666667
+GRASP' execution time in seconds:  130.62240290641785
+Partition  1 - 2
+% reduction:  92.80575539568345 %
+Final solution's training score:  82.2916666667
+Final solution's test score:  67.0103092784
+GRASP' execution time in seconds:  98.59981179237366
+Results for GRASP in arr
+Partition  2 - 1
+% reduction:  94.60431654676259 %
+Final solution's training score:  84.5360824742
+Final solution's test score:  77.0833333333
+GRASP' execution time in seconds:  115.44172716140747
