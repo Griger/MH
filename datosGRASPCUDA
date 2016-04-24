@@ -113,15 +113,32 @@ Partition  1 - 1
 % reduction:  93.88489208633094 %
 Final solution's training score:  85.0515463918
 Final solution's test score:  72.9166666667
-GRASP' execution time in seconds:  130.62240290641785
+GRASP' execution time in seconds:  132.67162823677063
 Partition  1 - 2
 % reduction:  92.80575539568345 %
 Final solution's training score:  82.2916666667
 Final solution's test score:  67.0103092784
-GRASP' execution time in seconds:  98.59981179237366
+GRASP' execution time in seconds:  99.76564621925354
 Results for GRASP in arr
 Partition  2 - 1
 % reduction:  94.60431654676259 %
 Final solution's training score:  84.5360824742
 Final solution's test score:  77.0833333333
-GRASP' execution time in seconds:  115.44172716140747
+GRASP' execution time in seconds:  118.8734142780304
+Partition  2 - 2
+% reduction:  93.88489208633094 %
+Final solution's training score:  82.2916666667
+Final solution's test score:  73.7113402062
+GRASP' execution time in seconds:  78.2945671081543
+Results for GRASP in arr
+Partition  3 - 1
+% reduction:  92.44604316546763 %
+Final solution's training score:  82.4742268041
+Final solution's test score:  70.8333333333
+GRASP' execution time in seconds:  98.61483931541443
+Partition  3 - 2
+% reduction:  93.16546762589928 %
+Final solution's training score:  84.375
+Final solution's test score:  70.618556701
+GRASP' execution time in seconds:  157.76192545890808
+Results for GRASP in arr
