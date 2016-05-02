@@ -25,11 +25,8 @@ def isSolHere(sol, sols_set):
 def AGG(train_data, train_labels, knnGPU):
     max_evals = 15000
     n = len(train_data[0])
-    p_size = 30 #population size
-
-    cross_p = 0.7
-    n_crosses = ceil(p_size/2 * 0.7)
-
+    p_size = 30
+    
     mutation_p = 0.001
     n_mutations = ceil(p_size * n * mutation_p)
 
@@ -49,30 +46,28 @@ def AGG(train_data, train_labels, knnGPU):
     parent.sort(order="score")
 
     while (n_evals < max_evals):
-        #selection by binary tournament
-        selected_parent_idx = np.empty(p_size, dtype=np.int32)
+        #selection by binary tournament of two parent
+        selected_parent_idx = np.empty(2, dtype=np.int32)
 
         for idx in selected_parent_idx:
             idx = np.random.randint(np.random.randint(0,p_size), p_size)
 
         #cross
-        children = np.zeros(p_size, dtype=datatype)
+        children = np.zeros(2, dtype=datatype)
 
-        for first_parent_idx, second_parent_idx, first_son, second_son in selected_parent_idx[0:2*n_crosses:2], selected_parent_idx[1:2*n_crosses:2], children[0:2*n_crosses:2], children[1:2*n_crosses:2]:
-            cross(parent[first_parent_idx]["chromosome"], parent[second_parent_idx]["chromosome"], first_son["chromosome"], second_son["chromosome"])
+        cross(parent[selected_parent_idx[0]]["chromosome"], parent[selected_parent_idx[1]]["chromosome"], children[0]["chromosome"], children[1]["chromosome"])
 
-        children[2*n_crosses:] = parent[idx[n_crosses:]].copy()
-
-        for son in children[0:2*n_crosses]:
+        for son in children:
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
-        n_evals += 2*n_crosses
+        n_evals += 2
+
         if n_evals >= max_evals:
             breakif n_evals >= max_evals:
                 break
 
         #mutation
-        mutant_children_idx = np.random.randint(0, p_size, n_mutations)
+        mutant_children_idx = np.random.randint(0, 2, n_mutations)
         mutant_genes_idx = np.random.randint(0, n, n_mutations)
 
         for son, gen_idx in children[mutant_children_idx], mutant_genes_idx:
@@ -86,10 +81,13 @@ def AGG(train_data, train_labels, knnGPU):
         #replacement with elitism
         children.sort(order="score")
 
-        if not isSolHere(parent[-1]["chromosome"], children["chromosome"]):
-            children[0] = parent[-1]
+        if children[1]["score"] > parent[1]["score"]:
+            parent[1] = children[1]
 
-        parent = children
+            if children[0]["score"] > parent[0]["score"]:
+                parent[0] = children[0]
+        elif children[1]["score"] > parent[0]["score"]:
+            parent[0] = children[1]
 
         parent.sort(order="score")
 
