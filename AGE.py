@@ -22,11 +22,11 @@ def isSolHere(sol, sols_set):
     equal_elements = sol == sols_set
     return len(s) in equals_elements.sum(axis = 1)
 
-def AGG(train_data, train_labels, knnGPU):
+def AGE(train_data, train_labels, knnGPU):
     max_evals = 15000
     n = len(train_data[0])
     p_size = 30
-    
+
     mutation_p = 0.001
     n_mutations = ceil(p_size * n * mutation_p)
 

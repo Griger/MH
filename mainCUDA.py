@@ -1,7 +1,11 @@
 import numpy as np
+import KNNCUDA
+import SFSCUDA
 import BMBCUDA
 import ILSCUDA
 import GRASPCUDA
+import AGG
+import AGE
 import time
 import knn
 import sys
@@ -26,8 +30,8 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print(heuristic_name + "' execution time in seconds: ", end-start)
 
 
-heuristics = {'BMB': BMBCUDA.BMBCUDA, 'ILS':ILSCUDA.ILSCUDA, 'GRASP':GRASPCUDA.GRASPCUDA}
-heuristic_names = ['BMB','ILS','GRASP']
+heuristics = {'KNN': KNNCUDA.KNNCUDA, 'SFS':SFSCUDA.SFSCUDA, 'BMB': BMBCUDA.BMBCUDA, 'ILS':ILSCUDA.ILSCUDA, 'GRASP':GRASPCUDA.GRASPCUDA, 'AGG':AGG.AGG,'AGE':AGE.AGE}
+heuristic_names = ['KNN','SFS','BMB','ILS','GRASP','AGG', 'AGE']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 	print("Algoritmo no especificado o no valido. Elija entre BMB")
