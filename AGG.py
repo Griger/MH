@@ -68,8 +68,7 @@ def AGG(train_data, train_labels, knnGPU):
 
         n_evals += 2*n_crosses
         if n_evals >= max_evals:
-            breakif n_evals >= max_evals:
-                break
+            break
 
         #mutation
         mutant_children_idx = np.random.randint(0, p_size, n_mutations)
