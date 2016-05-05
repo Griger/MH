@@ -63,8 +63,7 @@ def AGE(train_data, train_labels, knnGPU):
         n_evals += 2
 
         if n_evals >= max_evals:
-            breakif n_evals >= max_evals:
-                break
+            break
 
         #mutation
         mutant_children_idx = np.random.randint(0, 2, n_mutations)
