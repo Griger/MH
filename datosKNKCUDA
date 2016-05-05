@@ -1,0 +1,169 @@
+Results for KNN in wdbc
+Partition  1 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  96.1403508772
+Final solution's test score:  96.1267605634
+KNN' execution time in seconds:  0.0046923160552978516
+Partition  1 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  96.8309859155
+Final solution's test score:  95.7894736842
+KNN' execution time in seconds:  0.004019021987915039
+Results for KNN in wdbc
+Partition  2 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  95.4385964912
+Final solution's test score:  96.4788732394
+KNN' execution time in seconds:  0.0037009716033935547
+Partition  2 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  96.1267605634
+Final solution's test score:  96.4912280702
+KNN' execution time in seconds:  0.0037376880645751953
+Results for KNN in wdbc
+Partition  3 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  93.6842105263
+Final solution's test score:  97.1830985915
+KNN' execution time in seconds:  0.0037047863006591797
+Partition  3 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  97.5352112676
+Final solution's test score:  95.4385964912
+KNN' execution time in seconds:  0.0037071704864501953
+Results for KNN in wdbc
+Partition  4 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  96.1403508772
+Final solution's test score:  95.4225352113
+KNN' execution time in seconds:  0.003740072250366211
+Partition  4 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  95.4385964912
+KNN' execution time in seconds:  0.003696441650390625
+Results for KNN in wdbc
+Partition  5 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  96.1403508772
+Final solution's test score:  95.4225352113
+KNN' execution time in seconds:  0.003708362579345703
+Partition  5 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  97.8873239437
+Final solution's test score:  95.4385964912
+KNN' execution time in seconds:  0.0036754608154296875
+Results for KNN in libras
+Partition  1 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  76.1111111111
+KNN' execution time in seconds:  0.005419731140136719
+Partition  1 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  67.7777777778
+Final solution's test score:  70.5555555556
+KNN' execution time in seconds:  0.005331754684448242
+Results for KNN in libras
+Partition  2 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  70.0
+Final solution's test score:  67.7777777778
+KNN' execution time in seconds:  0.005341291427612305
+Partition  2 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  72.7777777778
+KNN' execution time in seconds:  0.0052928924560546875
+Results for KNN in libras
+Partition  3 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  70.5555555556
+Final solution's test score:  73.3333333333
+KNN' execution time in seconds:  0.0052947998046875
+Partition  3 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  70.0
+Final solution's test score:  72.2222222222
+KNN' execution time in seconds:  0.005341529846191406
+Results for KNN in libras
+Partition  4 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  72.2222222222
+Final solution's test score:  72.2222222222
+KNN' execution time in seconds:  0.005365610122680664
+Partition  4 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  70.0
+Final solution's test score:  74.4444444444
+KNN' execution time in seconds:  0.0053255558013916016
+Results for KNN in libras
+Partition  5 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  71.1111111111
+Final solution's test score:  78.3333333333
+KNN' execution time in seconds:  0.005313396453857422
+Partition  5 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  71.6666666667
+Final solution's test score:  73.3333333333
+KNN' execution time in seconds:  0.005330324172973633
+Results for KNN in arr
+Partition  3 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  60.824742268
+Final solution's test score:  65.1041666667
+KNN' execution time in seconds:  0.02130413055419922
+Partition  3 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  61.9791666667
+Final solution's test score:  64.9484536082
+KNN' execution time in seconds:  0.022131919860839844
+Results for KNN in arr
+Partition  4 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  60.824742268
+Final solution's test score:  64.5833333333
+KNN' execution time in seconds:  0.01932668685913086
+Partition  4 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  64.5833333333
+Final solution's test score:  62.3711340206
+KNN' execution time in seconds:  0.02024245262145996
+Results for KNN in arr
+Partition  5 - 1
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  67.0103092784
+Final solution's test score:  63.0208333333
+KNN' execution time in seconds:  0.019290685653686523
+Partition  5 - 2
+Ejecutando KNNCUDA
+% reduction:  0.0 %
+Final solution's training score:  63.5416666667
+Final solution's test score:  62.3711340206
+KNN' execution time in seconds:  0.020076990127563477

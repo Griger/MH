@@ -17,7 +17,7 @@ def SFSCUDA(data, labels, knnGPU):
 	finish = False
 	sol = np.repeat(False, n_features)
 	sol_score = 0
-	c_idx = range(0, n_features)
+	c_idx = list(range(0, n_features))
 
 	#while we get profit and we can add new features
 	while (not finish and len(c_idx) != 0):
