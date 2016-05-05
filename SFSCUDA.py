@@ -12,6 +12,7 @@ vgetFeatureClassificationScore = np.vectorize(getFeatureClassificationScore, exc
 
 #Function that implements the SFS algorithm
 def SFSCUDA(data, labels, knnGPU):
+	print("Ejecutando SFSCUDA")
 	n_features = len(data[0])
 	finish = False
 	sol = np.repeat(False, n_features)
