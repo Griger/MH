@@ -70,7 +70,7 @@ def AGE(train_data, train_labels, knnGPU):
         mutant_genes_idx = np.random.randint(0, n, n_mutations)
 
         for son, gen_idx in zip(children[mutant_children_idx], mutant_genes_idx):
-            mutate[son["chromosome"], gen_idx]
+            mutate(son["chromosome"], gen_idx)
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
         n_evals += n_mutations
