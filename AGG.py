@@ -55,7 +55,7 @@ def AGG(train_data, train_labels, knnGPU):
             idx = np.random.randint(np.random.randint(0,p_size), p_size)
 
         selected_pairs = zip(selected_parent_idx[0::2], selected_parent_idx[1::2])
-        print(selected_pairs)
+        print(selected_parent_idx)
 
         #cross
         children = np.zeros(p_size, dtype=datatype)
