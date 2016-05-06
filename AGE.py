@@ -20,7 +20,7 @@ def mutate(s, gen_idx):
 
 def isSolHere(sol, sols_set):
     equal_elements = sol == sols_set
-    return len(sol) in equals_elements.sum(axis = 1)
+    return len(sol) in equal_elements.sum(axis = 1)
 
 def AGE(train_data, train_labels, knnGPU):
     max_evals = 15000
