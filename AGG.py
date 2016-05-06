@@ -96,4 +96,5 @@ def AGG(train_data, train_labels, knnGPU):
         parent.sort(order="score")
 
 
+    print("Se han hecho ", n_evals, " llamadas a la función objetivo.\n")
     return parent[-1] #devolvemos la mejor solución pues se habrá ido manteniendo
