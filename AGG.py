@@ -51,8 +51,8 @@ def AGG(train_data, train_labels, knnGPU):
         #selection by binary tournament
         selected_parent_idx = np.empty(p_size, dtype=np.int32)
 
-        for idx in selected_parent_idx:
-            idx = np.random.randint(np.random.randint(0,p_size), p_size)
+        for idx in range(0,p_size):
+            selected_parent_idx[idx] = np.random.randint(np.random.randint(0,p_size), p_size)
 
         selected_pairs = zip(selected_parent_idx[0::2], selected_parent_idx[1::2])
         print(selected_parent_idx)
