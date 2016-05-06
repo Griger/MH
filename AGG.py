@@ -23,7 +23,7 @@ def isSolHere(sol, sols_set):
     return len(sol) in equal_elements.sum(axis = 1)
 
 def AGG(train_data, train_labels, knnGPU):
-    max_evals = 15000
+    max_evals = 300
     n = len(train_data[0])
     p_size = 30 #population size
 
@@ -55,7 +55,7 @@ def AGG(train_data, train_labels, knnGPU):
             selected_parent_idx[idx] = np.random.randint(np.random.randint(0,p_size), p_size)
 
         selected_pairs = zip(selected_parent_idx[0::2], selected_parent_idx[1::2])
-        print(selected_parent_idx)
+        print(selected_pairs)
 
         #cross
         children = np.zeros(p_size, dtype=datatype)
@@ -64,11 +64,13 @@ def AGG(train_data, train_labels, knnGPU):
             cross(parent[p_pair[0]]["chromosome"], parent[p_pair[1]]["chromosome"], first_son["chromosome"], second_son["chromosome"])
 
         children[2*n_crosses:] = parent[selected_parent_idx[2*n_crosses:]].copy()
+        print("hijos", children)
 
         for son in children[0:2*n_crosses]:
             n_evals += 1
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
+        print("scores", children["scores"])
         if n_evals >= max_evals:
             break
 
