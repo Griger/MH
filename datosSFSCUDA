@@ -1,0 +1,195 @@
+Results for SFS in wdbc
+Partition  1 - 1
+Ejecutando SFSCUDA
+% reduction:  83.33333333333334 %
+Final solution's training score:  95.4385964912
+Final solution's test score:  95.4225352113
+SFS' execution time in seconds:  0.24252080917358398
+Partition  1 - 2
+Ejecutando SFSCUDA
+% reduction:  90.0 %
+Final solution's training score:  97.5352112676
+Final solution's test score:  92.9824561404
+SFS' execution time in seconds:  0.15307092666625977
+Results for SFS in wdbc
+Partition  2 - 1
+Ejecutando SFSCUDA
+% reduction:  86.66666666666667 %
+Final solution's training score:  97.1929824561
+Final solution's test score:  97.5352112676
+SFS' execution time in seconds:  0.19744300842285156
+Partition  2 - 2
+Ejecutando SFSCUDA
+% reduction:  90.0 %
+Final solution's training score:  97.5352112676
+Final solution's test score:  95.7894736842
+SFS' execution time in seconds:  0.1543440818786621
+Results for SFS in wdbc
+Partition  3 - 1
+Ejecutando SFSCUDA
+% reduction:  83.33333333333334 %
+Final solution's training score:  96.4912280702
+Final solution's test score:  95.7746478873
+SFS' execution time in seconds:  0.24031519889831543
+Partition  3 - 2
+Ejecutando SFSCUDA
+% reduction:  86.66666666666667 %
+Final solution's training score:  97.8873239437
+Final solution's test score:  95.0877192982
+SFS' execution time in seconds:  0.19626998901367188
+Results for SFS in wdbc
+Partition  4 - 1
+Ejecutando SFSCUDA
+% reduction:  93.33333333333333 %
+Final solution's training score:  95.0877192982
+Final solution's test score:  91.5492957746
+SFS' execution time in seconds:  0.11099624633789062
+Partition  4 - 2
+Ejecutando SFSCUDA
+% reduction:  76.66666666666667 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  94.0350877193
+SFS' execution time in seconds:  0.3310704231262207
+Results for SFS in wdbc
+Partition  5 - 1
+Ejecutando SFSCUDA
+% reduction:  86.66666666666667 %
+Final solution's training score:  96.8421052632
+Final solution's test score:  97.1830985915
+SFS' execution time in seconds:  0.19740724563598633
+Partition  5 - 2
+Ejecutando SFSCUDA
+% reduction:  83.33333333333334 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  94.0350877193
+SFS' execution time in seconds:  0.2407057285308838
+Results for SFS in libras
+Partition  1 - 1
+Ejecutando SFSCUDA
+% reduction:  90.0 %
+Final solution's training score:  78.8888888889
+Final solution's test score:  72.2222222222
+SFS' execution time in seconds:  1.0403056144714355
+Partition  1 - 2
+Ejecutando SFSCUDA
+% reduction:  93.33333333333333 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  60.0
+SFS' execution time in seconds:  0.6923553943634033
+Results for SFS in libras
+Partition  2 - 1
+Ejecutando SFSCUDA
+% reduction:  88.88888888888889 %
+Final solution's training score:  77.2222222222
+Final solution's test score:  66.1111111111
+SFS' execution time in seconds:  1.1604273319244385
+Partition  2 - 2
+Ejecutando SFSCUDA
+% reduction:  91.11111111111111 %
+Final solution's training score:  76.1111111111
+Final solution's test score:  65.5555555556
+SFS' execution time in seconds:  0.921917200088501
+Results for SFS in libras
+Partition  3 - 1
+Ejecutando SFSCUDA
+% reduction:  90.0 %
+Final solution's training score:  78.3333333333
+Final solution's test score:  73.8888888889
+SFS' execution time in seconds:  1.0382723808288574
+Partition  3 - 2
+Ejecutando SFSCUDA
+% reduction:  91.11111111111111 %
+Final solution's training score:  76.1111111111
+Final solution's test score:  75.0
+SFS' execution time in seconds:  0.9234206676483154
+Results for SFS in libras
+Partition  4 - 1
+Ejecutando SFSCUDA
+% reduction:  91.11111111111111 %
+Final solution's training score:  76.1111111111
+Final solution's test score:  67.2222222222
+SFS' execution time in seconds:  0.9193933010101318
+Partition  4 - 2
+Ejecutando SFSCUDA
+% reduction:  93.33333333333333 %
+Final solution's training score:  70.5555555556
+Final solution's test score:  65.5555555556
+SFS' execution time in seconds:  0.6918535232543945
+Results for SFS in libras
+Partition  5 - 1
+Ejecutando SFSCUDA
+% reduction:  93.33333333333333 %
+Final solution's training score:  68.3333333333
+Final solution's test score:  62.7777777778
+SFS' execution time in seconds:  0.6955409049987793
+Partition  5 - 2
+Ejecutando SFSCUDA
+% reduction:  92.22222222222223 %
+Final solution's training score:  74.4444444444
+Final solution's test score:  66.1111111111
+SFS' execution time in seconds:  0.8107216358184814
+Results for SFS in arr
+Partition  1 - 1
+Ejecutando SFSCUDA
+% reduction:  97.12230215827337 %
+Final solution's training score:  79.8969072165
+Final solution's test score:  68.2291666667
+SFS' execution time in seconds:  3.0004284381866455
+Partition  1 - 2
+Ejecutando SFSCUDA
+% reduction:  98.56115107913669 %
+Final solution's training score:  74.4791666667
+Final solution's test score:  70.1030927835
+SFS' execution time in seconds:  1.511418342590332
+Results for SFS in arr
+Partition  2 - 1
+Ejecutando SFSCUDA
+% reduction:  97.12230215827337 %
+Final solution's training score:  84.5360824742
+Final solution's test score:  71.3541666667
+SFS' execution time in seconds:  3.0084896087646484
+Partition  2 - 2
+Ejecutando SFSCUDA
+% reduction:  99.28057553956835 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  69.587628866
+SFS' execution time in seconds:  0.8493826389312744
+Results for SFS in arr
+Partition  3 - 1
+Ejecutando SFSCUDA
+% reduction:  97.48201438848922 %
+Final solution's training score:  77.3195876289
+Final solution's test score:  69.7916666667
+SFS' execution time in seconds:  2.624932289123535
+Partition  3 - 2
+Ejecutando SFSCUDA
+% reduction:  96.0431654676259 %
+Final solution's training score:  85.9375
+Final solution's test score:  74.2268041237
+SFS' execution time in seconds:  4.271303653717041
+Results for SFS in arr
+Partition  4 - 1
+Ejecutando SFSCUDA
+% reduction:  96.0431654676259 %
+Final solution's training score:  79.8969072165
+Final solution's test score:  67.1875
+SFS' execution time in seconds:  4.242765188217163
+Partition  4 - 2
+Ejecutando SFSCUDA
+% reduction:  96.76258992805755 %
+Final solution's training score:  83.3333333333
+Final solution's test score:  78.8659793814
+SFS' execution time in seconds:  3.413478374481201
+Results for SFS in arr
+Partition  5 - 1
+Ejecutando SFSCUDA
+% reduction:  96.0431654676259 %
+Final solution's training score:  84.0206185567
+Final solution's test score:  69.7916666667
+SFS' execution time in seconds:  4.264729976654053
+Partition  5 - 2
+Ejecutando SFSCUDA
+% reduction:  96.0431654676259 %
+Final solution's training score:  83.8541666667
+Final solution's test score:  73.7113402062
+SFS' execution time in seconds:  4.250511646270752

@@ -55,18 +55,21 @@ def AGG(train_data, train_labels, knnGPU):
         for idx in selected_parent_idx:
             idx = np.random.randint(np.random.randint(0,p_size), p_size)
 
+        selected_pairs = zip(selected_parent_idx[0::2], selected_parent_idx[1::2])
+
         #cross
         children = np.zeros(p_size, dtype=datatype)
 
-        for first_parent_idx, second_parent_idx, first_son, second_son in selected_parent_idx[0:2*n_crosses:2], selected_parent_idx[1:2*n_crosses:2], children[0:2*n_crosses:2], children[1:2*n_crosses:2]:
-            cross(parent[first_parent_idx]["chromosome"], parent[second_parent_idx]["chromosome"], first_son["chromosome"], second_son["chromosome"])
+        for p_pair, first_son, second_son in selected_pairs, children[0::2], children[1::2]:
+            cross(parent[p_pair[0]]["chromosome"], parent[p_pair[1]]["chromosome"], first_son["chromosome"], second_son["chromosome"])
 
-        children[2*n_crosses:] = parent[idx[n_crosses:]].copy()
+        children[2*n_crosses:] = parent[idx[2*n_crosses:]].copy()
 
         for son in children[0:2*n_crosses]:
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
         n_evals += 2*n_crosses
+        
         if n_evals >= max_evals:
             break
 
