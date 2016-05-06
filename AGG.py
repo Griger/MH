@@ -60,7 +60,7 @@ def AGG(train_data, train_labels, knnGPU):
         #cross
         children = np.zeros(p_size, dtype=datatype)
 
-        for p_pair, first_son, second_son in selected_pairs, children[0::2], children[1::2]:
+        for p_pair, first_son, second_son in zip(selected_pairs, children[0::2], children[1::2]):
             cross(parent[p_pair[0]]["chromosome"], parent[p_pair[1]]["chromosome"], first_son["chromosome"], second_son["chromosome"])
 
         children[2*n_crosses:] = parent[idx[2*n_crosses:]].copy()
