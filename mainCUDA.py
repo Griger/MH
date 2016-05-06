@@ -101,7 +101,7 @@ else:
 		arr_train_data.append(D)
 		arr_train_labels.append(L)
 
-	for i in range(0,1):
+	for i in range(0,5):
 		print("Results for", heuristic_name, "in arr")
 		print("Partition ", i+1, "-", 1)
 		getResult(heuristic_name, heuristic, arr_train_data[i], arr_train_labels[i], arr_test_data[i], arr_test_labels[i])

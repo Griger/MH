@@ -2,25 +2,22 @@ import numpy as np
 from knnLooGPU import *
 from math import *
 
-def cross(first_parent, second_parent, first_son, second_son):
-    not_equals_idx = first_parent ^ second_parent
-    equals_idx = np.logical_not(not_equals_idx)
+def cross(first_parent, second_parent):
+    eq_idx = first_parent == second_parent
+    neq_idx = np.logical_not(eq_idx)
 
     #copy identical genes into children
-    first_son = first_parent & equals_idx
-    second_son = first_parent & equals_idx
+    first_son = first_parent & eq_idx
+    second_son = first_parent & eq_idx
 
     #random different genes selection
-    not_equals_size = sum(not_equals_idx)
-    first_son[not_equals_idx] = np.random.choice([True, False], not_equals_size)
-    second_son[not_equals_idx] = np.logical_not(first_son[not_equals_idx])
+    neq_size = sum(neq_idx)
+    first_son[neq_idx] = np.random.choice([True, False], neq_size)
+    second_son[neq_idx] = np.logical_not(first_son[neq_idx])
+    return first_son, second_son
 
 def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
-
-def isSolHere(sol, sols_set):
-    equal_elements = sol == sols_set
-    return len(sol) in equal_elements.sum(axis = 1)
 
 def AGE(train_data, train_labels, knnGPU):
     max_evals = 15000
