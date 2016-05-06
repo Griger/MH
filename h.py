@@ -111,6 +111,6 @@ for i in range(0,p_size):
 
 print "Hijos antes:\n",children
 for idx in range(0,p_size):
-    children[idx]["score"] = idx
+    children["chromosome"][idx] = np.array([True,True,False,False,True,True,False,False,True,True])
 
 print "Hijos despues:\n",children
