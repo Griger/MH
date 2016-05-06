@@ -42,9 +42,8 @@ def AGG(train_data, train_labels, knnGPU):
     parent["chromosome"] = np.random.choice([True,False], (p_size, n)) #random initial population
 
     for individual in parent:
+        n_evals += 1
         individual["score"] = knnGPU.scoreSolution(train_data[:,individual["chromosome"]], train_labels)
-
-    n_evals += p_size
 
     parent.sort(order="score")
 
@@ -66,9 +65,8 @@ def AGG(train_data, train_labels, knnGPU):
         children[2*n_crosses:] = parent[selected_parent_idx[2*n_crosses:]].copy()
 
         for son in children[0:2*n_crosses]:
+            n_evals += 1
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
-
-        n_evals += 2*n_crosses
 
         if n_evals >= max_evals:
             break
@@ -78,10 +76,10 @@ def AGG(train_data, train_labels, knnGPU):
         mutant_genes_idx = np.random.randint(0, n, n_mutations)
 
         for son, gen_idx in zip(children[mutant_children_idx], mutant_genes_idx):
+            n_evals += 1
             mutate(son["chromosome"], gen_idx)
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
-        n_evals += n_mutations
         if n_evals >= max_evals:
             break
 

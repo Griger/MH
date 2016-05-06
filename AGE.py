@@ -39,9 +39,8 @@ def AGE(train_data, train_labels, knnGPU):
     parent["chromosome"] = np.random.choice([True,False], (p_size, n)) #random initial population
 
     for individual in parent:
+        n_evals += 1
         individual["score"] = knnGPU.scoreSolution(train_data[:,individual["chromosome"]], train_labels)
-
-    n_evals += p_size
 
     parent.sort(order="score")
 

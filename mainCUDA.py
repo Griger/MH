@@ -38,7 +38,7 @@ if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 else:
 	heuristic_name = sys.argv[1]
 	heuristic = heuristics[heuristic_name]
-
+	'''
 	wdbc_test_data = []
 	wdbc_test_labels = []
 	wdbc_train_data = []
@@ -84,7 +84,7 @@ else:
 		getResult(heuristic_name, heuristic, libras_train_data[i], libras_train_labels[i], libras_test_data[i], libras_test_labels[i])
 		print("Partition ", i+1, "-", 2)
 		getResult(heuristic_name, heuristic, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
-
+	'''
 
 	arr_test_data = []
 	arr_test_labels = []
@@ -101,7 +101,7 @@ else:
 		arr_train_data.append(D)
 		arr_train_labels.append(L)
 
-	for i in range(0,5):
+	for i in range(0,0):
 		print("Results for", heuristic_name, "in arr")
 		print("Partition ", i+1, "-", 1)
 		getResult(heuristic_name, heuristic, arr_train_data[i], arr_train_labels[i], arr_test_data[i], arr_test_labels[i])
