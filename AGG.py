@@ -63,7 +63,7 @@ def AGG(train_data, train_labels, knnGPU):
         for p_pair, first_son, second_son in zip(selected_pairs, children[0::2], children[1::2]):
             cross(parent[p_pair[0]]["chromosome"], parent[p_pair[1]]["chromosome"], first_son["chromosome"], second_son["chromosome"])
 
-        children[2*n_crosses:] = parent[idx[2*n_crosses:]].copy()
+        children[2*n_crosses:] = parent[selected_parent_idx[2*n_crosses:]].copy()
 
         for son in children[0:2*n_crosses]:
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
