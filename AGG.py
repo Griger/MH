@@ -3,17 +3,17 @@ from knnLooGPU import *
 from math import *
 
 def cross(first_parent, second_parent, first_son, second_son):
-    not_equals_idx = first_parent ^ second_parent
-    equals_idx = np.logical_not(not_equals_idx)
+    eq_idx = first_parent == second_parent
+    neq_idx = np.logical_not(eq_idx)
 
     #copy identical genes into children
-    first_son = first_parent & equals_idx
-    second_son = first_parent & equals_idx
+    first_son = first_parent & eq_idx
+    second_son = first_parent & eq_idx
 
     #random different genes selection
-    not_equals_size = sum(not_equals_idx)
-    first_son[not_equals_idx] = np.random.choice([True, False], not_equals_size)
-    second_son[not_equals_idx] = np.logical_not(first_son[not_equals_idx])
+    neq_size = sum(neq_idx)
+    first_son[neq_idx] = np.random.choice([True, False], neq_size)
+    second_son[neq_idx] = np.logical_not(first_son[neq_idx])
 
 def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
@@ -69,7 +69,7 @@ def AGG(train_data, train_labels, knnGPU):
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
         n_evals += 2*n_crosses
-        
+
         if n_evals >= max_evals:
             break
 
