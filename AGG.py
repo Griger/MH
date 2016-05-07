@@ -20,7 +20,7 @@ def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
 
 def AGG(train_data, train_labels, knnGPU):
-    max_evals = 300
+    max_evals = 15000
     n = len(train_data[0])
     p_size = 30 #population size
 
@@ -85,5 +85,5 @@ def AGG(train_data, train_labels, knnGPU):
 
         parent.sort(order="score")
 
-
+    print("Se han realizado ", n_evals, " evaluaciones\n")
     return parent[-1] #devolvemos la mejor solución pues se habrá ido manteniendo
