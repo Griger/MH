@@ -25,7 +25,7 @@ def AGE(train_data, train_labels, knnGPU):
     p_size = 30
 
     mutation_p = 0.001
-    n_mutations = ceil(p_size * n * mutation_p)
+    mutations_threshold = 2 * n /1000.0
 
     n_evals = 0
 
@@ -43,45 +43,36 @@ def AGE(train_data, train_labels, knnGPU):
 
     while (n_evals < max_evals):
         #selection by binary tournament of two parent
-        selected_parent_idx = np.empty(2, dtype=np.int32)
-
-        for idx in selected_parent_idx:
-            idx = np.random.randint(np.random.randint(0,p_size), p_size)
+        idx1 = np.random.randint(np.random.randint(0,p_size), p_size)
+        idx2 = np.random.randint(np.random.randint(0,p_size), p_size)
 
         #cross
         children = np.zeros(2, dtype=datatype)
 
-        cross(parent[selected_parent_idx[0]]["chromosome"], parent[selected_parent_idx[1]]["chromosome"], children[0]["chromosome"], children[1]["chromosome"])
+        children["chromosome"][0], children["chromosome"][1] = cross(parent["chromosome"][idx1], parent["chromosome"][idx2])
 
         for son in children:
             son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
 
         n_evals += 2
 
-        if n_evals >= max_evals:
-            break
-
         #mutation
-        mutant_children_idx = np.random.randint(0, 2, n_mutations)
-        mutant_genes_idx = np.random.randint(0, n, n_mutations)
-
-        for son, gen_idx in zip(children[mutant_children_idx], mutant_genes_idx):
-            mutate(son["chromosome"], gen_idx)
-            son["score"] = knnGPU.scoreSolution(train_data[:,son["chromosome"]], train_labels)
-
-        n_evals += n_mutations
-        if n_evals >= max_evals:
-            break
+        if np.random.random() <= mutations_threshold:
+            mutant_children_idx = np.random.randint(0, 2)
+            mutant_gen_idx = np.random.randint(0, n)
+            mutate(children["chromosome"][mutant_children_idx], mutant_gen_idx)
+            children["score"][mutant_children_idx] = knnGPU.scoreSolution(train_data[:,children["chromosome"][mutant_children_idx]], train_labels)
+            n_evals += 1
 
         #replacement with elitism
         children.sort(order="score")
 
-        if children[1]["score"] > parent[1]["score"]:
+        if children["score"][1] > parent["score"][1]:
             parent[1] = children[1]
 
-            if children[0]["score"] > parent[0]["score"]:
+            if children["score"][0] > parent["score"][0]:
                 parent[0] = children[0]
-        elif children[1]["score"] > parent[0]["score"]:
+        elif children["score"][1] > parent["score"][0]:
             parent[0] = children[1]
 
         parent.sort(order="score")

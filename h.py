@@ -20,7 +20,6 @@ def mutate(s, gen_idx):
 def h(s):
     print "Me han pasado: \n", s
 
-'''
 n = 10
 p_size = 6 #population size
 
@@ -79,7 +78,7 @@ print mutant_genes_idx
 
 for idx, gen_idx in zip(mutant_children_idx, mutant_genes_idx):
     n_evals += 1
-    mutate(children[idx]["chromosome"], gen_idx)
+    mutate(children["chromosome"][idx], gen_idx)
     children["score"][idx] = np.random.randint(0,100)
 
 print "Hijos tras mutacion \n", children
@@ -97,20 +96,3 @@ print "El peor hijo es ahora: \n", children[0]
 parent = children
 
 print(parent)
-'''
-
-p_size = 6
-n = 10
-
-size_chromosome_string = str(n) + 'bool'
-datatype = np.dtype( [('chromosome',size_chromosome_string), ('score',np.float32)] )
-children = np.zeros(p_size, dtype=datatype)
-
-for i in range(0,p_size):
-    children["chromosome"][i][i] = True
-
-print "Hijos antes:\n",children
-for idx in range(0,p_size):
-    children["chromosome"][idx] = np.array([True,True,False,False,True,True,False,False,True,True])
-
-print "Hijos despues:\n",children

@@ -43,7 +43,7 @@ def AGG(train_data, train_labels, knnGPU):
         individual["score"] = knnGPU.scoreSolution(train_data[:,individual["chromosome"]], train_labels)
 
     parent.sort(order="score")
-    print(parent["score"])
+    
     while (n_evals < max_evals):
         #selection by binary tournament
         selected_parent_idx = np.empty(p_size, dtype=np.int32)
@@ -72,7 +72,7 @@ def AGG(train_data, train_labels, knnGPU):
 
         for idx, gen_idx in zip(mutant_children_idx, mutant_genes_idx):
             n_evals += 1
-            mutate(children[idx]["chromosome"], gen_idx)
+            mutate(children["chromosome"][idx], gen_idx)
             children["score"][idx] = knnGPU.scoreSolution(train_data[:,children["chromosome"][idx]], train_labels)
 
         #replacement with elitism
