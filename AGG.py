@@ -86,4 +86,5 @@ def AGG(train_data, train_labels, knnGPU):
         parent.sort(order="score")
 
     print("Se han realizado ", n_evals, " evaluaciones\n")
-    return parent[-1] #devolvemos la mejor solución pues se habrá ido manteniendo
+    print(parent)
+    return parent["chromosome"][-1], parent["score"][-1] #devolvemos la mejor solución pues se habrá ido manteniendo
