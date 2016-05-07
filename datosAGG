@@ -1,0 +1,195 @@
+Results for AGG in wdbc
+Partition  1 - 1
+Ejecutando AGG
+% reduction:  33.33333333333333 %
+Final solution's training score:  97.5439
+Final solution's test score:  96.8309859155
+AGG' execution time in seconds:  40.276225090026855
+Partition  1 - 2
+Ejecutando AGG
+% reduction:  40.0 %
+Final solution's training score:  98.2394
+Final solution's test score:  94.7368421053
+AGG' execution time in seconds:  37.61541295051575
+Results for AGG in wdbc
+Partition  2 - 1
+Ejecutando AGG
+% reduction:  26.666666666666668 %
+Final solution's training score:  98.2456
+Final solution's test score:  95.7746478873
+AGG' execution time in seconds:  41.894726276397705
+Partition  2 - 2
+Ejecutando AGG
+% reduction:  60.0 %
+Final solution's training score:  98.5916
+Final solution's test score:  95.0877192982
+AGG' execution time in seconds:  32.82013821601868
+Results for AGG in wdbc
+Partition  3 - 1
+Ejecutando AGG
+% reduction:  33.33333333333333 %
+Final solution's training score:  96.8421
+Final solution's test score:  98.5915492958
+AGG' execution time in seconds:  39.79354691505432
+Partition  3 - 2
+Ejecutando AGG
+% reduction:  23.333333333333332 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.0877192982
+AGG' execution time in seconds:  42.6808180809021
+Results for AGG in wdbc
+Partition  4 - 1
+Ejecutando AGG
+% reduction:  23.333333333333332 %
+Final solution's training score:  97.8947
+Final solution's test score:  96.1267605634
+AGG' execution time in seconds:  42.33968114852905
+Partition  4 - 2
+Ejecutando AGG
+% reduction:  33.33333333333333 %
+Final solution's training score:  98.9437
+Final solution's test score:  94.7368421053
+AGG' execution time in seconds:  40.27926325798035
+Results for AGG in wdbc
+Partition  5 - 1
+Ejecutando AGG
+% reduction:  26.666666666666668 %
+Final solution's training score:  98.2456
+Final solution's test score:  95.0704225352
+AGG' execution time in seconds:  40.89183592796326
+Partition  5 - 2
+Ejecutando AGG
+% reduction:  13.333333333333334 %
+Final solution's training score:  99.2958
+Final solution's test score:  95.4385964912
+AGG' execution time in seconds:  45.5338339805603
+Results for AGG in libras
+Partition  1 - 1
+Ejecutando AGG
+% reduction:  37.77777777777778 %
+Final solution's training score:  80.0
+Final solution's test score:  77.7777777778
+AGG' execution time in seconds:  50.2458701133728
+Partition  1 - 2
+Ejecutando AGG
+% reduction:  47.77777777777778 %
+Final solution's training score:  77.2222
+Final solution's test score:  70.0
+AGG' execution time in seconds:  45.30678939819336
+Results for AGG in libras
+Partition  2 - 1
+Ejecutando AGG
+% reduction:  38.88888888888889 %
+Final solution's training score:  78.3333
+Final solution's test score:  66.6666666667
+AGG' execution time in seconds:  48.90317893028259
+Partition  2 - 2
+Ejecutando AGG
+% reduction:  42.22222222222222 %
+Final solution's training score:  81.1111
+Final solution's test score:  72.2222222222
+AGG' execution time in seconds:  48.72094011306763
+Results for AGG in libras
+Partition  3 - 1
+Ejecutando AGG
+% reduction:  34.44444444444444 %
+Final solution's training score:  78.3333
+Final solution's test score:  71.6666666667
+AGG' execution time in seconds:  51.50032639503479
+Partition  3 - 2
+Ejecutando AGG
+% reduction:  36.666666666666664 %
+Final solution's training score:  77.2222
+Final solution's test score:  72.7777777778
+AGG' execution time in seconds:  50.99352431297302
+Results for AGG in libras
+Partition  4 - 1
+Ejecutando AGG
+% reduction:  45.55555555555556 %
+Final solution's training score:  79.4444
+Final solution's test score:  71.1111111111
+AGG' execution time in seconds:  46.5585777759552
+Partition  4 - 2
+Ejecutando AGG
+% reduction:  56.666666666666664 %
+Final solution's training score:  77.7778
+Final solution's test score:  74.4444444444
+AGG' execution time in seconds:  40.83958053588867
+Results for AGG in libras
+Partition  5 - 1
+Ejecutando AGG
+% reduction:  46.666666666666664 %
+Final solution's training score:  77.7778
+Final solution's test score:  76.1111111111
+AGG' execution time in seconds:  46.04921579360962
+Partition  5 - 2
+Ejecutando AGG
+% reduction:  47.77777777777778 %
+Final solution's training score:  80.0
+Final solution's test score:  73.8888888889
+AGG' execution time in seconds:  46.11744546890259
+Results for AGG in arr
+Partition  1 - 1
+Ejecutando AGG
+% reduction:  21.223021582733814 %
+Final solution's training score:  75.7732
+Final solution's test score:  66.1458333333
+AGG' execution time in seconds:  160.56510043144226
+Partition  1 - 2
+Ejecutando AGG
+% reduction:  12.589928057553957 %
+Final solution's training score:  74.4792
+Final solution's test score:  64.9484536082
+AGG' execution time in seconds:  219.25203776359558
+Results for AGG in arr
+Partition  2 - 1
+Ejecutando AGG
+% reduction:  28.05755395683453 %
+Final solution's training score:  77.3196
+Final solution's test score:  60.9375
+AGG' execution time in seconds:  149.9527804851532
+Partition  2 - 2
+Ejecutando AGG
+% reduction:  22.66187050359712 %
+Final solution's training score:  73.9583
+Final solution's test score:  68.0412371134
+AGG' execution time in seconds:  194.06235718727112
+Results for AGG in arr
+Partition  3 - 1
+Ejecutando AGG
+% reduction:  21.942446043165468 %
+Final solution's training score:  73.1959
+Final solution's test score:  65.1041666667
+AGG' execution time in seconds:  158.4280242919922
+Partition  3 - 2
+Ejecutando AGG
+% reduction:  16.546762589928058 %
+Final solution's training score:  72.3958
+Final solution's test score:  63.9175257732
+AGG' execution time in seconds:  212.0296368598938
+Results for AGG in arr
+Partition  4 - 1
+Ejecutando AGG
+% reduction:  29.136690647482016 %
+Final solution's training score:  76.2887
+Final solution's test score:  68.2291666667
+AGG' execution time in seconds:  148.90793538093567
+Partition  4 - 2
+Ejecutando AGG
+% reduction:  13.66906474820144 %
+Final solution's training score:  74.4792
+Final solution's test score:  63.4020618557
+AGG' execution time in seconds:  213.18100023269653
+Results for AGG in arr
+Partition  5 - 1
+Ejecutando AGG
+% reduction:  24.820143884892087 %
+Final solution's training score:  73.1959
+Final solution's test score:  66.6666666667
+AGG' execution time in seconds:  155.77953433990479
+Partition  5 - 2
+Ejecutando AGG
+% reduction:  29.136690647482016 %
+Final solution's training score:  75.0
+Final solution's test score:  64.4329896907
+AGG' execution time in seconds:  175.24088072776794
