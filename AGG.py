@@ -20,6 +20,7 @@ def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
 
 def AGG(train_data, train_labels, knnGPU):
+    print("Ejecutando AGG")
     max_evals = 15000
     n = len(train_data[0])
     p_size = 30 #population size
@@ -43,7 +44,7 @@ def AGG(train_data, train_labels, knnGPU):
         individual["score"] = knnGPU.scoreSolution(train_data[:,individual["chromosome"]], train_labels)
 
     parent.sort(order="score")
-    
+
     while (n_evals < max_evals):
         #selection by binary tournament
         selected_parent_idx = np.empty(p_size, dtype=np.int32)
@@ -82,9 +83,6 @@ def AGG(train_data, train_labels, knnGPU):
             children[0] = parent[-1]
 
         parent = children
-        print(parent["score"])
         parent.sort(order="score")
 
-    print("Se han realizado ", n_evals, " evaluaciones\n")
-    print(parent["score"])
     return parent["chromosome"][-1], parent["score"][-1] #devolvemos la mejor solución pues se habrá ido manteniendo
