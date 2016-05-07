@@ -188,6 +188,7 @@ Los algoritmos han sido implementados en Python 3.1 TODO para su ejecución son 
 
 \begin{itemize}
 \item numpy (v 1.8.2) \textbf{sudo apt-get install python-numpy}
+\item scikit \textbf{sudo apt-get install python-scikits-learn}
 \item jinja2
 \item pycuda
 \item El resto de módulos empleados suelen venir con las distribuciones básicas de Python (random, sys y time).
@@ -209,8 +210,6 @@ Estos archivos deberán reemplazar a aquellos que se encuentran en el directorio
 
 Estás prácticas han sido implementadas en Python 2.7.6 y ejecutadas sobre un ordenador son S.O. Ubuntu 14.04 LTS, de 8GB de RAM y procesador Intel Core i7-4790 CPU 3.60GHz con 8 núcleos, aunque dado que el código no ha sido paralelizado estos núcleos no han sido explotados al máximo.\\
 
-Debido a algunas complicaciones y a la falta de tiempo he ejecutado los algoritmo con un número máximo de evaluaciones de 5000 en lugar de 15000 lo que se ve reflejado en el tiempo de ejecución: por ejemplo la Búsqueda Tabú tarda aproximadamente un tercio del tiempo ya que como no tiene otro criterio de parada que no sea el número de evaluaciones, la reducción se ve afectada justamente por el número máximo de evaluaciones que se hagan.\\
-
 Hemos empleado tres bases de datos distintas, a continuación mencionamos sus tamaños ya que serán interesantes para el posterior análisis de resultados:\\
 
 \begin{itemize}
@@ -219,7 +218,7 @@ Hemos empleado tres bases de datos distintas, a continuación mencionamos sus ta
 \item \textbf{arritmia}: Los datos de este conjunto son mediciones para determinar la presencia de arritmia cardiaca o no. Tenemos \textbf{386} muestras con \textbf{278} caracterísitcas cada una, a clasificar en \textbf{5} grupos en base al tipo de arritmia que indican los datos de la muestra.
 \end{itemize}
 
-Lo que hemos hecho con los datos ha sido un preprocesado, en primer lugar todos los datos han sido codificados como flotantes (las etiquetas de wdbc eran cadenas de texto y las hemos cambiado por los valores 0 y 1), también hemos puesto la etiqueta en la última columna de la tabla de datos.\\
+Lo que hemos hecho con los datos ha sido un preprocesado, en primer lugar todos los datos han sido codificados como flotantes (las etiquetas de wdbc eran cadenas de texto y las hemos cambiado por los valores 0 y 1), también hemos puesto la etiqueta en la última columna de la tabla de datos. Es importante señalar que para poder emplear el KNN implementado en pyCUDA que hemos mencionado antes hemos tenido que codificar los distintos datos de las particiones en 32 bits ya que así es como estaba configurado el clasificador y CUDA no hace correctamente el casting de 64b a 32b.\\
 
 También hemos normalizado cada una de las columnas de datos (sin contar la de etiquetas) de modo que los valores quedaran en el intervalo [0,1] mediantes la fórmula:\\
 
@@ -229,9 +228,9 @@ $x_j^N = \dfrac{x_j - Min_j}{Max_j-Min_j}$ (siendo $Max_j$ y $Min_j$ el máximo 
 
 El código empleado para este formateo de los datos está en el fichero \textbf{\textcolor{green}{loader.py}} que se adjunta en la entrega. Como podemos ver para realizar la normalización de los datos hemos usado una utilidad del módulo scikit-learn antes mencionado que se llama MinMaxScaler. Y para futuros usos de estos datos normalizados, y con el objetivo de no tener que realizar tales operaciones cada ocasión que queramos usarlos, hemos almacenado los arrays de numpy donde hemos almacenado los datos en sendos ficheros con extensión .npy usando la función \textbf{numpy.save}. Estos ficheros son: \textbf{\textcolor{green}{data\_wdbc.npy}}, \textbf{\textcolor{green}{data\_libras.npy}} y \textbf{\textcolor{green}{data\_arrhythmia.npy}}.\\
 
-A continuación hemos elaborado las distintas particiones sobre estos datos que serán utilizadas en los experimentos, para ello hemos elaborado el código recogido en el fichero \textbf{\textcolor{green}{partition\_maker.npy}} donde simplemente tomamos una muestra aleatoria de los índices de los arrays antes generados, teniendo en cuenta que la cantidad de muestras de cada una de las clases en las que se clasifican los datos sea lo más equilibrida posible entre la partición de test y su correspondiente partición de training. La semilla usada para la generación de dichas particiones, y que podemos ver en el fichero mencionado, ha sido la \textbf{12345678}. Nuevamente hemos almacenado cada una de dichas particiones en ficheros .npy, los cuáles están en la carpeta \textbf{\textcolor{green}{partitions}}.\\
+A continuación hemos elaborado las distintas particiones sobre estos datos que serán utilizadas en los experimentos, para ello hemos elaborado el código recogido en el fichero \textbf{\textcolor{green}{partition\_maker.npy}} donde simplemente tomamos una muestra aleatoria de los índices de los arrays antes generados, teniendo en cuenta que la cantidad de muestras de cada una de las clases en las que se clasifican los datos sea lo más equilibrida posible entre la partición de test y su correspondiente partición de training. La semilla usada para la generación de dichas particiones, y que podemos ver en el fichero mencionado, ha sido la \textbf{12345678}. Nuevamente hemos almacenado cada una de dichas particiones en ficheros .npy, los cuáles están en la carpeta \textbf{\textcolor{green}{partitions32b}}.\\
 
-Los parámetros empleados en cada uno de los algoritmos son los que se indican en el guión de prácticas con la salvedad de que, como ya hemos dicho, el máximo número de evaluaciones que le hemos permitido realizar a los algoritmo han sido \textbf{5000} en lugar de 15000 por cuestiones de tiempo. Para cada una de las ejecuciones de lo algoritmos inicializamos la semilla aleatoria a \textbf{12345678} nuevamente, esto lo podemos ver en el fichero \textbf{\textcolor{green}{main.py}}.\\
+Los parámetros empleados en cada uno de los algoritmos son los que se indican en el guión de prácticas. Para cada una de las ejecuciones de lo algoritmos inicializamos la semilla aleatoria a \textbf{12345678} nuevamente, esto lo podemos ver en el fichero \textbf{\textcolor{green}{mainCUDA.py}}.\\
 
 
 \subsection{\color[rgb]{0.0,0.0,0.51}Resultados}
@@ -376,10 +375,10 @@ Adjuntamos también las tablas en un fichero por si no se leen correctamente en 
 \subsection{\color[rgb]{0.0,0.0,0.51}Análisis de resultados}
 
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=130mm]{graphTasaDentro.png}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=130mm]{tasa_train.png}
+\end{figure}
 
 Como podemos ver la tasa de acierto sobre Wdbc es la más elevada con respecto a las otras bases, además las tasas de acierto de todos lo algoritmos sobre esta base son muy parecidas, esto se debe a que, como dijo el profesor, esta base de datos es muy pequeña, es decir, el espacio de búsqueda es muy pequeño ($2^{30}$) y hay muy poca tasa de mejora entre una solución y otra.\\
 
@@ -391,10 +390,10 @@ En cambio si podemos ver cómo para el espacio más reducido de libras sí que l
 
 Vemos también cómo los algoritmos de BL, ES, BT y BText dan mejores resultados sobre la base de libras que sobre la de arritmia por lo que hemos comentado antes probablemente.\\
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=130mm]{graphTasaFuera.png}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=130mm]{tasa_test.png}
+\end{figure}
 
 Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación que producen sus características seleccionadas para los datos fuera de la muestra de entrenamiento. Lo primero que señalamos es que en la amplia mayoría de los casos la tasa de acierto es mayor dentro de la muestra que fuera, pero hay algunos casos donde es al revés. Esto se debe a que es probable que haya muestras de entrenamiento de una clase más cercanas a otra muestra pese a no pertenecer a la clase de dicha muestra. Con lo cual se puede dar el caso de que la "votación" sea mala en la muestra y en cambio la muestra fuera la distribución de puntos sea más favorable a una correcta clasificación de los datos. Por lo tanto no tiene que extrañarnos demasiado esto. Quizás si usásemos un 1NN sí que sería más probable que la muestra más cercana a otra perteneciera a la misma clase que ella (decimos la más cercana y no que en el 1NN hubiésemos obtenido una tasa de acierto del 100\% dentro de la muestra puesto que usamos para evitar esto el Leave One Out).\\
 
@@ -404,20 +403,20 @@ Algo que también cabe señalar es que en esta ocasión para la base de datos de
 
 El hecho de que el 3NN con toda la información no mejore a todos los algoritmos puede venir de que no sólo haya características irrelevantes sino que, como hemos señalado anteriormente, haya datos cuya medición haya sido errónea y que simplemente lo que nos estén haciendo sea empeorar el resultado.\\
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=130mm]{graphTasaReduccion.png}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=130mm]{reduccion.png}
+\end{figure}
 
 Evidentemente la tasa de reducción para el 3NN es 0 pues tomamos todas las características al no tener otro criterio. Ahora el que produce mayor reducción es el greedy lo que es lógico por la forma en la que trabaja, agregando progresivamente propiedades hasta no encontrar mejora ninguna.\\
 
 Las tasas de reducción para el resto de algoritmos son muy similares entre sí, si lo pensamos dado que nuestra función de coste sólo tiene en cuenta la tasa media de acierto en la muestra de entrenamiento (no tenemos en cuenta también la reducción que consigue) es lógico que esto suceda así, o al menos que no haya un algoritmo que claramente produzca mejores resultados que otro. Partimos de una solución totalmente aleatoria y nos movemos por los vecinos solamente teniendo en cuenta su score y algún término de azar como sucede en el Enfriamiento Simulado. Por lo tanto no podemos decir nada acerca de por qué se comportan así el resto de algoritmos respecto a la reducción y sólo podemos atribuirlo al azar.\\
 
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=130mm]{graphTiempos.png}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=130mm]{tiempo.png}
+\end{figure}
 
 
 Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de solución es 0 pues simplemente devuelve un solución con todos los valores a True, es decir, escoge todas las características sin tener ningún criterio.\\
