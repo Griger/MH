@@ -95,4 +95,6 @@ print "El peor hijo es ahora: \n", children[0]
 
 parent = children
 
-print(parent)
+print parent
+
+print parent["chromosome"][-1]
