@@ -1,0 +1,195 @@
+Results for AGE in wdbc
+Partition  1 - 1
+Ejecutando AGE
+% reduction:  33.33333333333333 %
+Final solution's training score:  97.5439
+Final solution's test score:  95.7746478873
+AGE' execution time in seconds:  40.67179536819458
+Partition  1 - 2
+Ejecutando AGE
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.0877192982
+AGE' execution time in seconds:  37.66767716407776
+Results for AGE in wdbc
+Partition  2 - 1
+Ejecutando AGE
+% reduction:  36.666666666666664 %
+Final solution's training score:  97.8947
+Final solution's test score:  95.4225352113
+AGE' execution time in seconds:  39.495980739593506
+Partition  2 - 2
+Ejecutando AGE
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8873
+Final solution's test score:  95.0877192982
+AGE' execution time in seconds:  36.64730477333069
+Results for AGE in wdbc
+Partition  3 - 1
+Ejecutando AGE
+% reduction:  40.0 %
+Final solution's training score:  97.193
+Final solution's test score:  98.2394366197
+AGE' execution time in seconds:  38.47311854362488
+Partition  3 - 2
+Ejecutando AGE
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.0877192982
+AGE' execution time in seconds:  34.62414908409119
+Results for AGE in wdbc
+Partition  4 - 1
+Ejecutando AGE
+% reduction:  33.33333333333333 %
+Final solution's training score:  98.2456
+Final solution's test score:  96.4788732394
+AGE' execution time in seconds:  40.25505828857422
+Partition  4 - 2
+Ejecutando AGE
+% reduction:  33.33333333333333 %
+Final solution's training score:  99.2958
+Final solution's test score:  95.4385964912
+AGE' execution time in seconds:  39.53650212287903
+Results for AGE in wdbc
+Partition  5 - 1
+Ejecutando AGE
+% reduction:  50.0 %
+Final solution's training score:  98.5965
+Final solution's test score:  94.3661971831
+AGE' execution time in seconds:  35.63222312927246
+Partition  5 - 2
+Ejecutando AGE
+% reduction:  26.666666666666668 %
+Final solution's training score:  99.2958
+Final solution's test score:  95.4385964912
+AGE' execution time in seconds:  42.05828928947449
+Results for AGE in libras
+Partition  1 - 1
+Ejecutando AGE
+% reduction:  47.77777777777778 %
+Final solution's training score:  77.7778
+Final solution's test score:  77.7777777778
+AGE' execution time in seconds:  46.70263648033142
+Partition  1 - 2
+Ejecutando AGE
+% reduction:  58.88888888888889 %
+Final solution's training score:  71.6667
+Final solution's test score:  70.0
+AGE' execution time in seconds:  40.063706159591675
+Results for AGE in libras
+Partition  2 - 1
+Ejecutando AGE
+% reduction:  45.55555555555556 %
+Final solution's training score:  75.0
+Final solution's test score:  72.2222222222
+AGE' execution time in seconds:  46.83731174468994
+Partition  2 - 2
+Ejecutando AGE
+% reduction:  44.44444444444444 %
+Final solution's training score:  79.4444
+Final solution's test score:  72.2222222222
+AGE' execution time in seconds:  48.10390305519104
+Results for AGE in libras
+Partition  3 - 1
+Ejecutando AGE
+% reduction:  50.0 %
+Final solution's training score:  79.4444
+Final solution's test score:  73.8888888889
+AGE' execution time in seconds:  44.67584538459778
+Partition  3 - 2
+Ejecutando AGE
+% reduction:  43.333333333333336 %
+Final solution's training score:  77.7778
+Final solution's test score:  72.2222222222
+AGE' execution time in seconds:  49.3892457485199
+Results for AGE in libras
+Partition  4 - 1
+Ejecutando AGE
+% reduction:  51.11111111111111 %
+Final solution's training score:  80.0
+Final solution's test score:  72.7777777778
+AGE' execution time in seconds:  44.61189293861389
+Partition  4 - 2
+Ejecutando AGE
+% reduction:  48.888888888888886 %
+Final solution's training score:  77.7778
+Final solution's test score:  72.7777777778
+AGE' execution time in seconds:  45.805829763412476
+Results for AGE in libras
+Partition  5 - 1
+Ejecutando AGE
+% reduction:  54.44444444444444 %
+Final solution's training score:  76.1111
+Final solution's test score:  80.0
+AGE' execution time in seconds:  42.89043116569519
+Partition  5 - 2
+Ejecutando AGE
+% reduction:  47.77777777777778 %
+Final solution's training score:  80.5556
+Final solution's test score:  73.3333333333
+AGE' execution time in seconds:  46.402172803878784
+Results for AGE in arr
+Partition  1 - 1
+Ejecutando AGE
+% reduction:  44.24460431654676 %
+Final solution's training score:  73.7113
+Final solution's test score:  65.1041666667
+AGE' execution time in seconds:  121.34381031990051
+Partition  1 - 2
+Ejecutando AGE
+% reduction:  45.68345323741007 %
+Final solution's training score:  72.3958
+Final solution's test score:  64.4329896907
+AGE' execution time in seconds:  136.04172253608704
+Results for AGE in arr
+Partition  2 - 1
+Ejecutando AGE
+% reduction:  48.201438848920866 %
+Final solution's training score:  73.7113
+Final solution's test score:  67.7083333333
+AGE' execution time in seconds:  114.87461113929749
+Partition  2 - 2
+Ejecutando AGE
+% reduction:  42.805755395683455 %
+Final solution's training score:  69.7917
+Final solution's test score:  69.0721649485
+AGE' execution time in seconds:  147.2856001853943
+Results for AGE in arr
+Partition  3 - 1
+Ejecutando AGE
+% reduction:  50.0 %
+Final solution's training score:  72.6804
+Final solution's test score:  67.1875
+AGE' execution time in seconds:  110.91592192649841
+Partition  3 - 2
+Ejecutando AGE
+% reduction:  47.84172661870504 %
+Final solution's training score:  71.875
+Final solution's test score:  65.9793814433
+AGE' execution time in seconds:  131.44288992881775
+Results for AGE in arr
+Partition  4 - 1
+Ejecutando AGE
+% reduction:  46.76258992805755 %
+Final solution's training score:  74.2268
+Final solution's test score:  68.2291666667
+AGE' execution time in seconds:  116.54122614860535
+Partition  4 - 2
+Ejecutando AGE
+% reduction:  50.0 %
+Final solution's training score:  73.9583
+Final solution's test score:  68.5567010309
+AGE' execution time in seconds:  122.92549157142639
+Results for AGE in arr
+Partition  5 - 1
+Ejecutando AGE
+% reduction:  49.64028776978417 %
+Final solution's training score:  75.7732
+Final solution's test score:  61.9791666667
+AGE' execution time in seconds:  111.32346105575562
+Partition  5 - 2
+Ejecutando AGE
+% reduction:  50.35971223021583 %
+Final solution's training score:  72.9167
+Final solution's test score:  64.4329896907
+AGE' execution time in seconds:  120.44921326637268
