@@ -20,6 +20,7 @@ def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
 
 def AGE(train_data, train_labels, knnGPU):
+    print("Ejecutando AGE")
     max_evals = 15000
     n = len(train_data[0])
     p_size = 30
