@@ -98,3 +98,6 @@ parent = children
 print parent
 
 print parent["chromosome"][-1]
+a,b = parent[-1]
+print a
+print b

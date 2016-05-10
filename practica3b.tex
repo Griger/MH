@@ -435,9 +435,11 @@ Vamos a ver unos datos que pueden ser interesantes para la comparación de ambos
 \end{tabular}}
 \end{table}
 
-Pese a que ambos algoritmos funcionan de un modo similar ya que ambos realizan un cruce de unos padres seleccionados y luego mutan sobre la población de hijos obtenidos en mi opinión el AGE es más conservador, quiero decir, los saltos que se producen de una generación a otra en el AGG son con mayor brusqueda ya que no solo cruzamos muchos más padres dando lugar a una mayor recombinación de genes por iteración sino que también ser realiza un mayor número de mutaciones por iteración. Con lo cual es mi opinión esto hace que el AGG sea un algoritmo con una componente de diversificación más fuerte que el AGE, lo que puede ser el motivo por el cual el AGG de mejores resultados en las bases de datos grandes (además del azar siempre presente en estos algoritmos).\\
+Ambos algoritmos se comportan de un modo muy similar ya que su tasa de acierto no difiera más que un 1\% que en el caso de la BBDD con un número mayor de muestras por partición, que es la wdbc, son sólo 3 aciertos más uno que otro con lo cuál no parece que a nivel de acierto dentro de la muestra haya un claro vencedor, al menos para los casos estudiados.\\
 
-Como vemos el AGE presenta un mayor número de cruces, pero un cruce siempre conserva más información de la población anterior que una mutación (pese a que en nuestro caso el número de mutaciones que se da en ambos algoritmos es bastante pequeño). Entonces el AGE no realiza una exploración tan amplia del espacio de soluciones.\\
+Ahora bien a la luz de los datos recogidos en la tabla anterior sí que podemos hacer un breve análisis del comportamiento de los dos algoritmos: como vemos el número total de cruces es más elevado en el AGE que el AGG, el cuál realiza un mayor número de mutaciones. Pensemos en cómo afecta esto a la diversificación: por el número de características que tenemos tenemos que por cada iteración del algoritmo se realizan como mucho 9 mutaciones que se reparte entre todos los individuos de la población, con lo cual la etapa de mutación introduce realmente poca diversidad en nuestra población.\\
+
+Ahora bien, cuando estamos en un cruce dependemos mucho de las soluciones que se crucen ya que según compartan más o menos genes estas soluciones "mutarán" más o menos, entonces en un principio la mayor diversificación la dan los cruces, pero en cuanto a comenzamos a realizar remplazamientos por elitismo la población tiende a ser más parecida o al menos eso sería lo normal si hay unas características bastante más informativas que las otras. Con lo cual creo que finalmente son las mutaciones las que aportan mayor capacidad de diversificación a los genéticos y por los datos anteriores es el AGG el que más diversificación presenta. Pero como ya hemos dicho a la luz de los resultados no nos podemos decantar por un algoritmo u otro pues las diferencias pueden deberse simplemente a la componente aleatoria de los algoritmos.\\
 
 \begin{figure}[H]
 \centering
@@ -448,9 +450,12 @@ Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación 
 
 Nuevamente el comportamiento para Wdbc es muy similar para todos los algoritmos, lo que era esperable por el razonamiento que hemos dado antes. Lo que sí podemos ver es cómo en esta ocasión el 3NN está en los primeros puestos para las bases de datos de wdbc y libras además de que hay otros algoritmos que también cambian de posición. Esto nos informa de dos cosas: la primera es del eterno problema que hay en el aprendizaje automático y es la capacidad de generalización, el no poder asegurar que si una solución es buena dentro de la muestra de entrenamiento vaya a ser fuera. En segundo lugar vemos cómo lo algoritmos son fuertemente dependientes de los datos, el ruido o simplemente los datos tomados afectan al rendimiento de las soluciones encontradas.\\
 
-Esto último se pone muy en relieve cuando vemos cómo el GRASP es de los peores algoritmos en las bases de datos de wdbc y libras, en mi oponión se ve más afectada en estas bases porque puede ser que los datos tengan ruido o no informen lo suficiente y al ser el algoritmo que mayor intesificación realiza puede que sea el que más sufre de sobreajuste. Ahora bien, en la base de datos de arritmia es el mejor algoritmo indicando que o bien los datos de esta base dan mucha información o que el espacio de búsqueda queda grande para el resto de algoritmos que dependen más de la exploración realizada. De hecho el otro algoritmo que peor funciona en libras y wdbc es precisamente el SFS que también puede verse afectado por el sobreajuste al no tener mecanismos de diversificación.\\
-
 El hecho de que el 3NN con toda la información no mejore a todos los algoritmos puede venir de que no sólo haya características irrelevantes sino que, como hemos señalado anteriormente, haya datos cuya medición haya sido errónea y que simplemente lo que nos estén haciendo sea empeorar el resultado.\\
+
+Nuevamente entre los dos algoritmos genéticos tenemos una diferencia mínima de rendimiento, observamos como en el resto de prácticas anteriores que el SFS tiene un mejor comportamiento en la base de datos con un espacio de búsqueda mayor probablemente debido a la dependencia de la exploración que tienen los otros dos algoritmos.\\
+
+Esperaba encontrar un peor rendimiento del AGE frente al AGG ya que como he dicho tiene menor capacidad de diversificación pero justamente ocurre lo contrario, ahora bien la diferencia de rendimientos es mínima así que no puedo sacar ninguna conclusión al respecto.\\
+
 
 \begin{figure}[H]
 \centering
@@ -459,9 +464,9 @@ El hecho de que el 3NN con toda la información no mejore a todos los algoritmos
 
 Evidentemente la tasa de reducción para el 3NN es 0 pues tomamos todas las características al no tener otro criterio. Ahora el que produce mayor reducción es el greedy lo que es lógico por la forma en la que trabaja, agregando progresivamente propiedades hasta no encontrar mejora ninguna.\\
 
-Como era de esperar el siguiente que tiene una mayor tasa de reducción es el GRASP el cual al fin y al cabo tiene un comportamiento greedy y como las soluciones que produce el greedy aleatorio (que es el que genera mayor reducción) ya son los suficientemente buenas la búsqueda local no le "añade" muchas más características a la solución de la que parte.
+Lo que observo es que el AGG me ha dado unas tasas de reducción muy bajas sobre todo en arritmia, a priori no hay ninguna razón para ello. El algoritmo parece funcionar correctamente y al fin y al cabo las soluciones que se obtienen son semi-aleatorias. Nosotros no hemos añadido como criterio para la elección de soluciones es su score, no tenemos en cuenta el elegir soluciones con tasas de reducción pequeñas, con lo cuál puede ocurrir cualquier cosa. Aunque realmente sorprende que en este caso se den tasas de reducción tan pequeñas.\\
 
-Las tasas de reducción para el resto la BMB y el ILS son muy similares entre sí, si lo pensamos dado que nuestra función de coste sólo tiene en cuenta la tasa media de acierto en la muestra de entrenamiento (no tenemos en cuenta también la reducción que consigue) es lógico que esto suceda así, o al menos que no haya un algoritmo que claramente produzca mejores resultados que otro. La exploración que se hace es de algún modo u otro aleatoria con lo que dependiendo del azar será un algoritmo o el otro el que obtenga una solución con un menor número de características.\\
+AGE también produce unas tasas de reducción bajas pero como hemos dicho no hay ninguna razón concreta para justificar este hecho.\\
 
 
 \begin{figure}[H]
@@ -470,13 +475,21 @@ Las tasas de reducción para el resto la BMB y el ILS son muy similares entre s�
 \end{figure}
 
 
-Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de solución es 0 pues simplemente devuelve un solución con todos los valores a True, es decir, escoge todas las características sin tener ningún criterio. Y observamos también que todos los algoritmos si los analizamos individualmente tardan más cuanto mayor es el espacio de búsqueda (ahora el LOO no tiene tanto impacto y con lo cual el número de muestras por partición no resulta tan decisivo como sí ocurría en la práctica anterior cuando se tardaba más en libras que en arritmia para algunos algoritmos).\\
+Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de solución es 0 pues simplemente devuelve un solución con todos los valores a True, es decir, escoge todas las características sin tener ningún criterio. Y observamos también que todos los algoritmos si los analizamos individualmente tardan más cuanto mayor es el espacio de búsqueda (ahora el LOO no tiene tanto impacto y con lo cual el número de muestras por partición no resulta tan decisivo como sí ocurría en la primera práctica cuando se tardaba más en libras que en arritmia para algunos algoritmos).\\
 
-El GRASP es el algoritmo que tarda salvo en arritmia donde sólo le supero la BMB. Esto se debe a que es el que realiza las operaciones más costosas al hacer por cada ejecución un greedy y a continuación una búsqueda local. Sin embargo en la base de datos con un espacio de búsqueda mayor es la BMB la que más tarda, probablemente esto se deba a que pese a que la generación de la solución de la que parte la BL en GRASP es más costosa en tiempo sí que hace que se parta de una buena solución y que por tanto la BL tarde menos en no poder mejorar la solución de la que parte, algo que es muy importante cuando el espacio de búsqueda es tan grande.
+El siguiente algoritmo que menos tarda es el SFS ya que hará en media un menor número de evaluaciones de la función objetivo además de no tener que hacer operaciones adicionales como el cruce o la mutación.\\
 
-De los tres algoritmos que hemos implementado en esta práctica el ILS es el más rápido esto se debe a la combinación de dos factores: las operaciones que realiza son poco costosas con respecto a las de los otros dos algoritmos y además tiene una componente de intesificación al mutar, un 10\% solamente, la mejor solución encontrada hasta el momento, haciendo, como hemos analizado anteriorment, que la BL tarde menos. De hecho vemos como en bases de datos con un espacio de búsqueda menor ILS y BMB tienen tiempos similares ya que esta intensificación no tiene tanta importancia.\\
+Y ahora veamos los dos algoritmos genéticos que hemos programado: tenemos que en las bases de datos de wdbc y libras se obtienen unos tiempos similares, en cambio en la base de datos de arritmia el AGG tarda en media unos 5o segundos más. Intentemos explicar este hecho, ya que el número de evaluaciones de la función objetivo es el mismo para ambos objetivos y una sola evaluación no influye en el tiempo de ejecución descartamos este hecho como factor diferenciador.\\
 
-Por último el SFS tarda muy poco con respecto al resto de algoritmos ya que se trata únicamente de una búsqueda greedy y no 25 como hace GRASP ni 25 búsquedas locales como hacen los otros algoritmos.\\
+Veamos la cantidad de números aleatorios que generan cada uno de los algoritmos por ejecución:\\
+
+$n\_aleatorios_{AGG} = 4*n\_cruces + 2*n\_mutaciones = 10626*4 + 4347*2 = 51198$\\
+
+$n\_aleatorios_{AGE} = 4*n\_cruces + 2*n\_mutaciones + random\_para\_mutar\_por\_iteracion = 11742*4 + 3228*2 + 5871 = 59295$\\
+
+como podemos ver el AGE genera más número aleatorios con lo que este no es el motivo del mayor tiempo de ejecución del AGG.\\
+
+Dado que ambos tienen el mismo operador de cruce y mutación el único factor que me parece relevante es la gestión de memoria ya que tenemos que copiar más hijos por iteración, copiar los padres no mutados al vector de hijos y ordenamos tanto los padres como los hijos a lo largo de la iteración, en el AGG estamos ordenando un vector de 30 hijos mientras que en el AGE ordenamos solamente dos hijos. El hecho de que esta diferencia de tiempos sea más acusada en arritmia se deberá a que las soluciones son más grande y con lo cual moverlas en memoria ha de ser más costoso haciendo esta operación más crítica.\\
 
 \newpage
 \section{\color[rgb]{0.0,0.0,0.21}Bibliografía}
