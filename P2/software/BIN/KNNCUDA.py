@@ -1,5 +1,4 @@
 import numpy as np
-import knn
 
 def KNNCUDA(train_data, train_labels, knnGPU):
 	print("Ejecutando KNNCUDA")
