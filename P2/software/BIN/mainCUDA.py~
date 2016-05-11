@@ -4,10 +4,7 @@ import SFSCUDA
 import BMBCUDA
 import ILSCUDA
 import GRASPCUDA
-import AGG
-import AGE
 import time
-import knn
 import sys
 from knnLooGPU import *
 

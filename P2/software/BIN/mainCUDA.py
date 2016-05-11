@@ -31,7 +31,7 @@ heuristics = {'KNN': KNNCUDA.KNNCUDA, 'SFS':SFSCUDA.SFSCUDA, 'BMB': BMBCUDA.BMBC
 heuristic_names = ['KNN','SFS','BMB','ILS','GRASP']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
-	print("Algoritmo no especificado o no valido. Elija entre BMB")
+	print("Algoritmo no especificado o no valido. Elija entre KNN, SFS, BMB, ILS o GRASP")
 else:
 	heuristic_name = sys.argv[1]
 	heuristic = heuristics[heuristic_name]
