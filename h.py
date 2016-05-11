@@ -39,9 +39,9 @@ parent["chromosome"] = np.random.choice([True,False], (p_size, n)) #random initi
 
 for individual in parent:
     n_evals += 1
-    individual["score"] = np.random.randint(0,100)
+    individual["score"] = 666
 
-parent.sort(order="score")
+#parent.sort(order="score")
 
 print "Los padres tras generarlos, darles score y ordenados \n", parent
 #selection by binary tournament

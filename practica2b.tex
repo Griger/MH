@@ -144,7 +144,7 @@ Aquí hay un cambio fundamental con respecto a la práctica anterior y es que an
 \newpage
 
 \section{\color[rgb]{0.0,0.0,0.21}Descripción en pseudocódigo de los algoritmos}
-\subsection{\color[rgb]{0.0,0.0,0.51}Búsqueda Multiarranque Básica (BMB.py)}
+\subsection{\color[rgb]{0.0,0.0,0.51}Búsqueda Multiarranque Básica (BMBCUDA.py)}
 
 \begin{lstlisting}
 for 25 veces:
@@ -159,7 +159,7 @@ return mejor_s
 
 \newpage
 
-\subsection{\color[rgb]{0.0,0.0,0.51}GRASP (GRASP.py)}
+\subsection{\color[rgb]{0.0,0.0,0.51}GRASP (GRASPCUDA.py)}
 
 El algoritmo de generación de soluciones greedy probabilísticas funciona del siguiente modo:\\
 \begin{lstlisting}
@@ -194,7 +194,7 @@ return mejor_s
 \end{lstlisting}
 
 \newpage
-\subsection{\color[rgb]{0.0,0.0,0.51} ILS (ILS.py)}
+\subsection{\color[rgb]{0.0,0.0,0.51} ILS (ILSCUDA.py)}
 \begin{lstlisting}
 mutar(s):
 	t = ceil(0.1*n_caracteristicas)
@@ -248,7 +248,7 @@ El código usado en prácticas lo he implementado yo a partir de las explicacion
 La parte que no ha sido implementada por mí es la correspondiente a la evaluación de las soluciones, es decir, tanto el KNN como los mecanismos de evaluación de las soluciones. Para ello he usado el código desarrollado por \textbf{Alejandro García Montoro} el cuál ha implementado tanto el clasificador KNN como los mecanismos para obtener el score de las soluciones dentro (con LOO) y fuera de la muestra con PyCUDA que permite insertar código CUDA en código Python. Con lo cual los tiempos de ejecución bajan considerablemente con respecto a los tiempos de la práctica anterior ya que el cuello de botella de los algoritmos, que es la evaluación de las soluciones con LOO, se ejecuta en la tarjeta gráfica, siendo mucho más rápidos los cálculos.\\
 
 \subsection{\color[rgb]{0.0,0.0,0.51}Manual de usuario}
-Los algoritmos han sido implementados en Python 3.1 TODO para su ejecución son necesarios tener instalados los módulos compatibles con esta versión de Python siguientes:\\
+Los algoritmos han sido implementados en Python 3.5.1 para su ejecución son necesarios tener instalados los módulos compatibles con esta versión de Python siguientes:\\
 
 \begin{itemize}
 \item numpy (v 1.8.2) \textbf{sudo apt-get install python-numpy}
@@ -272,9 +272,9 @@ Estos archivos deberán reemplazar a aquellos que se encuentran en el directorio
 \subsection{\color[rgb]{0.0,0.0,0.51}Descripción de los casos del problema empleados y de los valores de los parámetros}
 
 
-Estás prácticas han sido implementadas en Python 3.5.1 y ejecutadas sobre un ordenador son S.O. Arch Linux, de 12GB de RAM y procesador Intel Core i7 930 2.80GHz y tarjeta gráfica NVIDIA GeForce GTX 780. Este ordenador pertenece a Alejandro Garcia Montoro ya que tuve problemas al intentar usar los drivers oficiales de Nvidia en Ubuntu (necesarios para ejecutar código CUDA) y me ha permitido lanzar mis códigos en su ordenador mediante conexión ssh.\\
+Estás prácticas han sido implementadas en Python 3.5.1 y ejecutadas sobre un ordenador con S.O. Arch Linux, de 12GB de RAM y procesador Intel Core i7 930 2.80GHz y tarjeta gráfica NVIDIA GeForce GTX 780. Este ordenador pertenece a Alejandro Garcia Montoro ya que tuve problemas al intentar usar los drivers oficiales de Nvidia en Ubuntu (necesarios para ejecutar código CUDA) y me ha permitido lanzar mis códigos en su ordenador mediante conexión ssh.\\
 
-Hemos empleado tres bases de datos distintas, a continuación mencionamos sus tamaños ya que serán interesantes para el posterior análisis de resultados:\\
+Hemos empleado tres bases de datos distintas, a continuación mencionamos sus tamaños ya pueden ser interesantes para el posterior análisis de resultados:\\
 
 \begin{itemize}
 \item \textbf{wdbc}: Tenemos \textbf{569} muestras con \textbf{30} características cada una procedentes de imágenes digitalizadas de una masa de mama. Estas muestras se clasifican en \textbf{2} clases distintas.
@@ -292,7 +292,7 @@ $x_j^N = \dfrac{x_j - Min_j}{Max_j-Min_j}$ (siendo $Max_j$ y $Min_j$ el máximo 
 
 El código empleado para este formateo de los datos está en el fichero \textbf{\textcolor{green}{loader.py}} que se adjunta en la entrega. Como podemos ver para realizar la normalización de los datos hemos usado una utilidad del módulo scikit-learn antes mencionado que se llama MinMaxScaler. Y para futuros usos de estos datos normalizados, y con el objetivo de no tener que realizar tales operaciones cada ocasión que queramos usarlos, hemos almacenado los arrays de numpy donde hemos almacenado los datos en sendos ficheros con extensión .npy usando la función \textbf{numpy.save}. Estos ficheros son: \textbf{\textcolor{green}{data\_wdbc.npy}}, \textbf{\textcolor{green}{data\_libras.npy}} y \textbf{\textcolor{green}{data\_arrhythmia.npy}}.\\
 
-A continuación hemos elaborado las distintas particiones sobre estos datos que serán utilizadas en los experimentos, para ello hemos elaborado el código recogido en el fichero \textbf{\textcolor{green}{partition\_maker.npy}} donde simplemente tomamos una muestra aleatoria de los índices de los arrays antes generados, teniendo en cuenta que la cantidad de muestras de cada una de las clases en las que se clasifican los datos sea lo más equilibrida posible entre la partición de test y su correspondiente partición de training. La semilla usada para la generación de dichas particiones, y que podemos ver en el fichero mencionado, ha sido la \textbf{12345678}. Nuevamente hemos almacenado cada una de dichas particiones en ficheros .npy, los cuáles están en la carpeta \textbf{\textcolor{green}{partitions32b}}.\\
+A continuación hemos elaborado las distintas particiones sobre estos datos que serán utilizadas en los experimentos, para ello hemos elaborado el código recogido en el fichero \textbf{\textcolor{green}{partition\_maker.py}} donde simplemente tomamos una muestra aleatoria de los índices de los arrays antes generados, teniendo en cuenta que la cantidad de muestras de cada una de las clases en las que se clasifican los datos sea lo más equilibrida posible entre la partición de test y su correspondiente partición de training. La semilla usada para la generación de dichas particiones, y que podemos ver en el fichero mencionado, ha sido la \textbf{12345678}. Nuevamente hemos almacenado cada una de dichas particiones en ficheros .npy, los cuáles están en la carpeta \textbf{\textcolor{green}{partitions32b}}.\\
 
 Los parámetros empleados en cada uno de los algoritmos son los que se indican en el guión de prácticas. Para cada una de las ejecuciones de lo algoritmos inicializamos la semilla aleatoria a \textbf{12345678} nuevamente, esto lo podemos ver en el fichero \textbf{\textcolor{green}{mainCUDA.py}}.\\
 
@@ -448,13 +448,13 @@ Como podemos ver la tasa de acierto sobre Wdbc es la más elevada con respecto a
 
 Las tasas de acierto tanto para arritmia como para libras son parecidas como podemos ver en la gráfica para cada algoritmo. Es importante señalar cómo la tasa de acierto de los algoritmos usados en mejor que la tasa que da el 3NN original, es decir, usando todos los datos de la muestra. Con lo cual aquí se pone de manifiesto cómo el hecho de reducir el número de características a considerar no merma la correcta clasificación de los datos, al menos dentro de la muestra ya veremos qué sucede fuera. De hecho reduciendo el número de características no sólo reducimos el cómputo necesario sino también el posible ruido que pueden tener algunos datos.\\
 
-Es curioso ver cómo el algoritmo greedy produce los mejores resultados en la base de datos con un espacio de búsqueda mayor, de hecho produce mejores resultados en esa base de datos que en la de libras que tiene un espacio menor, probablemente por la naturaleza de los datos, es decir, cómo de distintas sean las muestras que componen las distintas clases entre sí. En mi opinión el hecho de que el SFS produzca mejores resultados que la mayoría en el espacio de búsqueda más grande se debe a que al fin y al cabo el greedy en cada momento va construyendo la mejor solución que puede mientras que en cambio el resto de métodos depende más de cómo de buena sea la exploración que realicen. En cambio el GRASP sí que mejora lo que hace el SFS ya que GRASP no hace un sólo greedy sino que hace 25 optimizando las soluciones que encuentra mediante una búsqueda local, esto le da esa mejora que presenta. Como sabemos el greedy que usa GRASP tiene una componente aleatoria pero aún así esa aleatoriedad se da entre unas soluciones que superan un cierto umbral de calidad, con lo que el hecho de que el GRASP se comporte mejor que el SFS está justificado.\\
+Es curioso ver cómo el algoritmo greedy produce de los mejores resultados en la base de datos con un espacio de búsqueda mayor, de hecho produce mejores resultados en esa base de datos que en la de libras que tiene un espacio menor, probablemente por la naturaleza de los datos, es decir, cómo de distintas sean las muestras que componen las distintas clases entre sí. En mi opinión el hecho de que el SFS produzca mejores resultados que la mayoría en el espacio de búsqueda más grande se debe a que al fin y al cabo el greedy en cada momento va construyendo la mejor solución que puede mientras que en cambio el resto de métodos depende más de cómo de buena sea la exploración que realicen. En cambio el GRASP sí que mejora lo que hace el SFS ya que GRASP no hace un sólo greedy sino que hace 25 optimizando las soluciones que encuentra mediante una búsqueda local, esto le da esa mejora que presenta. Como sabemos el greedy que usa GRASP tiene una componente aleatoria pero aún así esa aleatoriedad se da entre unas características que superan un cierto umbral de calidad, con lo que el hecho de que el GRASP se comporte mejor que el SFS está justificado.\\
 
 En cambio sí podemos ver cómo para el espacio más reducido de libras (también se ve en wdbc) sí que los algoritmos que hacen una búsqueda más extensa en el terreno, dan resultados mejores que SFS ya que exploran más soluciones y por lo tanto tienen mayor posibilidad de encontrar una mejor.\\
 
 Si ahora comparamos los tres algoritmos que son nuevos en esta práctica vemos como la BMB es la que peor resultados obtiene, al fin y al cabo la búsqueda que realiza es la más aleatoria de todas y aunque esto le da una componente interesante de diversificación no hace que encuentre soluciones mejores a los otros algoritmos que sí que tienen diversificación pero con una cierta tendencia a la intesificación.\\
 
-Entre GRASP e ILS, ILS tiene un mejor comportamiento en wdbc pero con un margen muy pequeño, ya hemos dicho que en esta base la diferencia entre soluciones es muy pequeña. En cambio en las otras dos bases de datos es el GRASP el que se impone. En mi opinión esto se debe a que GRASP aunque diversifica por su componente aleatoria no deja de intensificar en cada una de sus iteraciones una solución que ya es bastante buena a priori pues es construida mediante un procedimiento greedy al fin y al cabo. En cambio ILS parte en inicio de la solución de una BL que parte de un punto aleatorio que luego irá mutando pero esta mutación es de como mucho un 10\% de las características, con lo cual si la solución que ha encontrado es mala no da grandes saltos en sólo 25 iteraciones como para explorar en gran medida el espacio de búsqueda y encontrar una solución mejor que GRASP mediante su estrategia de diversificación.\\
+Entre GRASP e ILS, ILS tiene un mejor comportamiento en wdbc pero con un margen muy pequeño, ya hemos dicho que en esta base la diferencia entre soluciones es muy pequeña. En cambio en las otras dos bases de datos es el GRASP el que se impone. En mi opinión esto se debe a que GRASP aunque diversifica por su componente aleatoria no deja de intensificar en cada una de sus iteraciones una solución que ya es bastante buena a priori pues es construida mediante un procedimiento greedy al fin y al cabo. En cambio ILS parte en inicio de la solución de una BL que parte de un punto aleatorio que luego irá mutando, pero esta mutación es de como mucho un 10\% de las características, con lo cual si la solución que ha encontrado es mala no da grandes saltos en sólo 25 iteraciones como para explorar en gran medida el espacio de búsqueda y encontrar una solución mejor que GRASP mediante su estrategia de diversificación.\\
 
 \begin{figure}[H]
 \centering
@@ -465,7 +465,7 @@ Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación 
 
 Nuevamente el comportamiento para Wdbc es muy similar para todos los algoritmos, lo que era esperable por el razonamiento que hemos dado antes. Lo que sí podemos ver es cómo en esta ocasión el 3NN está en los primeros puestos para las bases de datos de wdbc y libras además de que hay otros algoritmos que también cambian de posición. Esto nos informa de dos cosas: la primera es del eterno problema que hay en el aprendizaje automático y es la capacidad de generalización, el no poder asegurar que si una solución es buena dentro de la muestra de entrenamiento vaya a ser fuera. En segundo lugar vemos cómo lo algoritmos son fuertemente dependientes de los datos, el ruido o simplemente los datos tomados afectan al rendimiento de las soluciones encontradas.\\
 
-Esto último se pone muy en relieve cuando vemos cómo el GRASP es de los peores algoritmos en las bases de datos de wdbc y libras, en mi oponión se ve más afectada en estas bases porque puede ser que los datos tengan ruido o no informen lo suficiente y al ser el algoritmo que mayor intesificación realiza puede que sea el que más sufre de sobreajuste. Ahora bien, en la base de datos de arritmia es el mejor algoritmo indicando que o bien los datos de esta base dan mucha información o que el espacio de búsqueda queda grande para el resto de algoritmos que dependen más de la exploración realizada. De hecho el otro algoritmo que peor funciona en libras y wdbc es precisamente el SFS que también puede verse afectado por el sobreajuste al no tener mecanismos de diversificación.\\
+Esto último se pone muy en relieve cuando vemos cómo el GRASP es de los peores algoritmos en las bases de datos de wdbc y libras, en mi oponión se ve más afectado en estas bases porque puede ser que los datos tengan ruido o no informen lo suficiente y al ser el algoritmo que mayor intesificación realiza (pues un greedy está totalmente dirigido por los datos) puede que sea el que más sufre de sobreajuste. Ahora bien, en la base de datos de arritmia es el mejor algoritmo indicando que o bien los datos de esta base dan mucha información o que el espacio de búsqueda queda grande para el resto de algoritmos que dependen más de la exploración realizada. De hecho el otro algoritmo que peor funciona en libras y wdbc es precisamente el SFS que también puede verse afectado por el sobreajuste al no tener mecanismos de diversificación.\\
 
 El hecho de que el 3NN con toda la información no mejore a todos los algoritmos puede venir de que no sólo haya características irrelevantes sino que, como hemos señalado anteriormente, haya datos cuya medición haya sido errónea y que simplemente lo que nos estén haciendo sea empeorar el resultado.\\
 
@@ -491,7 +491,7 @@ Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de soluci
 
 El GRASP es el algoritmo que más tarda salvo en arritmia donde sólo le supera la BMB. Esto se debe a que es el que realiza las operaciones más costosas al hacer por cada ejecución un greedy y a continuación una búsqueda local. Sin embargo en la base de datos con un espacio de búsqueda mayor es la BMB la que más tarda, probablemente esto se deba a que pese a que la generación de la solución de la que parte la BL en GRASP es más costosa en tiempo sí que hace que se parta de una buena solución y que por tanto la BL tarde menos en no poder mejorar la solución de la que parte, algo que es muy importante cuando el espacio de búsqueda es tan grande.
 
-De los tres algoritmos que hemos implementado en esta práctica el ILS es el más rápido esto se debe a la combinación de dos factores: las operaciones que realiza son poco costosas con respecto a las de los otros dos algoritmos y además tiene una componente de intesificación al mutar, un 10\% solamente, la mejor solución encontrada hasta el momento, haciendo, como hemos analizado anteriorment, que la BL tarde menos. De hecho vemos como en bases de datos con un espacio de búsqueda menor ILS y BMB tienen tiempos similares ya que esta intensificación no tiene tanta importancia.\\
+De los tres algoritmos que hemos implementado en esta práctica el ILS es el más rápido, esto se debe a la combinación de dos factores: las operaciones que realiza son poco costosas con respecto a las de los otros dos algoritmos y además tiene una componente de intesificación al mutar, un 10\% solamente, la mejor solución encontrada hasta el momento, haciendo, como hemos analizado anteriormente, que la BL tarde menos. De hecho vemos como en bases de datos con un espacio de búsqueda menor ILS y BMB tienen tiempos similares ya que esta intensificación no tiene tanta importancia.\\
 
 Por último el SFS tarda muy poco con respecto al resto de algoritmos ya que se trata únicamente de una búsqueda greedy y no 25 como hace GRASP ni 25 búsquedas locales como hacen los otros algoritmos.\\
 
