@@ -1,0 +1,31 @@
+Contenido de cada archivo:
+
+AGE.py: fichero donde está programado el AGE
+
+AGG.py: fichero donde está programado el AGG
+
+kernel.cu: fichero donde está el código CUDA para el clasificador
+
+KNNCUDA.py: fichero donde está programado el algoritmo 3NN que usamos para obtener los
+resultados para la tabla de datos
+
+knnLooGPU.py: interfaz en Python para usar el kNN programado en CUDA (está la clase que usamos para crear clasificadores)
+
+mainCUDA.py: archivo con el que ejecutamos los experimentos para cada algoritmo
+
+SFSCUDA.py: archivo donde está programado el algoritmo SFS
+
+En el directorio make_partitions32b tenemos los datos necesarios para construir las particiones:
+
+Tenemos los ficheros arff proporcionados para la práctica
+
+loader.py: fichero que carga dichos arffs y los formatea almacenando los datos formateados en
+los ficheros
+						data_arrythmia.npy
+						data_libras.npy
+						data_wdbc.npy
+
+partition_maker.py: archivo donde se implementa el código para crear las particiones
+
+En el directorio partitions32b se almacenan los archivos .npy que contienen cada una de las
+particiones creadas antes.

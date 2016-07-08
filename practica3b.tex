@@ -122,7 +122,7 @@ for 30 o 2 veces(segun estemos en AGG o AGE):
 	almacenamos el elegido en un vector de padres elegidos
 \end{lstlisting}
 
-El operador de cruce que emplearemos es el HUX ya que como se dijo en clase funciona mejor que el que se explica en las transparencias (mi compañero Jacinto Carrasco Castillo ha probado ambos operadores obteniendo efectivamente mejores resultados con este operador de cruce) y funciona así:\\
+El operador de cruce que emplearemos es el HUX ya que como se dijo en clase funciona mejor que el que se explica en las transparencias y funciona así:\\
 
 \begin{lstlisting}
 def cruce(padre1, padre2):
@@ -146,6 +146,7 @@ El operador de mutación es el \textit{flip} que hemos usado para la generación
 \begin{lstlisting}
 padres = poblacion inicial de 30 individuos aleatoria
 ordenamos los padres de peor a mejor segun score
+n_evals += 30
 
 while n_evals < max_evals:
 	#seleccion
@@ -156,12 +157,16 @@ while n_evals < max_evals:
 	
 	aniadimos a hijos copias de los padres que no se han cruzado
 	
+	n_evals += 2*n_cruces
+	
 	#mutacion
 	seleccionamos n_mutaciones hijos aleatoriamente para mutar (con repeticion)
 	seleccionamos n_mutaciones genes a mutar (con repeticion)
 	
 	for cada par (hijo,gen) seleccionado:
 		modificamos el gen de ese hijo por su complementario
+		
+	n_evals += n_mutaciones
 		
 	#remplazamiento
 	if mejor_hijo es peor que mejor_padre:
@@ -182,6 +187,7 @@ umbral = 2 * n_caracteristicas / 1000 #para mutacion
 
 padres = poblacion inicial de 30 individuos aleatoria
 ordenamos los padres de peor a mejor segun score
+n_evals += 30
 
 while n_evals < max_evals:
 	#seleccion
@@ -191,9 +197,11 @@ while n_evals < max_evals:
 	#cruce
 	hijo1, hijo2 = resultado de cruzar los dos padres
 	
+	n_evals += 2
 	#mutacion
 	if num aleatorio en el [0,1] <= umbral:
 		mutamos un gen aleatorio de uno de los dos hijos elegido aleatoriamente
+		n_evals++
 		
 	#remplazamiento
 	if mejor hijo es mejor que el penultimo padre:
