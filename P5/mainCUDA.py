@@ -1,8 +1,6 @@
 import numpy as np
-import KNNCUDA
-import SFSCUDA
-import AGG
-import AGE
+import BLCUDA
+import AGGH
 import time
 import sys
 from knnLooGPU import *
@@ -26,8 +24,12 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print(heuristic_name + "' execution time in seconds: ", end-start)
 
 
-heuristics = {'KNN': KNNCUDA.KNNCUDA, 'SFS':SFSCUDA.SFSCUDA, 'AGG':AGG.AGG,'AGE':AGE.AGE}
-heuristic_names = ['KNN','SFS', 'AGG', 'AGE']
+AGGHModel1 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 1)
+AGGHModel2 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 2)
+AGGHModel3 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 3)
+
+heuristics = {'BL' : BLCUDA.BLCUDA, 'AGGH Model 1':AGGHModel1, 'AGGH Model 2':AGGHModel2, 'AGGH Model 3':AGGHModel3}
+heuristic_names = ['BL','AGGH Model 1', 'AGGH Model 2', 'AGGH Model 3']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 	print("Algoritmo no especificado o no valido. Elija entre KNN, SFS, AGG o AGE")
@@ -80,7 +82,7 @@ else:
 		getResult(heuristic_name, heuristic, libras_train_data[i], libras_train_labels[i], libras_test_data[i], libras_test_labels[i])
 		print("Partition ", i+1, "-", 2)
 		getResult(heuristic_name, heuristic, libras_test_data[i], libras_test_labels[i], libras_train_data[i], libras_train_labels[i])
-	
+
 	arr_test_data = []
 	arr_test_labels = []
 	arr_train_data = []

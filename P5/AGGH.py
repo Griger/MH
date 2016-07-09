@@ -21,7 +21,7 @@ def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
 
 def AGGH(train_data, train_labels, knnGPU, model):
-    print("Ejecutando AGG")
+    print("Ejecutando AGG Hibrido con modelo",model)
     max_evals = 15000
     n = len(train_data[0])
     p_size = 10 #population size
@@ -97,7 +97,7 @@ def AGGH(train_data, train_labels, knnGPU, model):
             elif model == 2:#apply LS over a random individual
                 idx = np.random.randint(0, p_size, 1)
                 parent["chromosome"][idx], parent["score"][idx], n_evals_in_BL = BL.BLCUDA1iter(train_data, train_labels, knnGPU, parent["chromosome"][idx])
-                n_evals += n_evals_in_BL    
+                n_evals += n_evals_in_BL
             elif model == 3:#apply LS over the best
                 parent["chromosome"][-1], parent["score"][-1], n_evals_in_BL = BL.BLCUDA1iter(train_data, train_labels, knnGPU, parent["chromosome"][-1])
                 n_evals += n_evals_in_BL

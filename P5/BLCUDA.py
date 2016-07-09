@@ -8,6 +8,7 @@ def flip(s,i):
 
 
 def BLCUDA(training_data, training_labels, knnGPU, initial_sol):
+	print("Ejecutando BLCUDA")
 	n = len(training_data[0]) #number of features
 	s = np.array(initial_sol)
 	s_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
