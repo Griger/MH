@@ -1,0 +1,195 @@
+Results for AMall in wdbc
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  36.666666666666664 %
+Final solution's training score:  98.2456
+Final solution's test score:  95.0704225352
+AMall' execution time in seconds:  41.34883499145508
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  36.666666666666664 %
+Final solution's training score:  98.5916
+Final solution's test score:  96.4912280702
+AMall' execution time in seconds:  40.78572416305542
+Results for AMall in wdbc
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  26.666666666666668 %
+Final solution's training score:  97.8947
+Final solution's test score:  95.4225352113
+AMall' execution time in seconds:  43.8189857006073
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8873
+Final solution's test score:  95.0877192982
+AMall' execution time in seconds:  37.550838232040405
+Results for AMall in wdbc
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  43.333333333333336 %
+Final solution's training score:  96.1404
+Final solution's test score:  96.4788732394
+AMall' execution time in seconds:  38.615859031677246
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  13.333333333333334 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.4385964912
+AMall' execution time in seconds:  46.41774272918701
+Results for AMall in wdbc
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8947
+Final solution's test score:  94.3661971831
+AMall' execution time in seconds:  37.47589135169983
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  20.0 %
+Final solution's training score:  98.9437
+Final solution's test score:  94.7368421053
+AMall' execution time in seconds:  45.1553635597229
+Results for AMall in wdbc
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  30.0 %
+Final solution's training score:  97.8947
+Final solution's test score:  94.3661971831
+AMall' execution time in seconds:  41.83494210243225
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  16.666666666666664 %
+Final solution's training score:  98.5916
+Final solution's test score:  95.4385964912
+AMall' execution time in seconds:  45.80762577056885
+Results for AMall in libras
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  44.44444444444444 %
+Final solution's training score:  76.6667
+Final solution's test score:  78.3333333333
+AMall' execution time in seconds:  47.97499489784241
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  52.22222222222223 %
+Final solution's training score:  73.3333
+Final solution's test score:  71.6666666667
+AMall' execution time in seconds:  44.74611496925354
+Results for AMall in libras
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  38.88888888888889 %
+Final solution's training score:  75.5556
+Final solution's test score:  68.8888888889
+AMall' execution time in seconds:  50.07602524757385
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  38.88888888888889 %
+Final solution's training score:  78.8889
+Final solution's test score:  72.2222222222
+AMall' execution time in seconds:  50.6742262840271
+Results for AMall in libras
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  52.22222222222223 %
+Final solution's training score:  76.6667
+Final solution's test score:  75.5555555556
+AMall' execution time in seconds:  43.26486301422119
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  44.44444444444444 %
+Final solution's training score:  77.7778
+Final solution's test score:  73.3333333333
+AMall' execution time in seconds:  47.920917987823486
+Results for AMall in libras
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  51.11111111111111 %
+Final solution's training score:  77.7778
+Final solution's test score:  70.0
+AMall' execution time in seconds:  46.05856490135193
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  53.333333333333336 %
+Final solution's training score:  77.2222
+Final solution's test score:  76.6666666667
+AMall' execution time in seconds:  43.49348855018616
+Results for AMall in libras
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  50.0 %
+Final solution's training score:  74.4444
+Final solution's test score:  77.7777777778
+AMall' execution time in seconds:  41.77649283409119
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  42.22222222222222 %
+Final solution's training score:  77.7778
+Final solution's test score:  75.0
+AMall' execution time in seconds:  49.06575059890747
+Results for AMall in arr
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  43.16546762589928 %
+Final solution's training score:  75.7732
+Final solution's test score:  64.0625
+AMall' execution time in seconds:  120.5650269985199
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  43.884892086330936 %
+Final solution's training score:  71.3542
+Final solution's test score:  64.9484536082
+AMall' execution time in seconds:  131.88042759895325
+Results for AMall in arr
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  41.36690647482014 %
+Final solution's training score:  71.6495
+Final solution's test score:  63.0208333333
+AMall' execution time in seconds:  132.17432141304016
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  38.489208633093526 %
+Final solution's training score:  72.3958
+Final solution's test score:  66.4948453608
+AMall' execution time in seconds:  150.49418449401855
+Results for AMall in arr
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  40.28776978417266 %
+Final solution's training score:  72.1649
+Final solution's test score:  65.1041666667
+AMall' execution time in seconds:  132.24160885810852
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  39.92805755395683 %
+Final solution's training score:  70.8333
+Final solution's test score:  65.4639175258
+AMall' execution time in seconds:  151.5014841556549
+Results for AMall in arr
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  42.44604316546763 %
+Final solution's training score:  69.5876
+Final solution's test score:  64.5833333333
+AMall' execution time in seconds:  122.46433520317078
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  46.402877697841724 %
+Final solution's training score:  74.4792
+Final solution's test score:  64.4329896907
+AMall' execution time in seconds:  132.22438764572144
+Results for AMall in arr
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  41.007194244604314 %
+Final solution's training score:  72.1649
+Final solution's test score:  67.7083333333
+AMall' execution time in seconds:  139.81490015983582
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 1
+% reduction:  45.68345323741007 %
+Final solution's training score:  72.3958
+Final solution's test score:  65.4639175258
+AMall' execution time in seconds:  134.46933436393738

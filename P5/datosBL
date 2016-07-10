@@ -1,0 +1,195 @@
+Results for BL in wdbc
+Partition  1 - 1
+Ejecutando BLCUDA
+% reduction:  50.0 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  96.1267605634
+BL' execution time in seconds:  0.2518937587738037
+Partition  1 - 2
+Ejecutando BLCUDA
+% reduction:  40.0 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  94.7368421053
+BL' execution time in seconds:  0.18824100494384766
+Results for BL in wdbc
+Partition  2 - 1
+Ejecutando BLCUDA
+% reduction:  56.666666666666664 %
+Final solution's training score:  97.8947368421
+Final solution's test score:  95.7746478873
+BL' execution time in seconds:  0.21776938438415527
+Partition  2 - 2
+Ejecutando BLCUDA
+% reduction:  46.666666666666664 %
+Final solution's training score:  95.7746478873
+Final solution's test score:  95.0877192982
+BL' execution time in seconds:  0.08923196792602539
+Results for BL in wdbc
+Partition  3 - 1
+Ejecutando BLCUDA
+% reduction:  43.333333333333336 %
+Final solution's training score:  96.4912280702
+Final solution's test score:  97.5352112676
+BL' execution time in seconds:  0.19288945198059082
+Partition  3 - 2
+Ejecutando BLCUDA
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8873239437
+Final solution's test score:  94.0350877193
+BL' execution time in seconds:  0.11420297622680664
+Results for BL in wdbc
+Partition  4 - 1
+Ejecutando BLCUDA
+% reduction:  50.0 %
+Final solution's training score:  97.5438596491
+Final solution's test score:  95.0704225352
+BL' execution time in seconds:  0.17786359786987305
+Partition  4 - 2
+Ejecutando BLCUDA
+% reduction:  40.0 %
+Final solution's training score:  98.2394366197
+Final solution's test score:  92.6315789474
+BL' execution time in seconds:  0.1429746150970459
+Results for BL in wdbc
+Partition  5 - 1
+Ejecutando BLCUDA
+% reduction:  43.333333333333336 %
+Final solution's training score:  96.1403508772
+Final solution's test score:  93.661971831
+BL' execution time in seconds:  0.1320040225982666
+Partition  5 - 2
+Ejecutando BLCUDA
+% reduction:  43.333333333333336 %
+Final solution's training score:  98.5915492958
+Final solution's test score:  94.3859649123
+BL' execution time in seconds:  0.24079275131225586
+Results for BL in libras
+Partition  1 - 1
+Ejecutando BLCUDA
+% reduction:  48.888888888888886 %
+Final solution's training score:  75.5555555556
+Final solution's test score:  76.1111111111
+BL' execution time in seconds:  0.4861640930175781
+Partition  1 - 2
+Ejecutando BLCUDA
+% reduction:  44.44444444444444 %
+Final solution's training score:  71.6666666667
+Final solution's test score:  69.4444444444
+BL' execution time in seconds:  0.725562334060669
+Results for BL in libras
+Partition  2 - 1
+Ejecutando BLCUDA
+% reduction:  42.22222222222222 %
+Final solution's training score:  71.1111111111
+Final solution's test score:  69.4444444444
+BL' execution time in seconds:  0.4763014316558838
+Partition  2 - 2
+Ejecutando BLCUDA
+% reduction:  44.44444444444444 %
+Final solution's training score:  77.2222222222
+Final solution's test score:  72.2222222222
+BL' execution time in seconds:  0.6164014339447021
+Results for BL in libras
+Partition  3 - 1
+Ejecutando BLCUDA
+% reduction:  44.44444444444444 %
+Final solution's training score:  72.7777777778
+Final solution's test score:  72.2222222222
+BL' execution time in seconds:  0.3484165668487549
+Partition  3 - 2
+Ejecutando BLCUDA
+% reduction:  47.77777777777778 %
+Final solution's training score:  75.0
+Final solution's test score:  72.2222222222
+BL' execution time in seconds:  0.5193512439727783
+Results for BL in libras
+Partition  4 - 1
+Ejecutando BLCUDA
+% reduction:  45.55555555555556 %
+Final solution's training score:  73.3333333333
+Final solution's test score:  72.2222222222
+BL' execution time in seconds:  0.3251383304595947
+Partition  4 - 2
+Ejecutando BLCUDA
+% reduction:  47.77777777777778 %
+Final solution's training score:  72.7777777778
+Final solution's test score:  73.3333333333
+BL' execution time in seconds:  0.5170872211456299
+Results for BL in libras
+Partition  5 - 1
+Ejecutando BLCUDA
+% reduction:  43.333333333333336 %
+Final solution's training score:  71.6666666667
+Final solution's test score:  79.4444444444
+BL' execution time in seconds:  0.3951249122619629
+Partition  5 - 2
+Ejecutando BLCUDA
+% reduction:  43.333333333333336 %
+Final solution's training score:  70.0
+Final solution's test score:  74.4444444444
+BL' execution time in seconds:  0.3432939052581787
+Results for BL in arr
+Partition  1 - 1
+Ejecutando BLCUDA
+% reduction:  52.15827338129496 %
+Final solution's training score:  73.1958762887
+Final solution's test score:  65.625
+BL' execution time in seconds:  5.618119239807129
+Partition  1 - 2
+Ejecutando BLCUDA
+% reduction:  53.597122302158276 %
+Final solution's training score:  69.2708333333
+Final solution's test score:  64.9484536082
+BL' execution time in seconds:  5.308615684509277
+Results for BL in arr
+Partition  2 - 1
+Ejecutando BLCUDA
+% reduction:  52.87769784172662 %
+Final solution's training score:  71.1340206186
+Final solution's test score:  64.0625
+BL' execution time in seconds:  3.4240612983703613
+Partition  2 - 2
+Ejecutando BLCUDA
+% reduction:  53.956834532374096 %
+Final solution's training score:  70.3125
+Final solution's test score:  64.9484536082
+BL' execution time in seconds:  6.626782655715942
+Results for BL in arr
+Partition  3 - 1
+Ejecutando BLCUDA
+% reduction:  52.87769784172662 %
+Final solution's training score:  69.587628866
+Final solution's test score:  67.1875
+BL' execution time in seconds:  3.623802423477173
+Partition  3 - 2
+Ejecutando BLCUDA
+% reduction:  53.597122302158276 %
+Final solution's training score:  72.9166666667
+Final solution's test score:  63.9175257732
+BL' execution time in seconds:  5.091426610946655
+Results for BL in arr
+Partition  4 - 1
+Ejecutando BLCUDA
+% reduction:  52.87769784172662 %
+Final solution's training score:  72.6804123711
+Final solution's test score:  67.7083333333
+BL' execution time in seconds:  4.848597049713135
+Partition  4 - 2
+Ejecutando BLCUDA
+% reduction:  51.798561151079134 %
+Final solution's training score:  70.3125
+Final solution's test score:  63.9175257732
+BL' execution time in seconds:  3.5655782222747803
+Results for BL in arr
+Partition  5 - 1
+Ejecutando BLCUDA
+% reduction:  53.23741007194245 %
+Final solution's training score:  68.5567010309
+Final solution's test score:  65.625
+BL' execution time in seconds:  4.325641870498657
+Partition  5 - 2
+Ejecutando BLCUDA
+% reduction:  53.597122302158276 %
+Final solution's training score:  71.875
+Final solution's test score:  61.3402061856
+BL' execution time in seconds:  4.427536487579346

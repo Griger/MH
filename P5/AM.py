@@ -95,7 +95,7 @@ def AM(train_data, train_labels, knnGPU, model):
                     individual["chromosome"], individual["score"], n_evals_in_BL = BL.BLCUDA1iter(train_data, train_labels, knnGPU, individual["chromosome"])
                     n_evals += n_evals_in_BL
             elif model == 2:#apply LS over a random individual
-                idx = np.random.randint(0, p_size, 1)
+                idx = np.random.randint(0, p_size)
                 parent["chromosome"][idx], parent["score"][idx], n_evals_in_BL = BL.BLCUDA1iter(train_data, train_labels, knnGPU, parent["chromosome"][idx])
                 n_evals += n_evals_in_BL
             elif model == 3:#apply LS over the best
