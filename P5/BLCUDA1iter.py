@@ -12,8 +12,6 @@ def BLCUDA1iter(training_data, training_labels, knnGPU, initial_sol):
 	s = np.array(initial_sol)
 	s_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
 	n_generated_sols = 0
-	max_generated_sol = 15000
-
 
 	idx = np.random.choice(range(0,n), n, False)
 	found_better_sol = False
@@ -25,13 +23,9 @@ def BLCUDA1iter(training_data, training_labels, knnGPU, initial_sol):
 
 		if(s_i_score > s_score):
 			found_better_sol = True
-			#s = s_i
 			s_score = s_i_score
 		else:
 			s[i] = not s[i] #revert change
-
-		if n_generated_sols == max_generated_sol:
-			return s, s_score
 
 		if found_better_sol:
 			break

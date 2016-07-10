@@ -20,7 +20,7 @@ def cross(first_parent, second_parent):
 def mutate(s, gen_idx):
     s[gen_idx] = not s[gen_idx]
 
-def AGGH(train_data, train_labels, knnGPU, model):
+def AM(train_data, train_labels, knnGPU, model):
     print("Ejecutando AGG Hibrido con modelo",model)
     max_evals = 15000
     n = len(train_data[0])

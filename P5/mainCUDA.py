@@ -1,6 +1,6 @@
 import numpy as np
 import BLCUDA
-import AGGH
+import AM
 import time
 import sys
 from knnLooGPU import *
@@ -24,12 +24,12 @@ def getResult(heuristic_name, heuristic, train_data, train_labels, test_data, te
 	print(heuristic_name + "' execution time in seconds: ", end-start)
 
 
-AGGHModel1 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 1)
-AGGHModel2 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 2)
-AGGHModel3 = lambda train_data, train_labels, knnGPU: AGGH.AGGH(train_data, train_labels, knnGPU, 3)
+AMall = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels, knnGPU, 1)
+AMrandom = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels, knnGPU, 2)
+AMbest = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels, knnGPU, 3)
 
-heuristics = {'BL' : BLCUDA.BLCUDA, 'AGGH Model 1':AGGHModel1, 'AGGH Model 2':AGGHModel2, 'AGGH Model 3':AGGHModel3}
-heuristic_names = ['BL','AGGH Model 1', 'AGGH Model 2', 'AGGH Model 3']
+heuristics = {'BL' : BLCUDA.BLCUDA, 'AM Model 1':AMall, 'AM Model 2':AMrandom, 'AM Model 3':AMbest}
+heuristic_names = ['BL','AM Model 1', 'AM Model 2', 'AM Model 3']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
 	print("Algoritmo no especificado o no valido. Elija entre KNN, SFS, AGG o AGE")
