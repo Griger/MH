@@ -1,0 +1,195 @@
+Results for AMrandom in wdbc
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  36.666666666666664 %
+Final solution's training score:  98.5965
+Final solution's test score:  96.8309859155
+AMrandom' execution time in seconds:  41.574177742004395
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  36.666666666666664 %
+Final solution's training score:  98.5916
+Final solution's test score:  96.8421052632
+AMrandom' execution time in seconds:  40.30042767524719
+Results for AMrandom in wdbc
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  26.666666666666668 %
+Final solution's training score:  97.8947
+Final solution's test score:  96.8309859155
+AMrandom' execution time in seconds:  43.64315724372864
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8873
+Final solution's test score:  95.0877192982
+AMrandom' execution time in seconds:  37.34685039520264
+Results for AMrandom in wdbc
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  43.333333333333336 %
+Final solution's training score:  96.1404
+Final solution's test score:  96.4788732394
+AMrandom' execution time in seconds:  38.113502740859985
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  23.333333333333332 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.0877192982
+AMrandom' execution time in seconds:  44.21126341819763
+Results for AMrandom in wdbc
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  33.33333333333333 %
+Final solution's training score:  97.8947
+Final solution's test score:  95.4225352113
+AMrandom' execution time in seconds:  40.964150190353394
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  40.0 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.4385964912
+AMrandom' execution time in seconds:  39.10713982582092
+Results for AMrandom in wdbc
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  30.0 %
+Final solution's training score:  97.8947
+Final solution's test score:  94.3661971831
+AMrandom' execution time in seconds:  42.22087836265564
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  10.0 %
+Final solution's training score:  98.9437
+Final solution's test score:  94.3859649123
+AMrandom' execution time in seconds:  48.224040031433105
+Results for AMrandom in libras
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  37.77777777777778 %
+Final solution's training score:  77.7778
+Final solution's test score:  77.7777777778
+AMrandom' execution time in seconds:  47.434346199035645
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  51.11111111111111 %
+Final solution's training score:  74.4444
+Final solution's test score:  73.3333333333
+AMrandom' execution time in seconds:  44.091532468795776
+Results for AMrandom in libras
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  41.11111111111111 %
+Final solution's training score:  76.6667
+Final solution's test score:  69.4444444444
+AMrandom' execution time in seconds:  49.43583273887634
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  35.55555555555556 %
+Final solution's training score:  80.0
+Final solution's test score:  72.2222222222
+AMrandom' execution time in seconds:  51.926809310913086
+Results for AMrandom in libras
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  40.0 %
+Final solution's training score:  76.6667
+Final solution's test score:  71.6666666667
+AMrandom' execution time in seconds:  48.71778988838196
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  44.44444444444444 %
+Final solution's training score:  77.7778
+Final solution's test score:  73.8888888889
+AMrandom' execution time in seconds:  47.654179096221924
+Results for AMrandom in libras
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  42.22222222222222 %
+Final solution's training score:  78.3333
+Final solution's test score:  70.5555555556
+AMrandom' execution time in seconds:  45.895127296447754
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  56.666666666666664 %
+Final solution's training score:  76.6667
+Final solution's test score:  75.0
+AMrandom' execution time in seconds:  41.202996492385864
+Results for AMrandom in libras
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  60.0 %
+Final solution's training score:  72.7778
+Final solution's test score:  80.5555555556
+AMrandom' execution time in seconds:  39.24634313583374
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  42.22222222222222 %
+Final solution's training score:  77.2222
+Final solution's test score:  73.8888888889
+AMrandom' execution time in seconds:  48.97267746925354
+Results for AMrandom in arr
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  23.381294964028775 %
+Final solution's training score:  77.3196
+Final solution's test score:  65.625
+AMrandom' execution time in seconds:  146.33876657485962
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  24.46043165467626 %
+Final solution's training score:  71.3542
+Final solution's test score:  64.9484536082
+AMrandom' execution time in seconds:  183.16786456108093
+Results for AMrandom in arr
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  23.381294964028775 %
+Final solution's training score:  72.1649
+Final solution's test score:  63.5416666667
+AMrandom' execution time in seconds:  151.72107529640198
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  25.899280575539567 %
+Final solution's training score:  71.875
+Final solution's test score:  66.4948453608
+AMrandom' execution time in seconds:  184.91272044181824
+Results for AMrandom in arr
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  28.776978417266186 %
+Final solution's training score:  72.1649
+Final solution's test score:  61.9791666667
+AMrandom' execution time in seconds:  141.38695788383484
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  21.58273381294964 %
+Final solution's training score:  73.4375
+Final solution's test score:  66.4948453608
+AMrandom' execution time in seconds:  196.31401348114014
+Results for AMrandom in arr
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  33.093525179856115 %
+Final solution's training score:  72.6804
+Final solution's test score:  64.0625
+AMrandom' execution time in seconds:  130.83683371543884
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  25.539568345323744 %
+Final solution's training score:  75.5208
+Final solution's test score:  65.4639175258
+AMrandom' execution time in seconds:  180.42246317863464
+Results for AMrandom in arr
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  23.741007194244602 %
+Final solution's training score:  72.1649
+Final solution's test score:  67.1875
+AMrandom' execution time in seconds:  147.53292036056519
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 2
+% reduction:  25.179856115107913 %
+Final solution's training score:  70.8333
+Final solution's test score:  63.4020618557
+AMrandom' execution time in seconds:  177.9336416721344

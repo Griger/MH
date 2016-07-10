@@ -1,0 +1,195 @@
+Results for AMbest in wdbc
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  33.33333333333333 %
+Final solution's training score:  98.2456
+Final solution's test score:  96.4788732394
+AMbest' execution time in seconds:  41.49948859214783
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  36.666666666666664 %
+Final solution's training score:  98.5916
+Final solution's test score:  96.8421052632
+AMbest' execution time in seconds:  40.16569781303406
+Results for AMbest in wdbc
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  26.666666666666668 %
+Final solution's training score:  97.8947
+Final solution's test score:  96.8309859155
+AMbest' execution time in seconds:  43.21421241760254
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  46.666666666666664 %
+Final solution's training score:  97.8873
+Final solution's test score:  95.0877192982
+AMbest' execution time in seconds:  37.49825739860535
+Results for AMbest in wdbc
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  43.333333333333336 %
+Final solution's training score:  95.7895
+Final solution's test score:  97.1830985915
+AMbest' execution time in seconds:  38.165406942367554
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  13.333333333333334 %
+Final solution's training score:  98.9437
+Final solution's test score:  95.0877192982
+AMbest' execution time in seconds:  46.99921631813049
+Results for AMbest in wdbc
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  56.666666666666664 %
+Final solution's training score:  97.8947
+Final solution's test score:  95.7746478873
+AMbest' execution time in seconds:  34.150906801223755
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  20.0 %
+Final solution's training score:  99.2958
+Final solution's test score:  95.4385964912
+AMbest' execution time in seconds:  45.106866121292114
+Results for AMbest in wdbc
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  36.666666666666664 %
+Final solution's training score:  97.8947
+Final solution's test score:  92.9577464789
+AMbest' execution time in seconds:  40.58532214164734
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  10.0 %
+Final solution's training score:  98.9437
+Final solution's test score:  94.3859649123
+AMbest' execution time in seconds:  47.92503118515015
+Results for AMbest in libras
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  45.55555555555556 %
+Final solution's training score:  76.6667
+Final solution's test score:  77.7777777778
+AMbest' execution time in seconds:  47.60685992240906
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  50.0 %
+Final solution's training score:  71.6667
+Final solution's test score:  71.1111111111
+AMbest' execution time in seconds:  44.38480544090271
+Results for AMbest in libras
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  41.11111111111111 %
+Final solution's training score:  76.1111
+Final solution's test score:  70.5555555556
+AMbest' execution time in seconds:  49.512704610824585
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  41.11111111111111 %
+Final solution's training score:  79.4444
+Final solution's test score:  73.8888888889
+AMbest' execution time in seconds:  49.46130132675171
+Results for AMbest in libras
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  43.333333333333336 %
+Final solution's training score:  76.6667
+Final solution's test score:  73.8888888889
+AMbest' execution time in seconds:  46.660789489746094
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  38.88888888888889 %
+Final solution's training score:  78.3333
+Final solution's test score:  73.3333333333
+AMbest' execution time in seconds:  49.92454791069031
+Results for AMbest in libras
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  48.888888888888886 %
+Final solution's training score:  78.8889
+Final solution's test score:  72.2222222222
+AMbest' execution time in seconds:  45.47779107093811
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  56.666666666666664 %
+Final solution's training score:  76.6667
+Final solution's test score:  73.3333333333
+AMbest' execution time in seconds:  41.38167428970337
+Results for AMbest in libras
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  60.0 %
+Final solution's training score:  72.7778
+Final solution's test score:  80.5555555556
+AMbest' execution time in seconds:  39.70494532585144
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  32.22222222222222 %
+Final solution's training score:  78.8889
+Final solution's test score:  71.6666666667
+AMbest' execution time in seconds:  53.25942850112915
+Results for AMbest in arr
+Partition  1 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  25.179856115107913 %
+Final solution's training score:  75.7732
+Final solution's test score:  64.0625
+AMbest' execution time in seconds:  148.47381615638733
+Partition  1 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  28.776978417266186 %
+Final solution's training score:  72.9167
+Final solution's test score:  63.4020618557
+AMbest' execution time in seconds:  169.55287384986877
+Results for AMbest in arr
+Partition  2 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  28.05755395683453 %
+Final solution's training score:  72.6804
+Final solution's test score:  62.5
+AMbest' execution time in seconds:  138.46371006965637
+Partition  2 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  23.021582733812952 %
+Final solution's training score:  71.875
+Final solution's test score:  67.0103092784
+AMbest' execution time in seconds:  197.08697056770325
+Results for AMbest in arr
+Partition  3 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  31.294964028776977 %
+Final solution's training score:  72.6804
+Final solution's test score:  62.5
+AMbest' execution time in seconds:  131.7663130760193
+Partition  3 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  17.62589928057554 %
+Final solution's training score:  69.2708
+Final solution's test score:  64.9484536082
+AMbest' execution time in seconds:  196.40308213233948
+Results for AMbest in arr
+Partition  4 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  30.215827338129497 %
+Final solution's training score:  73.1959
+Final solution's test score:  64.0625
+AMbest' execution time in seconds:  140.52267384529114
+Partition  4 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  28.776978417266186 %
+Final solution's training score:  76.0417
+Final solution's test score:  63.9175257732
+AMbest' execution time in seconds:  168.50357866287231
+Results for AMbest in arr
+Partition  5 - 1
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  25.179856115107913 %
+Final solution's training score:  72.1649
+Final solution's test score:  67.7083333333
+AMbest' execution time in seconds:  149.2917845249176
+Partition  5 - 2
+Ejecutando AGG Hibrido con modelo 3
+% reduction:  29.136690647482016 %
+Final solution's training score:  72.9167
+Final solution's test score:  63.4020618557
+AMbest' execution time in seconds:  164.19553136825562

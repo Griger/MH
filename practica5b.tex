@@ -331,6 +331,30 @@ Adjuntamos también las tablas en un fichero por si no se leen correctamente en 
 \end{tabular}}
 \end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{BL}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-13}
+\multirow{2}{*}{}                   & \multicolumn{4}{c|}{Wdbc}                     & \multicolumn{4}{c|}{Movement\_Libras}         & \multicolumn{4}{c|}{Arrhythmia}               \\ \cline{2-13} 
+                                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T    & \%\_clas\_in & \%\_clas\_out & \%\_red & T    & \%\_clas\_in & \%\_clas\_out & \%\_red & T    \\ \hline
+\multicolumn{1}{|l|}{Partición 1-1} & 97,89        & 96,13         & 50,00   & 0,25 & 75,56        & 76,11         & 48,89   & 0,49 & 73,20        & 65,63         & 52,16   & 5,62 \\ \hline
+\multicolumn{1}{|l|}{Partición 1-2} & 98,24        & 94,77         & 40,00   & 0,19 & 71,67        & 69,44         & 44,44   & 0,73 & 69,27        & 64,95         & 53,60   & 5,31 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-1} & 97,89        & 95,77         & 56,67   & 0,22 & 71,11        & 69,44         & 42,22   & 0,48 & 71,13        & 64,06         & 52,88   & 3,42 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-2} & 95,77        & 95,09         & 46,67   & 0,09 & 77,22        & 72,22         & 44,44   & 0,62 & 70,31        & 64,95         & 53,96   & 6,63 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-1} & 96,49        & 97,54         & 43,33   & 0,19 & 72,78        & 72,22         & 44,44   & 0,35 & 69,59        & 67,19         & 52,88   & 3,62 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-2} & 97,89        & 94,04         & 46,67   & 0,11 & 75,00        & 72,22         & 47,78   & 0,52 & 72,92        & 63,92         & 53,60   & 5,10 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-1} & 97,54        & 95,07         & 50,00   & 0,18 & 73,33        & 72,22         & 45,56   & 0,33 & 72,68        & 67,71         & 52,88   & 4,85 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-2} & 98,24        & 92,63         & 40,00   & 0,14 & 72,78        & 73,33         & 47,78   & 0,52 & 70,31        & 63,92         & 51,80   & 3,57 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-1} & 95,14        & 93,66         & 43,33   & 0,13 & 71,67        & 79,44         & 43,33   & 0,40 & 68,56        & 65,63         & 53,24   & 4,33 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-2} & 98,59        & 94,39         & 43,33   & 0,24 & 70,00        & 74,44         & 43,33   & 0,34 & 71,88        & 61,34         & 53,60   & 4,43 \\ \hline
+\multicolumn{1}{|l|}{Media}         & 97,37        & 94,91         & 46,00   & 0,17 & 73,11        & 73,11         & 45,22   & 0,48 & 70,99        & 64,93         & 53,06   & 4,69 \\ \hline
+\end{tabular}}
+\end{table}
+
 \begin{table}[H]
 \centering
 \caption{AGG}
@@ -353,17 +377,95 @@ Adjuntamos también las tablas en un fichero por si no se leen correctamente en 
 \end{tabular}}
 \end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{AM-(10,1.0)}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-13}
+\multirow{2}{*}{}                   & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}          & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+                                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+\multicolumn{1}{|l|}{Partición 1-1} & 98,25        & 95,07         & 36,67   & 41,35 & 76,67        & 78,33         & 44,44   & 47,97 & 75,77        & 64,06         & 43,17   & 120,57 \\ \hline
+\multicolumn{1}{|l|}{Partición 1-2} & 98,59        & 96,49         & 36,67   & 40,79 & 73,33        & 71,67         & 52,22   & 44,75 & 71,35        & 64,95         & 43,88   & 131,88 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-1} & 97,89        & 95,42         & 26,67   & 43,82 & 75,56        & 68,89         & 38,89   & 50,08 & 71,65        & 63,02         & 41,37   & 132,17 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-2} & 97,89        & 95,09         & 46,67   & 37,55 & 78,89        & 72,22         & 38,89   & 50,67 & 72,40        & 66,49         & 38,50   & 150,49 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-1} & 96,14        & 96,48         & 43,33   & 38,62 & 76,67        & 75,56         & 52,22   & 43,26 & 72,16        & 65,10         & 40,29   & 132,24 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-2} & 98,94        & 95,44         & 13,33   & 46,42 & 77,78        & 73,33         & 44,44   & 47,92 & 70,83        & 65,47         & 39,93   & 151,50 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-1} & 97,89        & 94,37         & 46,67   & 37,48 & 77,78        & 70,00         & 51,11   & 46,06 & 69,59        & 64,58         & 42,45   & 122,46 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-2} & 98,94        & 94,74         & 20,00   & 45,16 & 77,22        & 76,67         & 53,33   & 43,49 & 74,48        & 64,43         & 46,40   & 132,22 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-1} & 97,89        & 94,37         & 30,00   & 41,83 & 74,44        & 77,78         & 50,00   & 41,78 & 72,16        & 67,71         & 41,01   & 139,81 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-2} & 98,59        & 95,44         & 16,67   & 45,81 & 77,78        & 75,00         & 42,22   & 49,07 & 72,40        & 65,46         & 45,68   & 134,47 \\ \hline
+\multicolumn{1}{|l|}{Media}         & 98,10        & 95,29         & 31,67   & 41,88 & 76,61        & 73,95         & 46,78   & 46,51 & 72,28        & 65,13         & 42,27   & 134,78 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{AM-(10,0.1)}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-13}
+\multirow{2}{*}{}                   & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}          & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+                                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+\multicolumn{1}{|l|}{Partición 1-1} & 98,6         & 96,83         & 36,67   & 41,57 & 77,78        & 77,78         & 37,78   & 47,43 & 77,32        & 65,63         & 23,38   & 146,34 \\ \hline
+\multicolumn{1}{|l|}{Partición 1-2} & 98,6         & 96,84         & 36,66   & 40,30 & 74,44        & 73,33         & 51,11   & 44,09 & 71,35        & 64,95         & 24,46   & 183,17 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-1} & 97,89        & 96,83         & 26,67   & 43,64 & 76,67        & 69,44         & 41,11   & 49,44 & 72,16        & 63,54         & 23,38   & 151,72 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-2} & 97,89        & 95,09         & 46,67   & 37,35 & 80,00        & 72,22         & 35,56   & 51,93 & 71,88        & 66,49         & 25,90   & 184,91 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-1} & 96,14        & 96,47         & 43,33   & 38,11 & 76,67        & 71,67         & 40,00   & 48,72 & 72,16        & 61,98         & 28,78   & 141,39 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-2} & 98,94        & 95,09         & 23,33   & 44,21 & 77,78        & 73,89         & 44,44   & 47,65 & 73,44        & 66,49         & 21,58   & 196,31 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-1} & 97,89        & 95,42         & 33,33   & 40,96 & 78,33        & 70,56         & 42,22   & 45,90 & 72,68        & 64,06         & 33,09   & 130,84 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-2} & 98,94        & 95,44         & 40,00   & 39,11 & 76,67        & 75,00         & 56,67   & 41,20 & 75,52        & 65,46         & 25,54   & 180,42 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-1} & 97,89        & 94,37         & 30,00   & 42,22 & 72,78        & 80,56         & 60,00   & 39,25 & 72,16        & 67,19         & 23,74   & 147,53 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-2} & 98,94        & 94,39         & 10,00   & 48,22 & 77,22        & 73,89         & 42,22   & 48,97 & 70,83        & 63,40         & 25,18   & 177,93 \\ \hline
+\multicolumn{1}{|l|}{Media}         & 98,17        & 95,68         & 32,67   & 41,57 & 76,83        & 73,83         & 45,11   & 46,46 & 72,95        & 64,92         & 25,50   & 164,06 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\caption{AM-(10,0.1mejor)}
+\label{my-label}
+\resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\cline{2-13}
+\multirow{2}{*}{}                   & \multicolumn{4}{c|}{Wdbc}                      & \multicolumn{4}{c|}{Movement\_Libras}          & \multicolumn{4}{c|}{Arrhythmia}                 \\ \cline{2-13} 
+                                    & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T     & \%\_clas\_in & \%\_clas\_out & \%\_red & T      \\ \hline
+\multicolumn{1}{|l|}{Partición 1-1} & 98,25        & 96,48         & 33,33   & 41,50 & 76,67        & 77,78         & 45,56   & 47,61 & 75,77        & 64,06         & 25,18   & 148,47 \\ \hline
+\multicolumn{1}{|l|}{Partición 1-2} & 98,59        & 96,84         & 36,67   & 40,17 & 71,67        & 71,11         & 50,00   & 44,38 & 72,92        & 63,40         & 28,78   & 169,55 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-1} & 97,89        & 96,83         & 26,67   & 43,21 & 76,11        & 70,56         & 41,11   & 49,51 & 72,68        & 62,50         & 28,06   & 138,46 \\ \hline
+\multicolumn{1}{|l|}{Partición 2-2} & 97,89        & 95,09         & 46,67   & 37,50 & 79,44        & 73,89         & 41,11   & 49,46 & 71,88        & 67,01         & 23,02   & 197,09 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-1} & 95,79        & 97,18         & 43,33   & 38,17 & 76,67        & 73,89         & 43,33   & 46,66 & 72,68        & 62,50         & 31,29   & 131,77 \\ \hline
+\multicolumn{1}{|l|}{Partición 3-2} & 98,94        & 95,09         & 13,33   & 47,00 & 78,33        & 73,33         & 38,89   & 79,92 & 69,27        & 64,95         & 17,63   & 196,40 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-1} & 97,89        & 95,77         & 56,67   & 34,15 & 78,89        & 72,22         & 48,89   & 45,78 & 73,20        & 64,06         & 30,22   & 140,52 \\ \hline
+\multicolumn{1}{|l|}{Partición 4-2} & 99,3         & 95,44         & 20,00   & 45,11 & 76,67        & 73,33         & 56,67   & 41,38 & 76,04        & 63,92         & 28,78   & 168,50 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-1} & 97,89        & 92,96         & 36,67   & 40,59 & 72,78        & 80,56         & 60,00   & 39,70 & 72,16        & 67,71         & 25,18   & 149,29 \\ \hline
+\multicolumn{1}{|l|}{Partición 5-2} & 98,94        & 94,39         & 10,00   & 47,93 & 78,89        & 71,67         & 32,22   & 53,26 & 72,92        & 63,40         & 29,14   & 164,20 \\ \hline
+\multicolumn{1}{|l|}{Media}         & 98,14        & 95,61         & 32,33   & 41,53 & 76,61        & 73,83         & 45,78   & 49,77 & 72,95        & 64,35         & 26,73   & 160,43 \\ \hline
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 \begin{table}[H]
 \centering
 \caption{Resultados Totales}
 \label{my-label}
 \resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \cline{2-13}
-                           & \multicolumn{4}{c|}{Wdbc}                       & \multicolumn{4}{c|}{Movement\_Libras}           & \multicolumn{4}{c|}{Arrhythmia}                  \\ \cline{2-13} 
-                           & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T       \\ \hline
-\multicolumn{1}{|l|}{3-NN} & 96,417       & 95,922        & 0       & 0      & 71,334       & 73,11         & 0       & 0      & 62,95        & 63,575        & 0       & 0       \\ \hline
-\multicolumn{1}{|l|}{SFS}  & 97,05        & 94,94         & 86      & 0,206  & 75,054       & 67,445        & 91,443  & 0,889  & 80,62        & 71,285        & 97,048  & 3,141   \\ \hline
-\multicolumn{1}{|l|}{AGG}  & 98,28        & 95,75         & 31,33   & 40,41  & 78,72        & 72,67         & 43,45   & 47,53  & 74,61        & 65,18         & 21,98   & 178,74  \\ \hline
+\multirow{2}{*}{}                      & \multicolumn{4}{c|}{Wdbc}                       & \multicolumn{4}{c|}{Movement\_Libras}           & \multicolumn{4}{c|}{Arrhythmia}                  \\ \cline{2-13} 
+                                       & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T      & \%\_clas\_in & \%\_clas\_out & \%\_red & T       \\ \hline
+\multicolumn{1}{|l|}{3-NN}             & 96,417       & 95,922        & 0       & 0      & 71,334       & 73,11         & 0       & 0      & 62,95        & 63,575        & 0       & 0       \\ \hline
+\multicolumn{1}{|l|}{SFS}              & 97,05        & 94,94         & 86      & 0,206  & 75,054       & 67,445        & 91,443  & 0,889  & 80,62        & 71,285        & 97,048  & 3,141   \\ \hline
+\multicolumn{1}{|l|}{BL}               & 97,368       & 94,909        & 46      & 0,174  & 73,112       & 73,108        & 45,221  & 0,478  & 70,985       & 64,93         & 53,06   & 4,688   \\ \hline
+\multicolumn{1}{|l|}{AGG}              & 98,28        & 95,75         & 31,33   & 40,41  & 78,72        & 72,67         & 43,45   & 47,53  & 74,61        & 65,18         & 21,98   & 178,74  \\ \hline
+\multicolumn{1}{|l|}{AM-(10,1.0)}      & 98,101       & 95,291        & 31,668  & 41,883 & 76,612       & 73,945        & 46,776  & 46,505 & 72,279       & 65,127        & 42,268  & 134,781 \\ \hline
+\multicolumn{1}{|l|}{AM-(10,0.1)}      & 98,172       & 95,677        & 32,666  & 41,569 & 76,834       & 73,834        & 45,111  & 46,458 & 72,95        & 64,919        & 25,503  & 164,056 \\ \hline
+\multicolumn{1}{|l|}{AM-(10,0.1mejor)} & 98,137       & 95,607        & 32,334  & 41,533 & 76,612       & 73,834        & 45,778  & 49,766 & 72,952       & 64,351        & 26,728  & 160,425 \\ \hline
 \end{tabular}}
 \end{table}
 
@@ -372,7 +474,7 @@ Adjuntamos también las tablas en un fichero por si no se leen correctamente en 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=130mm]{tasa_train_ag.png}
+\includegraphics[width=130mm]{tasa_train_am.png}
 \end{figure}
 
 Como podemos ver la tasa de acierto sobre Wdbc es la más elevada con respecto a las otras bases, además las tasas de acierto de todos lo algoritmos sobre esta base son muy parecidas, esto se debe a que, como dijo el profesor, esta base de datos es muy pequeña, es decir, el espacio de búsqueda es muy pequeño ($2^{30}$) y hay muy poca tasa de mejora entre una solución y otra.\\
@@ -408,7 +510,7 @@ Ahora bien, cuando estamos en un cruce dependemos mucho de las soluciones que se
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=130mm]{tasa_test_ag.png}
+\includegraphics[width=130mm]{tasa_test_am.png}
 \end{figure}
 
 Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación que producen sus características seleccionadas para los datos fuera de la muestra de entrenamiento. Lo primero que señalamos es que en la amplia mayoría de los casos la tasa de acierto es mayor dentro de la muestra que fuera, pero hay algunos casos donde es al revés. Esto se debe a que es probable que haya muestras de entrenamiento de una clase más cercanas a otra muestra pese a no pertenecer a la clase de dicha muestra. Con lo cual se puede dar el caso de que la "votación" sea mala en la muestra y en cambio la muestra fuera la distribución de puntos sea más favorable a una correcta clasificación de los datos. Por lo tanto no tiene que extrañarnos demasiado esto. Quizás si usásemos un 1NN sí que sería más probable que la muestra más cercana a otra perteneciera a la misma clase que ella (decimos la más cercana y no que en el 1NN hubiésemos obtenido una tasa de acierto del 100\% dentro de la muestra puesto que usamos para evitar esto el Leave One Out).\\
@@ -424,7 +526,7 @@ Esperaba encontrar un peor rendimiento del AGE frente al AGG ya que como he dich
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=130mm]{reduccion_ag.png}
+\includegraphics[width=130mm]{reduccion_am.png}
 \end{figure}
 
 Evidentemente la tasa de reducción para el 3NN es 0 pues tomamos todas las características al no tener otro criterio. Ahora el que produce mayor reducción es el greedy lo que es lógico por la forma en la que trabaja, agregando progresivamente propiedades hasta no encontrar mejora ninguna.\\
@@ -436,7 +538,7 @@ AGE también produce unas tasas de reducción bajas pero como hemos dicho no hay
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=130mm]{tiempo_ag.png}
+\includegraphics[width=130mm]{tiempo_am.png}
 \end{figure}
 
 
