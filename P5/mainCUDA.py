@@ -28,11 +28,11 @@ AMall = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels,
 AMrandom = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels, knnGPU, 2)
 AMbest = lambda train_data, train_labels, knnGPU: AM.AM(train_data, train_labels, knnGPU, 3)
 
-heuristics = {'BL' : BLCUDA.BLCUDA, 'AM Model 1':AMall, 'AM Model 2':AMrandom, 'AM Model 3':AMbest}
-heuristic_names = ['BL','AM Model 1', 'AM Model 2', 'AM Model 3']
+heuristics = {'BL' : BLCUDA.BLCUDA, 'AMall':AMall, 'AMrandom':AMrandom, 'AMbest':AMbest}
+heuristic_names = ['BL','AMall', 'AMrandom', 'AMbest']
 
 if len(sys.argv) < 2 or not sys.argv[1] in heuristic_names:
-	print("Algoritmo no especificado o no valido. Elija entre KNN, SFS, AGG o AGE")
+	print("Algoritmo no especificado o no valido. Elija entre BL , AMall, AMrandom o AMbest")
 else:
 	heuristic_name = sys.argv[1]
 	heuristic = heuristics[heuristic_name]
