@@ -7,10 +7,10 @@ def flip(s,i):
 	return new_s
 
 
-def BLCUDA(training_data, training_labels, knnGPU, initial_sol):
+def BLCUDA(training_data, training_labels, knnGPU):
 	print("Ejecutando BLCUDA")
 	n = len(training_data[0]) #number of features
-	s = np.array(initial_sol)
+	s = np.random.choice([True, False], n)
 	s_score = knnGPU.scoreSolution(training_data[:, s], training_labels)
 	n_generated_sols = 0
 	max_generated_sol = 15000
