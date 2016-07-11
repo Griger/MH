@@ -138,8 +138,10 @@ Todos los algoritmos están implementados en el fichero \textbf{AM.py} donde la 
 padres = poblacion inicial de 30 individuos aleatoria
 ordenamos los padres de peor a mejor segun score
 n_evals += 30
+n_generaciones = 0
 
 while n_evals < max_evals:
+	n_generaciones++
 	#seleccion
 	padres_seleccionados = seleccionamos 30 padres por torneo binario (con repeticion)
 	
@@ -166,7 +168,8 @@ while n_evals < max_evals:
 	padres = hijos
 	ordenamos padres
 	
-	cada 10 iteraciones del while:
+	if n_generaciones == 10:
+		n_generaciones = 0
 		mecanismo de optimizacion correspondiente
 		n_evals += numero evaluaciones empleados en el proceso de optimizacion
 	
@@ -479,34 +482,16 @@ Adjuntamos también las tablas en un fichero por si no se leen correctamente en 
 
 Como podemos ver la tasa de acierto sobre Wdbc es la más elevada con respecto a las otras bases, además las tasas de acierto de todos lo algoritmos sobre esta base son muy parecidas, esto se debe a que, como dijo el profesor, esta base de datos es muy pequeña, es decir, el espacio de búsqueda es muy pequeño ($2^{30}$) y hay muy poca tasa de mejora entre una solución y otra.\\
 
-Las tasas de acierto tanto para arritmia como para libras no difieren más que aproximadamente un 5\% para cada algoritmo. Es importante señalar cómo la tasa de acierto de los algoritmos usados en mejor que la tasa que da el 3NN original, es decir, usando todos los datos de la muestra. Con lo cual aquí se pone de manifiesto cómo el hecho de reducir el número de características a considerar no merma la correcta clasificación de los datos, al menos dentro de la muestra, ya veremos qué sucede fuera. De hecho reduciendo el número de características no sólo reducimos el cómputo necesario sino también el posible ruido que pueden tener algunos datos.\\
+Las tasas de acierto tanto para arritmia como para libras no difieren más que aproximadamente un 5\% para cada algoritmo (excepto para KNN). Es importante señalar cómo la tasa de acierto de los algoritmos usados en mejor que la tasa que da el 3NN original, es decir, usando todos los datos de la muestra. Con lo cual aquí se pone de manifiesto cómo el hecho de reducir el número de características a considerar no merma la correcta clasificación de los datos, al menos dentro de la muestra, ya veremos qué sucede fuera. De hecho reduciendo el número de características no sólo reducimos el cómputo necesario sino también el posible ruido que puedan aportar todos los datos.\\
 
 Es curioso ver cómo el algoritmo greedy produce los mejores resultados en la base de datos con un espacio de búsqueda mayor, de hecho produce mejores resultados en esa base de datos que en la de libras que tiene un espacio menor (es el único que lo hace), probablemente por la naturaleza de los datos, es decir, cómo de distintas sean las muestras que componen las distintas clases entre sí. En mi opinión el hecho de que el SFS produzca mejores resultados que la mayoría en el espacio de búsqueda más grande se debe a que al fin y al cabo el greedy en cada momento va construyendo la mejor solución que puede mientras que en cambio el resto de métodos depende más de cómo de buena sea la exploración que realicen.\\
 
-En cambio sí podemos ver cómo para el espacio más reducido de libras (también se ve en wdbc) sí que los algoritmos que hacen una búsqueda más extensa en el terreno, los genéticos, dan resultados mejores que SFS ya que exploran más soluciones y por lo tanto tienen mayor posibilidad de encontrar una mejor.\\
+En cambio sí podemos ver cómo para el espacio más reducido de libras (también se ve en wdbc) sí que los algoritmos que hacen una búsqueda más extensa en el terreno, los meméticos y el AGG, dan resultados mejores que SFS ya que exploran más soluciones y por lo tanto tienen mayor posibilidad de encontrar una mejor.\\
 
-Si ahora comparamos los dos algoritmos genéticos vemos como el AGG da mejores resultados en libras y en arritmia. En wdbc es el AGE el que obtiene un mejor resultado aunque con una diferencia más pequeña que la que tienen los dos algoritmos en las otras BBDD; ya hemos dicho que esta base de datos es muy pequeña y que hay poca variación de una solución a otra.\\
+Observamos que los algoritmos meméticos sí que mejoran a la BL, es decir, que la capacidad de exploración que tienen hace que se encuentren mejores soluciones que simplemente con la estrategia de explotación de la BL. Ahora bien, algo que me ha sorprendido es que el AGG básico funciona mejor que los meméticos, es decir, la componente de explotación que tienen no es suficiente. También hemos de tener en cuenta que mientras que en los meméticos estamos empleando un tamaño de población de 10 en los genéticos utilizábamos un tamaño de 30 con lo que la diversidad de la búsqueda es mucho mayor, en estos meméticos con un tamaño tan pequeño la convergencia (si además le sumamos la explotación de la BL de baja intensidad) a una zona del espacio debería ser más rápida que en el AGG y por tanto quizás no sean tan buenos exploradores del espacio de búsqueda. Esto se pone algo más de manifiesto si comparamos los tres algoritmos meméticos entre sí, y es que en todas las bases de datos el que peor funciona es el AM-(10,1.0), el que más explotación realiza. Ahora bien, hemos de decir que el rendimiento de los tres meméticos es muy parecido, probablemente debido al reducido tamaño de la población que hace que la explotación no varie mucho entre unos y otros.\\
 
-Vamos a ver unos datos que pueden ser interesantes para la comparación de ambos algoritmos y que han sido calculados de forma aproximada ya que sí bien para AGE siempre se realiza el mismo número de cruces y mutaciones por iteración y en consecuencia el mismo número de evaluaciones de la función objetivo, en AGE la mutación se da con una cierta probabilidad con lo que las cifras que hemos calculado son aproximadas:\\
+Es curioso también observar que, pese a que no podemos extraer conclusiones muy importantes al ser el rendimiento de los algoritos tan parecidos, el memético aleatorio funciona mejor que el que aplica optimización sólo al mejor en las bases de datos más pequeñas (y a la inversa en arritmia), estoy podría indicar que la diversidad que ya aportar el genético es suficiente para arritmia y que es importante explotar buenas zonas del espacio de búsqueda, debido a que el espacio es muy grande movernos aleatoriamente puede llevarnos a soluciones mucho peores.\\
 
-\begin{table}[H]
-\centering
-\caption{Datos algoritmos genéticos}
-\label{my-label}
-\resizebox{\textwidth}{!}{\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\cline{2-16}
-                          & \multicolumn{5}{c|}{Wdbc}                                            & \multicolumn{5}{c|}{Movement\_Libras}                                & \multicolumn{5}{c|}{Arrhythmia}                                      \\ \cline{2-16} 
-                          & n\_iters & cruces/iter & mutaciones/iter & n\_cruces & n\_mutaciones & n\_iters & cruces/iter & mutaciones/iter & n\_cruces & n\_mutaciones & n\_iters & cruces/iter & mutaciones/iter & n\_cruces & n\_mutaciones \\ \hline
-\multicolumn{1}{|l|}{AGG} & 651      & 22          & 1               & 14322     & 651           & 599      & 22          & 3               & 13178     & 1797          & 483      & 22          & 9               & 10626     & 4347          \\ \hline
-\multicolumn{1}{|l|}{AGE} & 7267     & 2           & 0.06            & 14534     & 436           & 6867     & 2           & 0.18            & 13734     & 1236          & 5871     & 2           & 0.55            & 11742     & 3228          \\ \hline
-\end{tabular}}
-\end{table}
-
-Ambos algoritmos se comportan de un modo muy similar ya que su tasa de acierto no difiera más que un 1\% que en el caso de la BBDD con un número mayor de muestras por partición, que es la wdbc, son sólo 3 aciertos más uno que otro con lo cuál no parece que a nivel de acierto dentro de la muestra haya un claro vencedor, al menos para los casos estudiados.\\
-
-Ahora bien a la luz de los datos recogidos en la tabla anterior sí que podemos hacer un breve análisis del comportamiento de los dos algoritmos: como vemos el número total de cruces es más elevado en el AGE que el AGG, el cuál realiza un mayor número de mutaciones. Pensemos en cómo afecta esto a la diversificación: por el número de características que tenemos tenemos que por cada iteración del algoritmo se realizan como mucho 9 mutaciones que se reparte entre todos los individuos de la población, con lo cual la etapa de mutación introduce realmente poca diversidad en nuestra población.\\
-
-Ahora bien, cuando estamos en un cruce dependemos mucho de las soluciones que se crucen ya que según compartan más o menos genes estas soluciones "mutarán" más o menos, entonces en un principio la mayor diversificación la dan los cruces, pero en cuanto a comenzamos a realizar remplazamientos por elitismo la población tiende a ser más parecida o al menos eso sería lo normal si hay unas características bastante más informativas que las otras. Con lo cual creo que finalmente son las mutaciones las que aportan mayor capacidad de diversificación a los genéticos y por los datos anteriores es el AGG el que más diversificación presenta. Pero como ya hemos dicho a la luz de los resultados no nos podemos decantar por un algoritmo u otro pues las diferencias pueden deberse simplemente a la componente aleatoria de los algoritmos.\\
 
 \begin{figure}[H]
 \centering
@@ -515,14 +500,15 @@ Ahora bien, cuando estamos en un cruce dependemos mucho de las soluciones que se
 
 Veamos ahora cómo se comportan los algoritmos con respecto a la clasificación que producen sus características seleccionadas para los datos fuera de la muestra de entrenamiento. Lo primero que señalamos es que en la amplia mayoría de los casos la tasa de acierto es mayor dentro de la muestra que fuera, pero hay algunos casos donde es al revés. Esto se debe a que es probable que haya muestras de entrenamiento de una clase más cercanas a otra muestra pese a no pertenecer a la clase de dicha muestra. Con lo cual se puede dar el caso de que la "votación" sea mala en la muestra y en cambio la muestra fuera la distribución de puntos sea más favorable a una correcta clasificación de los datos. Por lo tanto no tiene que extrañarnos demasiado esto. Quizás si usásemos un 1NN sí que sería más probable que la muestra más cercana a otra perteneciera a la misma clase que ella (decimos la más cercana y no que en el 1NN hubiésemos obtenido una tasa de acierto del 100\% dentro de la muestra puesto que usamos para evitar esto el Leave One Out).\\
 
-Nuevamente el comportamiento para Wdbc es muy similar para todos los algoritmos, lo que era esperable por el razonamiento que hemos dado antes. Lo que sí podemos ver es cómo en esta ocasión el 3NN está en los primeros puestos para las bases de datos de wdbc y libras además de que hay otros algoritmos que también cambian de posición. Esto nos informa de dos cosas: la primera es del eterno problema que hay en el aprendizaje automático y es la capacidad de generalización, el no poder asegurar que si una solución es buena dentro de la muestra de entrenamiento vaya a ser fuera. En segundo lugar vemos cómo lo algoritmos son fuertemente dependientes de los datos, el ruido o simplemente los datos tomados afectan al rendimiento de las soluciones encontradas.\\
+Nuevamente el comportamiento para Wdbc es muy similar para todos los algoritmos, lo que era esperable por el razonamiento que hemos dado antes. Lo que sí podemos ver es cómo en esta ocasión el 3NN está el primero en wdbc además de que hay otros algoritmos que también cambian de posición. Esto nos informa de dos cosas: la primera es del eterno problema que hay en el aprendizaje automático y es la capacidad de generalización, el no poder asegurar que si una solución es buena dentro de la muestra de entrenamiento vaya a serlo fuera. En segundo lugar vemos cómo lo algoritmos son fuertemente dependientes de los datos, el ruido o simplemente los datos tomados afectan al rendimiento de las soluciones encontradas.\\
 
 El hecho de que el 3NN con toda la información no mejore a todos los algoritmos puede venir de que no sólo haya características irrelevantes sino que, como hemos señalado anteriormente, haya datos cuya medición haya sido errónea y que simplemente lo que nos estén haciendo sea empeorar el resultado.\\
 
-Nuevamente entre los dos algoritmos genéticos tenemos una diferencia mínima de rendimiento, observamos como en el resto de prácticas anteriores que el SFS tiene un mejor comportamiento en la base de datos con un espacio de búsqueda mayor probablemente debido a la dependencia de la exploración que tienen los otros dos algoritmos.\\
+Vemos como en la base de datos menor aquellas estrategias que son más exploratorias son las que funcionan mejor, es decir, que el hecho de tomar la mejor solución (dentro de los límites de la exploración claro) de todo el espacio de búsqueda nos da una buena solución en el test, que la generalización es buena. No obstante en la base de datos de mayor tamaño es el SFS algoritmo sin ninguna exploración el que mejor funcionan, tenemos un espacio de búsqueda tan grande y con tantos datos tan diverso que, el hecho de explorar y buscar la mejor solución para estos datos hace que la generalización sea peor.\\
 
-Esperaba encontrar un peor rendimiento del AGE frente al AGG ya que como he dicho tiene menor capacidad de diversificación pero justamente ocurre lo contrario, ahora bien la diferencia de rendimientos es mínima así que no puedo sacar ninguna conclusión al respecto.\\
+Aunque nuevamente no podemos extraer unas conclusiones demasiado buenas debido a que el rendimiento de los meméticos es muy parecido vamos a compararlos entre sí: en relación a lo que hemos dicho antes, el memético aleatorio, el que aporta mayor diversidad, es que que peor funciona el las bases de datos mayores y sin embargo el que mejor funciona en wdbc.\\
 
+En la base de libras, que es en la que hemos venido observando un comportamiento algo más sorprendente de los algoritmos desarrollados a lo largo de las prácticas son los algoritmo meméticos lo que mejor funcionan, es decir, es una base de datos tan "extraña" que el equilibrio exploración-explotación que aportan estas estrategias es la que mejor se adapta.\\
 
 \begin{figure}[H]
 \centering
@@ -531,10 +517,11 @@ Esperaba encontrar un peor rendimiento del AGE frente al AGG ya que como he dich
 
 Evidentemente la tasa de reducción para el 3NN es 0 pues tomamos todas las características al no tener otro criterio. Ahora el que produce mayor reducción es el greedy lo que es lógico por la forma en la que trabaja, agregando progresivamente propiedades hasta no encontrar mejora ninguna.\\
 
-Lo que observo es que el AGG me ha dado unas tasas de reducción muy bajas sobre todo en arritmia, a priori no hay ninguna razón para ello. El algoritmo parece funcionar correctamente y al fin y al cabo las soluciones que se obtienen son semi-aleatorias. Nosotros no hemos añadido como criterio para la elección de soluciones es su score, no tenemos en cuenta el elegir soluciones con tasas de reducción pequeñas, con lo cuál puede ocurrir cualquier cosa. Aunque realmente sorprende que en este caso se den tasas de reducción tan pequeñas.\\
+El siguiente algoritmo que menos reduce es el AGG que es el más exploratorio seguido del siguiente más exploratorio que es el memético aleatorio, (10, 0.1), con lo cual como vemos cuando los algoritmos son más explotativos tienden a seleccionar un mayor número de características, aquí puede verse la tendencia al sobreajuste, al querer adaptarse a estos datos toma la información como relevante y por tanto no la descarta ya que obtiene mejores tasas de clasificación con toda la información.\\
 
-AGE también produce unas tasas de reducción bajas pero como hemos dicho no hay ninguna razón concreta para justificar este hecho.\\
+Esto lo podemos ver en arritmia donde el orden de los algoritmos de mayor a menos tasa de reducción es exactamente el mismo que de mayor a menor explotación: SFS, BL, AM-(10,1.0), AM-(10,0.1mejor), AM-(10,0.1), AGG y 3NN.\\
 
+En las bases de datos de libras y wdbc no se observa esto tan claramente pero también es cierto que hay menos variación entre las distintas tasas de reducción de los algoritmos en estas bases.\\
 
 \begin{figure}[H]
 \centering
@@ -544,19 +531,11 @@ AGE también produce unas tasas de reducción bajas pero como hemos dicho no hay
 
 Evidentemente el 3NN tarda 0 segundo puesto que su tiempo de búsqueda de solución es 0 pues simplemente devuelve un solución con todos los valores a True, es decir, escoge todas las características sin tener ningún criterio. Y observamos también que todos los algoritmos si los analizamos individualmente tardan más cuanto mayor es el espacio de búsqueda (ahora el LOO no tiene tanto impacto y con lo cual el número de muestras por partición no resulta tan decisivo como sí ocurría en la primera práctica cuando se tardaba más en libras que en arritmia para algunos algoritmos).\\
 
-El siguiente algoritmo que menos tarda es el SFS ya que hará en media un menor número de evaluaciones de la función objetivo además de no tener que hacer operaciones adicionales como el cruce o la mutación.\\
+Los algoritmos que menos tardan son BL y SFS lo cuál es lógico ya que dependen simplemente de cómo de rápido converjan, como vemos la convergencia de BL es mś rápida en las bases de datos de menor tamaño con lo que la hay diversidad en la base de datos de mayor tamaño.\\
 
-Y ahora veamos los dos algoritmos genéticos que hemos programado: tenemos que en las bases de datos de wdbc y libras se obtienen unos tiempos similares, en cambio en la base de datos de arritmia el AGG tarda en media unos 5o segundos más. Intentemos explicar este hecho, ya que el número de evaluaciones de la función objetivo es el mismo para ambos objetivos y una sola evaluación no influye en el tiempo de ejecución descartamos este hecho como factor diferenciador.\\
+En las bases de datos de menor tamaño las diferencias de tiempo entre los distintos meméticos y el AGG no son muy grandes es decir la BL de baja intensidad no aporta demasiada carga en tiempo de cómputo ya que es en un espacio pequeño.\\
 
-Veamos la cantidad de números aleatorios que generan cada uno de los algoritmos por ejecución:\\
-
-$n\_aleatorios_{AGG} = 4*n\_cruces + 2*n\_mutaciones = 10626*4 + 4347*2 = 51198$\\
-
-$n\_aleatorios_{AGE} = 4*n\_cruces + 2*n\_mutaciones + random\_para\_mutar\_por\_iteracion = 11742*4 + 3228*2 + 5871 = 59295$\\
-
-como podemos ver el AGE genera más número aleatorios con lo que este no es el motivo del mayor tiempo de ejecución del AGG.\\
-
-Dado que ambos tienen el mismo operador de cruce y mutación el único factor que me parece relevante es la gestión de memoria ya que tenemos que copiar más hijos por iteración, copiar los padres no mutados al vector de hijos y ordenamos tanto los padres como los hijos a lo largo de la iteración, en el AGG estamos ordenando un vector de 30 hijos mientras que en el AGE ordenamos solamente dos hijos. El hecho de que esta diferencia de tiempos sea más acusada en arritmia se deberá a que las soluciones son más grande y con lo cual moverlas en memoria ha de ser más costoso haciendo esta operación más crítica.\\
+En la base de datos de arritmia, donde la BL de baja intensidad puede ser más lenta ya que el vecindario de un inviduo es mayor, sí vemos como el AGG es más rápido al no realizar BL que los meméticos. Además entre los meméticos el más lento en esta base es el que aplica más búsquedas locales, el AM-(10,1.0) y en cambio los otros dos que realizan el mismo número de BL (ya que el tamaño de la población es 10) tarda prácticamente lo mismo.\\
 
 \newpage
 \section{\color[rgb]{0.0,0.0,0.21}Bibliografía}
