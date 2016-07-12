@@ -1,19 +1,18 @@
 Contenido de cada archivo:
 
-AGE.py: fichero donde está programado el AGE
-
 AGG.py: fichero donde está programado el AGG
 
-kernel.cu: fichero donde está el código CUDA para el clasificador
+AM.py: fichero en el que están implementados los tres algoritmos meméticos.
 
-KNNCUDA.py: fichero donde está programado el algoritmo 3NN que usamos para obtener los
-resultados para la tabla de datos
+BLCUDA.py: fichero donde está implementada la búsqueda local normal.
+
+BLCUDA1iter.py: fichero donde está implementada la búsqueda local de baja intensidad usada por los algoritmos meméticos.
+
+kernel.cu: fichero donde está el código CUDA para el clasificador
 
 knnLooGPU.py: interfaz en Python para usar el kNN programado en CUDA (está la clase que usamos para crear clasificadores)
 
 mainCUDA.py: archivo con el que ejecutamos los experimentos para cada algoritmo
-
-SFSCUDA.py: archivo donde está programado el algoritmo SFS
 
 En el directorio make_partitions32b tenemos los datos necesarios para construir las particiones:
 
